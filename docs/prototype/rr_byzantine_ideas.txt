@@ -1,0 +1,62 @@
+ideas = {
+	country = {
+		RR_GRE_purple_phoenix_1 = {
+			allowed = { original_tag = GRE }
+			allowed_civil_war = { always = yes }
+			picture = air_support_focus
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
+
+		RR_GRE_purple_phoenix_2 = {
+			allowed = { original_tag = GRE }
+			allowed_civil_war = { always = yes }
+			picture = air_support_focus
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.10
+				war_support_factor = 0.10
+				army_morale_factor = 0.05
+			}
+		}
+
+		RR_GRE_purple_phoenix_3 = {
+			allowed = { original_tag = GRE }
+			allowed_civil_war = { always = yes }
+			picture = air_support_focus
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.15
+				war_support_factor = 0.15
+				army_morale_factor = 0.10
+				army_org_factor = 0.05
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		RR_GRE_purple_phoenix_4 = {
+			allowed = { original_tag = GRE }
+			allowed_civil_war = { always = yes }
+			picture = air_support_focus
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.20
+				war_support_factor = 0.20
+				stability_factor = 0.10
+				army_morale_factor = 0.10
+				army_org_factor = 0.10
+				planning_speed = 0.10
+				supply_consumption_factor = -0.10
+				justify_war_goal_time = -0.25
+			}
+		}
+	}
+}
+

@@ -1,0 +1,224 @@
+RR_imperial_decisions = {
+RR_rebuild_senate = { icon = generic_political_discourse fire_only_once = no
+cost = 100
+visible = { has_completed_focus = RR_government }
+available = {  NOT = { has_country_flag = RR_rebuild_senate_taken } }
+ai_will_do = { factor = 1 }
+days_remove = 45
+complete_effect = {  set_country_flag = RR_rebuild_senate_taken }
+remove_effect = { set_country_flag = RR_senate_rebuilt }
+}
+RR_population_census = { icon = generic_political_discourse fire_only_once = no
+cost = 125
+visible = { has_completed_focus = RR_government }
+available = {  NOT = { has_country_flag = RR_population_census_taken } }
+ai_will_do = { factor = 1 }
+days_remove = 60
+complete_effect = {  set_country_flag = RR_population_census_taken }
+remove_effect = { set_country_flag = RR_census_done add_ideas = RR_census if = { limit = { NOT = { OR = { has_idea = extensive_conscription has_idea = service_by_requirement has_idea = all_adults_serve has_idea = scraping_the_barrel } } } add_ideas = extensive_conscription } }
+}
+RR_provincial_council = { icon = generic_political_discourse fire_only_once = no
+cost = 100
+visible = { has_completed_focus = RR_themes }
+available = {  NOT = { has_country_flag = RR_provincial_council_taken } }
+ai_will_do = { factor = 1 }
+days_remove = 45
+complete_effect = {  set_country_flag = RR_provincial_council_taken }
+remove_effect = { if = { limit = { NOT = { OR = { has_country_flag = RR_central has_country_flag = RR_pronoia } } } RR_set_provincial2 = yes } set_country_flag = RR_council_done }
+}
+RR_institution_meeting = { icon = generic_political_discourse fire_only_once = no
+cost = 125
+visible = { has_completed_focus = RR_eastern_empire }
+available = {  NOT = { has_country_flag = RR_institution_meeting_taken } }
+ai_will_do = { factor = 1 }
+days_remove = 30
+complete_effect = {  set_country_flag = RR_institution_meeting_taken }
+remove_effect = { country_event = { id = rr.11 } }
+}
+RR_civic_schooling = { icon = generic_political_discourse fire_only_once = no
+cost = 100
+visible = { has_completed_focus = RR_private_faith }
+available = {  NOT = { has_country_flag = RR_civic_schooling_taken } }
+ai_will_do = { factor = 1 }
+days_remove = 60
+complete_effect = {  set_country_flag = RR_civic_schooling_taken }
+remove_effect = { set_country_flag = RR_civic_education RR_set_identity2 = yes }
+}
+RR_turkey_demand = { icon = generic_political_discourse fire_only_once = no
+cost = 75
+visible = { has_completed_focus = RR_legitimacy }
+available = { date > 1936.12.31 has_government = empire is_subject = no NOT = { has_war_with = TUR } OR = { is_in_faction = no is_faction_leader = yes } TUR = { exists = yes } NOT = { has_country_flag = RR_turkey_demand_taken } }
+ai_will_do = { factor = 1 }
+complete_effect = {  set_country_flag = RR_turkey_demand_taken TUR = { country_event = { id = rr.5 } } }
+}
+RR_capital_constantinople = { icon = generic_political_discourse fire_only_once = no
+cost = 25
+visible = { has_completed_focus = RR_jewel NOT = { has_country_flag = RR_rome_proclaimed } }
+available = { has_completed_focus = RR_new_rome has_war = no 797 = { is_owned_by = ROOT is_controlled_by = ROOT } NOT = { has_country_flag = RR_capital_constantinople_taken } }
+ai_will_do = { factor = 1 }
+complete_effect = {  set_country_flag = RR_capital_constantinople_taken set_capital = { state = 797 } RR_rename_constantinople = yes 797 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
+        add_extra_state_shared_building_slots = 2
+        add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }797 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
+        add_extra_state_shared_building_slots = 0
+        add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } 797 = { add_dynamic_modifier = { modifier = RR_capital_base } } set_country_flag = RR_capital_built }
+}
+RR_holy_city = { icon = generic_political_discourse fire_only_once = no
+cost = 0
+visible = { has_completed_focus = RR_antioch }
+available = { 454 = { is_owned_by = ROOT is_controlled_by = ROOT } NOT = { has_country_flag = RR_holy_city_taken } }
+ai_will_do = { factor = 1 }
+complete_effect = {  set_country_flag = RR_holy_city_taken add_stability = .05 454 = { add_core_of = ROOT }
+455 = { add_core_of = ROOT } set_country_flag = RR_holy_city }
+}
+RR_granary = { icon = generic_political_discourse fire_only_once = no
+cost = 100
+visible = { has_completed_focus = RR_great_restoration }
+available = {  NOT = { has_country_flag = RR_granary_taken } }
+ai_will_do = { factor = 1 }
+days_remove = 7
+complete_effect = {  set_country_flag = RR_granary_taken }
+remove_effect = { every_other_country = { limit = { OR = { owns_state = 447 owns_state = 446 owns_state = 452 owns_state = 453 owns_state = 456 } NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } }
+        ROOT = { create_wargoal = { type = annex_everything target = PREV expire = 365 } } } }
+}
+RR_our_sea = { icon = generic_political_discourse fire_only_once = no
+cost = 100
+visible = { has_completed_focus = RR_antioch has_completed_focus = RR_alexandria }
+available = { 554 = { is_owned_by = ROOT is_controlled_by = ROOT }
+553 = { is_owned_by = ROOT is_controlled_by = ROOT }
+454 = { is_owned_by = ROOT is_controlled_by = ROOT }
+455 = { is_owned_by = ROOT is_controlled_by = ROOT }
+447 = { is_owned_by = ROOT is_controlled_by = ROOT }
+446 = { is_owned_by = ROOT is_controlled_by = ROOT }
+452 = { is_owned_by = ROOT is_controlled_by = ROOT }
+453 = { is_owned_by = ROOT is_controlled_by = ROOT }
+456 = { is_owned_by = ROOT is_controlled_by = ROOT } NOT = { has_country_flag = RR_our_sea_taken } }
+ai_will_do = { factor = 1 }
+days_remove = 30
+complete_effect = {  set_country_flag = RR_our_sea_taken }
+remove_effect = { add_navy_experience = 50 add_ideas = RR_mare set_country_flag = RR_mare_done }
+}
+RR_proclaim_rome = { icon = generic_political_discourse fire_only_once = no
+cost = 100
+visible = { has_completed_focus = RR_restore_rome }
+available = { 797 = { is_owned_by = ROOT is_controlled_by = ROOT }
+2 = { is_owned_by = ROOT is_controlled_by = ROOT } NOT = { has_country_flag = RR_proclaim_rome_taken } }
+ai_will_do = { factor = 1 }
+complete_effect = {  set_country_flag = RR_proclaim_rome_taken country_event = { id = rr.13 } }
+}
+RR_higher_education = { icon = generic_political_discourse fire_only_once = no
+cost = 75
+visible = { has_completed_focus = RR_university NOT = { has_completed_focus = RR_academy } }
+available = {  NOT = { has_country_flag = RR_higher_education_taken } }
+ai_will_do = { factor = 1 }
+days_remove = 45
+complete_effect = {  set_country_flag = RR_higher_education_taken }
+remove_effect = { if = { limit = { NOT = { OR = { has_idea = RR_science3 has_idea = RR_science4 } } } RR_set_science2 = yes } }
+}
+RR_education_system = { icon = generic_political_discourse fire_only_once = no
+cost = 125
+visible = { has_completed_focus = RR_university }
+available = {  NOT = { has_country_flag = RR_education_system_taken } }
+ai_will_do = { factor = 1 }
+days_remove = 180
+complete_effect = {  set_country_flag = RR_education_system_taken }
+remove_effect = { add_ideas = RR_education set_country_flag = RR_education_done country_event = { id = rr.14 } }
+}
+RR_national_laboratory = { icon = generic_political_discourse fire_only_once = no
+cost = 100
+visible = { has_completed_focus = RR_research_committee }
+available = { has_dlc = "Gotterdammerung" NOT = { has_country_flag = RR_national_laboratory_taken } }
+ai_will_do = { factor = 1 }
+days_remove = 180
+complete_effect = {  set_country_flag = RR_national_laboratory_taken }
+remove_effect = { country_event = { id = rr.15 } }
+}
+RR_assembly_decision = { icon = generic_political_discourse fire_only_once = no
+cost = 25
+visible = { has_completed_focus = RR_programme }
+available = { NOT = { has_idea = RR_assembly } }
+ai_will_do = { factor = 1 }
+days_remove = 90
+complete_effect = { add_timed_idea = { idea = RR_assembly days = 90 } }
+remove_effect = {  }
+days_re_enable = 180
+}
+RR_tour_decision = { icon = generic_political_discourse fire_only_once = no
+cost = 35
+visible = { has_government = empire }
+available = { NOT = { has_idea = RR_tour } }
+ai_will_do = { factor = 1 }
+days_remove = 90
+complete_effect = { add_timed_idea = { idea = RR_tour days = 90 } }
+remove_effect = {  }
+days_re_enable = 180
+}
+RR_registration_decision = { icon = generic_political_discourse fire_only_once = no
+cost = 50
+visible = { has_completed_focus = RR_citizenship }
+available = { NOT = { has_idea = RR_registration } }
+ai_will_do = { factor = 1 }
+days_remove = 120
+complete_effect = { add_timed_idea = { idea = RR_registration days = 120 } }
+remove_effect = {  }
+days_re_enable = 240
+}
+RR_conference_decision = { icon = generic_political_discourse fire_only_once = no
+cost = 50
+visible = { has_completed_focus = RR_university }
+available = { NOT = { has_idea = RR_conference } NOT = { OR = { has_idea = RR_conference has_idea = RR_emergency_research } } }
+ai_will_do = { factor = 1 }
+days_remove = 180
+complete_effect = { add_timed_idea = { idea = RR_conference days = 180 } }
+remove_effect = {  }
+days_re_enable = 365
+}
+RR_emergency_research_decision = { icon = generic_political_discourse fire_only_once = no
+cost = 75
+visible = { has_completed_focus = RR_academy }
+available = { NOT = { has_idea = RR_emergency_research } NOT = { OR = { has_idea = RR_conference has_idea = RR_emergency_research } } }
+ai_will_do = { factor = 1 }
+days_remove = 180
+complete_effect = { add_timed_idea = { idea = RR_emergency_research days = 180 } }
+remove_effect = {  }
+days_re_enable = 365
+}
+RR_legal_review_decision = { icon = generic_political_discourse fire_only_once = no
+cost = 50
+visible = { has_completed_focus = RR_codex }
+available = { NOT = { has_idea = RR_legal_review } }
+ai_will_do = { factor = 1 }
+days_remove = 120
+complete_effect = { add_timed_idea = { idea = RR_legal_review days = 120 } }
+remove_effect = {  }
+days_re_enable = 365
+}
+RR_festival_decision = { icon = generic_political_discourse fire_only_once = no
+cost = 75
+visible = { has_country_flag = RR_rome_proclaimed }
+available = { NOT = { has_idea = RR_festival } }
+ai_will_do = { factor = 1 }
+days_remove = 180
+complete_effect = { add_timed_idea = { idea = RR_festival days = 180 } }
+remove_effect = {  }
+days_re_enable = 365
+}
+RR_triumph_decision = { icon = generic_political_discourse fire_only_once = no
+cost = 50
+visible = { has_government = empire }
+available = { has_country_flag = RR_victory_pending NOT = { has_idea = RR_triumph } }
+ai_will_do = { factor = 1 }
+days_remove = 90
+complete_effect = { clr_country_flag = RR_victory_pending add_timed_idea = { idea = RR_triumph days = 90 } }
+remove_effect = {  }
+}
+RR_clear_cases = { icon = generic_political_discourse fire_only_once = no
+cost = 75
+visible = { has_completed_focus = RR_codex }
+available = { NOT = { has_idea = RR_case_review } }
+ai_will_do = { factor = 1 }
+days_remove = 30
+complete_effect = {  }
+remove_effect = { add_timed_idea = { idea = RR_case_review days = 120 } }
+days_re_enable = 360
+}
+}

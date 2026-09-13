@@ -1,0 +1,16 @@
+leader_traits = {
+RR_purple_emperor = { stability_factor = 0.05 war_support_factor = 0.05 }
+RR_imperial_administrator = { political_power_gain = 0.15 }
+RR_narses_trait = { political_power_gain = 0.15 industrial_capacity_factory = 0.03 intel_network_gain_factor = 0.1 }
+RR_propagandist_trait = { empire_drift = 0.08 stability_factor = 0.03 research_speed_factor = 0.02 }
+RR_reconstruction_minister_trait = { production_speed_industrial_complex_factor = 0.05 production_speed_infrastructure_factor = 0.1 decryption_factor = 0.05 }
+RR_palace_intelligence_trait = { intel_network_gain_factor = 0.05 empire_drift = 0.03 political_power_gain = 0.05 intelligence_agency_defense = 0.5 }
+RR_military_secretary_trait = { experience_gain_army = 0.03 training_time_army_factor = -0.05 political_power_gain = 0.05 }
+RR_frontier_governor_trait = { conscription_factor = 0.05 army_core_defence_factor = 0.03 resistance_growth = -0.05 }
+RR_cipher_director_trait = { decryption_factor = 0.1 agency_upgrade_time = -0.1 }
+RR_overseas_director_trait = { intel_network_gain_factor = 0.15 operation_cost = -0.1 }
+RR_senate_secretary_trait = { political_power_gain = 0.2 stability_factor = 0.03 }
+RR_jurist_trait = { political_advisor_cost_factor = -0.15 drift_defence_factor = 0.25 economy_cost_factor = -0.15 trade_laws_cost_factor = -0.15 mobilization_laws_cost_factor = -0.15 }
+RR_census_minister_trait = { conscription_factor = 0.1 mobilization_speed = 0.1 }
+RR_university_director_trait = { research_speed_factor = 0.05 special_project_speed_factor = 0.05 }
+}

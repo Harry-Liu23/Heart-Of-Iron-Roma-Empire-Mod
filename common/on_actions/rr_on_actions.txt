@@ -1,0 +1,10 @@
+on_actions = {
+ on_daily_GRE = { effect = {
+   if = { limit = { has_completed_focus = RR_tourism } RR_refresh_tourism = yes }
+   if = { limit = { has_country_flag = RR_enterprises } RR_update_enterprises = yes }
+   if = { limit = { has_idea = RR_first_war NOT = { has_war_with = TUR } } remove_ideas = RR_first_war }
+   if = { limit = { has_government = empire is_in_faction = yes is_faction_leader = no } leave_faction = yes }
+ }}
+ on_monthly_GRE = { effect = { if = { limit = { has_country_flag = RR_education_done } add_stability = .001 } } }
+ on_capitulation = { effect = { if = { limit = { FROM = { original_tag = GRE has_government = empire } } FROM = { set_country_flag = RR_victory_pending } } } }
+}

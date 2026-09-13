@@ -1,0 +1,21 @@
+RR_capital_base = { enable = { always = yes }
+        state_production_speed_buildings_factor = 0.1
+        local_manpower = 0.1
+        army_defence_factor = 0.05
+    }
+RR_capital_imperial = { enable = { always = yes }
+        state_production_speed_buildings_factor = 0.15
+        local_manpower = 0.2
+        army_defence_factor = 0.1
+    }
+RR_capital_rome = { enable = { always = yes }
+        state_production_speed_buildings_factor = 0.2
+        local_manpower = 0.3
+        army_defence_factor = 0.1
+    }
+
+RR_island_infrastructure = {
+ enable = { is_owned_by = GRE is_controlled_by = GRE
+   owner = { has_country_flag = RR_tourism_pilgrims has_war = no } }
+ state_production_speed_infrastructure_factor = .1
+}

@@ -1,0 +1,295 @@
+RR_set_movement1 = {
+remove_ideas = RR_movement2
+remove_ideas = RR_movement3
+remove_ideas = RR_movement4
+add_ideas = RR_movement1
+}
+RR_set_movement2 = {
+remove_ideas = RR_movement1
+remove_ideas = RR_movement3
+remove_ideas = RR_movement4
+add_ideas = RR_movement2
+}
+RR_set_movement3 = {
+remove_ideas = RR_movement1
+remove_ideas = RR_movement2
+remove_ideas = RR_movement4
+add_ideas = RR_movement3
+}
+RR_set_movement4 = {
+remove_ideas = RR_movement1
+remove_ideas = RR_movement2
+remove_ideas = RR_movement3
+add_ideas = RR_movement4
+}
+RR_set_provincial1 = {
+remove_ideas = RR_provincial2
+remove_ideas = RR_central
+remove_ideas = RR_central_final
+remove_ideas = RR_pronoia
+remove_ideas = RR_pronoia_final
+add_ideas = RR_provincial1
+}
+RR_set_provincial2 = {
+remove_ideas = RR_provincial1
+remove_ideas = RR_central
+remove_ideas = RR_central_final
+remove_ideas = RR_pronoia
+remove_ideas = RR_pronoia_final
+add_ideas = RR_provincial2
+}
+RR_set_central = {
+remove_ideas = RR_provincial1
+remove_ideas = RR_provincial2
+remove_ideas = RR_central_final
+remove_ideas = RR_pronoia
+remove_ideas = RR_pronoia_final
+add_ideas = RR_central
+}
+RR_set_central_final = {
+remove_ideas = RR_provincial1
+remove_ideas = RR_provincial2
+remove_ideas = RR_central
+remove_ideas = RR_pronoia
+remove_ideas = RR_pronoia_final
+add_ideas = RR_central_final
+}
+RR_set_pronoia = {
+remove_ideas = RR_provincial1
+remove_ideas = RR_provincial2
+remove_ideas = RR_central
+remove_ideas = RR_central_final
+remove_ideas = RR_pronoia_final
+add_ideas = RR_pronoia
+}
+RR_set_pronoia_final = {
+remove_ideas = RR_provincial1
+remove_ideas = RR_provincial2
+remove_ideas = RR_central
+remove_ideas = RR_central_final
+remove_ideas = RR_pronoia
+add_ideas = RR_pronoia_final
+}
+RR_set_church1 = {
+remove_ideas = RR_church2
+remove_ideas = RR_church3
+remove_ideas = RR_church4
+add_ideas = RR_church1
+}
+RR_set_church2 = {
+remove_ideas = RR_church1
+remove_ideas = RR_church3
+remove_ideas = RR_church4
+add_ideas = RR_church2
+}
+RR_set_church3 = {
+remove_ideas = RR_church1
+remove_ideas = RR_church2
+remove_ideas = RR_church4
+add_ideas = RR_church3
+}
+RR_set_church4 = {
+remove_ideas = RR_church1
+remove_ideas = RR_church2
+remove_ideas = RR_church3
+add_ideas = RR_church4
+}
+RR_set_identity1 = {
+remove_ideas = RR_identity2
+remove_ideas = RR_identity3
+remove_ideas = RR_identity4
+add_ideas = RR_identity1
+}
+RR_set_identity2 = {
+remove_ideas = RR_identity1
+remove_ideas = RR_identity3
+remove_ideas = RR_identity4
+add_ideas = RR_identity2
+}
+RR_set_identity3 = {
+remove_ideas = RR_identity1
+remove_ideas = RR_identity2
+remove_ideas = RR_identity4
+add_ideas = RR_identity3
+}
+RR_set_identity4 = {
+remove_ideas = RR_identity1
+remove_ideas = RR_identity2
+remove_ideas = RR_identity3
+add_ideas = RR_identity4
+}
+RR_set_science1 = {
+remove_ideas = RR_science2
+remove_ideas = RR_science3
+remove_ideas = RR_science4
+add_ideas = RR_science1
+}
+RR_set_science2 = {
+remove_ideas = RR_science1
+remove_ideas = RR_science3
+remove_ideas = RR_science4
+add_ideas = RR_science2
+}
+RR_set_science3 = {
+remove_ideas = RR_science1
+remove_ideas = RR_science2
+remove_ideas = RR_science4
+add_ideas = RR_science3
+}
+RR_set_science4 = {
+remove_ideas = RR_science1
+remove_ideas = RR_science2
+remove_ideas = RR_science3
+add_ideas = RR_science4
+}
+RR_issue_common = {
+add_political_power = 75 RR_set_movement3 = yes add_ideas = RR_consensus add_to_variable = { GRE_monarchist_loyalty = 1 }
+}
+RR_research_slot = {
+if = { limit = { amount_research_slots < 6 } add_research_slot = 1 }
+}
+RR_rename_constantinople = {
+797 = { set_state_name = RR_constantinople } set_province_name = { id = 9833 name = RR_constantinople }
+}
+RR_proclaim_rome = {
+set_cosmetic_tag = RR_ROM set_country_flag = RR_rome_proclaimed
+}
+RR_take_power = {
+set_politics = { ruling_party = empire elections_allowed = no }
+promote_character = { character = RR_constantine ideology = roman_restoration }
+set_party_name = { ideology = empire name = RR_empire_party long_name = RR_empire_party }
+remove_ideas = GRE_metaxism remove_ideas = GRE_metaxism_2
+remove_ideas = GRE_george_ii remove_ideas = GRE_george_ii_restrained
+if = { limit = { is_in_faction = yes is_faction_leader = no } leave_faction = yes }
+set_rule = { can_create_factions = no }
+}
+RR_emperor_administration = {
+RR_constantine = { add_country_leader_trait = RR_imperial_administrator }
+}
+RR_end_instability = {
+remove_ideas = GRE_political_instability
+remove_ideas = GRE_political_instability_dummy
+remove_ideas = GRE_political_instability_republican
+remove_ideas = GRE_political_instability_republican_2
+remove_ideas = GRE_political_instability_communist
+remove_ideas = GRE_political_instability_metaxas
+remove_ideas = GRE_political_instability_fascism
+set_country_flag = RR_constitution_done add_ideas = RR_senate
+}
+RR_build_land_lab = {
+if = { limit = { any_owned_state = { is_controlled_by = ROOT free_building_slots = { building = land_facility size > 0 include_locked = yes } } }
+    random_owned_controlled_state = { limit = { free_building_slots = { building = land_facility size > 0 include_locked = yes } }
+    add_building_construction = { type = land_facility level = 1 instant_build = yes } } }
+    else = { add_political_power = 100 clr_country_flag = RR_national_laboratory_taken }
+}
+RR_build_naval_lab = {
+if = { limit = { any_owned_state = { is_controlled_by = ROOT free_building_slots = { building = naval_facility size > 0 include_locked = yes } } }
+    random_owned_controlled_state = { limit = { free_building_slots = { building = naval_facility size > 0 include_locked = yes } }
+    add_building_construction = { type = naval_facility level = 1 instant_build = yes } } }
+    else = { add_political_power = 100 clr_country_flag = RR_national_laboratory_taken }
+}
+RR_build_air_lab = {
+if = { limit = { any_owned_state = { is_controlled_by = ROOT free_building_slots = { building = air_facility size > 0 include_locked = yes } } }
+    random_owned_controlled_state = { limit = { free_building_slots = { building = air_facility size > 0 include_locked = yes } }
+    add_building_construction = { type = air_facility level = 1 instant_build = yes } } }
+    else = { add_political_power = 100 clr_country_flag = RR_national_laboratory_taken }
+}
+RR_recruit_court = {
+recruit_character = RR_constantine
+recruit_character = RR_belisarius
+recruit_character = RR_heraclius
+recruit_character = RR_john_ii
+recruit_character = RR_ouranos
+recruit_character = RR_troglita
+recruit_character = RR_axouch
+recruit_character = RR_philanthropenos
+recruit_character = RR_kekaumenos
+recruit_character = RR_argyros
+recruit_character = RR_lachanodrakon
+recruit_character = RR_leo_iii
+recruit_character = RR_constantine_v
+recruit_character = RR_alexios_i
+recruit_character = RR_kourkouas
+recruit_character = RR_narses
+recruit_character = RR_propagandist
+recruit_character = RR_reconstruction_minister
+recruit_character = RR_palace_intelligence
+recruit_character = RR_military_secretary
+recruit_character = RR_frontier_governor
+recruit_character = RR_cipher_director
+recruit_character = RR_overseas_director
+recruit_character = RR_senate_secretary
+recruit_character = RR_jurist
+recruit_character = RR_census_minister
+recruit_character = RR_university_director
+}
+RR_upgrade_concerns = {
+if = { limit = { has_idea = RR_construction_1 } swap_ideas = { remove_idea = RR_construction_1 add_idea = RR_construction_2 } }
+if = { limit = { has_idea = RR_electrical_1 } swap_ideas = { remove_idea = RR_electrical_1 add_idea = RR_electrical_2 } }
+}
+RR_arsenal_funds = {
+if = { limit = { has_dlc = "Arms Against Tyranny" } mio:RR_mio_piraeus = { add_mio_funds_gain_factor = .1 } }
+}
+RR_update_enterprises = {
+if = { limit = { has_dlc = "Arms Against Tyranny" has_country_flag = RR_enterprises controls_state = 47 NOT = { has_country_flag = RR_mio_piraeus_initialized } }
+      mio:RR_mio_piraeus = { add_mio_size = 1 }
+      set_country_flag = RR_mio_piraeus_initialized
+    }
+if = { limit = { has_dlc = "Arms Against Tyranny" has_country_flag = RR_enterprises controls_state = 731 NOT = { has_country_flag = RR_mio_thessaloniki_initialized } }
+      mio:RR_mio_thessaloniki = { add_mio_size = 1 }
+      set_country_flag = RR_mio_thessaloniki_initialized
+    }
+if = { limit = { has_dlc = "Arms Against Tyranny" has_country_flag = RR_enterprises controls_state = 47 NOT = { has_country_flag = RR_mio_naval_office_initialized } }
+      mio:RR_mio_naval_office = { add_mio_size = 1 }
+      set_country_flag = RR_mio_naval_office_initialized
+    }
+if = { limit = { has_dlc = "Arms Against Tyranny" has_country_flag = RR_enterprises controls_state = 797 NOT = { has_country_flag = RR_mio_constantinople_shipyard_initialized } }
+      mio:RR_mio_constantinople_shipyard = { add_mio_size = 1 }
+      set_country_flag = RR_mio_constantinople_shipyard_initialized
+    }
+if = { limit = { has_dlc = "Arms Against Tyranny" has_country_flag = RR_enterprises controls_state = 339 NOT = { has_country_flag = RR_mio_smyrna_aircraft_initialized } }
+      mio:RR_mio_smyrna_aircraft = { add_mio_size = 1 }
+      set_country_flag = RR_mio_smyrna_aircraft_initialized
+    }
+if = { limit = { has_dlc = "Arms Against Tyranny" has_country_flag = RR_enterprises controls_state = 49 NOT = { has_country_flag = RR_mio_ankara_armor_initialized } }
+      mio:RR_mio_ankara_armor = { add_mio_size = 1 }
+      set_country_flag = RR_mio_ankara_armor_initialized
+    }
+if = { limit = { NOT = { controls_state = 47 } }
+  if = { limit = { has_idea = RR_construction_1 } set_country_flag = RR_restore_construction remove_ideas = RR_construction_1 }
+  if = { limit = { has_idea = RR_construction_2 } set_country_flag = RR_restore_construction remove_ideas = RR_construction_2 }
+  if = { limit = { has_idea = RR_electrical_1 } set_country_flag = RR_restore_electrical remove_ideas = RR_electrical_1 }
+  if = { limit = { has_idea = RR_electrical_2 } set_country_flag = RR_restore_electrical remove_ideas = RR_electrical_2 }
+}
+if = { limit = { controls_state = 47 has_country_flag = RR_restore_construction }
+ if = { limit = { amount_taken_ideas = { amount < 1 slots = { industrial_concern } } }
+      if = { limit = { has_completed_focus = RR_industrial_combine } add_ideas = RR_construction_2 } else = { add_ideas = RR_construction_1 }
+      } clr_country_flag = RR_restore_construction
+    }
+if = { limit = { controls_state = 47 has_country_flag = RR_restore_electrical }
+ if = { limit = { amount_taken_ideas = { amount < 1 slots = { industrial_concern } } }
+      if = { limit = { has_completed_focus = RR_industrial_combine } add_ideas = RR_electrical_2 } else = { add_ideas = RR_electrical_1 }
+      } clr_country_flag = RR_restore_electrical
+    }
+}
+RR_refresh_tourism = {
+if = { limit = { has_war = no }
+ if = { limit = { has_country_flag = RR_tourism_merchants }
+   remove_ideas = RR_tourism_pilgrims
+   if = { limit = { NOT = { has_idea = RR_tourism_merchants } } add_ideas = RR_tourism_merchants }
+ }
+ else_if = { limit = { has_country_flag = RR_tourism_pilgrims }
+   remove_ideas = RR_tourism_merchants
+   if = { limit = { NOT = { has_idea = RR_tourism_pilgrims } } add_ideas = RR_tourism_pilgrims }
+ 187 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT NOT = { has_dynamic_modifier = RR_island_infrastructure } }
+ add_dynamic_modifier = { modifier = RR_island_infrastructure } } }
+182 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT NOT = { has_dynamic_modifier = RR_island_infrastructure } }
+ add_dynamic_modifier = { modifier = RR_island_infrastructure } } }
+183 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT NOT = { has_dynamic_modifier = RR_island_infrastructure } }
+ add_dynamic_modifier = { modifier = RR_island_infrastructure } } }
+164 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT NOT = { has_dynamic_modifier = RR_island_infrastructure } }
+ add_dynamic_modifier = { modifier = RR_island_infrastructure } } }
+ }
+}
+else = { remove_ideas = RR_tourism_merchants remove_ideas = RR_tourism_pilgrims }
+}

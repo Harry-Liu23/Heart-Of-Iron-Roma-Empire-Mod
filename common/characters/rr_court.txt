@@ -1,0 +1,155 @@
+characters = {
+RR_constantine = {
+ name = RR_constantine
+ portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" } }
+ country_leader = { ideology = roman_restoration traits = { RR_purple_emperor } expire = "1970.1.1" }
+}
+RR_belisarius = { name = RR_belisarius
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      corps_commander = { traits = { brilliant_strategist war_hero career_officer trickster } skill = 4
+      attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
+      advisor = { slot = army_chief idea_token = RR_belisarius ledger = army
+          allowed = { original_tag = GRE } available = { has_completed_focus = RR_empire }
+          traits = { army_chief_offensive_2 } cost = 150 }
+    }
+RR_heraclius = { name = RR_heraclius
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      corps_commander = { traits = { brilliant_strategist panzer_leader career_officer trait_cautious } skill = 4
+      attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
+      advisor = { slot = high_command idea_token = RR_heraclius ledger = army
+          allowed = { original_tag = GRE } available = { has_completed_focus = RR_empire }
+          traits = { army_armored_1 } cost = 150 }
+    }
+RR_john_ii = { name = RR_john_ii
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      corps_commander = { traits = { brilliant_strategist trait_mountaineer trait_cautious } skill = 3
+      attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
+      
+    }
+RR_ouranos = { name = RR_ouranos
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      corps_commander = { traits = { career_officer infantry_leader trickster } skill = 3
+      attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
+      
+    }
+RR_troglita = { name = RR_troglita
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      corps_commander = { traits = { cavalry_leader war_hero trait_cautious } skill = 3
+      attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
+      
+    }
+RR_axouch = { name = RR_axouch
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      corps_commander = { traits = { career_officer organizer trait_cautious } skill = 3
+      attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
+      
+    }
+RR_philanthropenos = { name = RR_philanthropenos
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      corps_commander = { traits = { trickster trait_reckless war_hero } skill = 3
+      attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
+      
+    }
+RR_kekaumenos = { name = RR_kekaumenos
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      corps_commander = { traits = { trait_mountaineer career_officer trait_reckless } skill = 3
+      attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
+      
+    }
+RR_argyros = { name = RR_argyros
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      corps_commander = { traits = { cavalry_leader old_guard trait_cautious } skill = 2
+      attack_skill = 2 defense_skill = 3 planning_skill = 3 logistics_skill = 2 }
+      
+    }
+RR_lachanodrakon = { name = RR_lachanodrakon
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      corps_commander = { traits = { infantry_leader harsh_leader old_guard } skill = 2
+      attack_skill = 2 defense_skill = 3 planning_skill = 3 logistics_skill = 2 }
+      
+    }
+RR_leo_iii = { name = RR_leo_iii
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      corps_commander = { traits = { inflexible_strategist war_hero career_officer } skill = 3
+      attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
+      
+    }
+RR_constantine_v = { name = RR_constantine_v
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      corps_commander = { traits = { infantry_leader career_officer trait_reckless } skill = 3
+      attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
+      
+    }
+RR_alexios_i = { name = RR_alexios_i
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      field_marshal = { traits = { brilliant_strategist organizer logistics_wizard trait_cautious } skill = 3
+      attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
+      
+    }
+RR_kourkouas = { name = RR_kourkouas
+      portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
+      field_marshal = { traits = { inflexible_strategist unyielding_defender defensive_doctrine old_guard } skill = 4
+      attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
+      
+    }
+RR_narses = { name = RR_narses
+      portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }
+      advisor = { slot = political_advisor idea_token = RR_narses allowed = { original_tag = GRE }
+      available = { has_completed_focus = RR_empire } traits = { RR_narses_trait } cost = 125 }
+    }
+RR_propagandist = { name = RR_propagandist
+      portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }
+      advisor = { slot = political_advisor idea_token = RR_propagandist allowed = { original_tag = GRE }
+      available = { has_completed_focus = RR_empire } traits = { RR_propagandist_trait } cost = 75 }
+    }
+RR_reconstruction_minister = { name = RR_reconstruction_minister
+      portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }
+      advisor = { slot = political_advisor idea_token = RR_reconstruction_minister allowed = { original_tag = GRE }
+      available = { has_completed_focus = RR_empire } traits = { RR_reconstruction_minister_trait } cost = 100 }
+    }
+RR_palace_intelligence = { name = RR_palace_intelligence
+      portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }
+      advisor = { slot = political_advisor idea_token = RR_palace_intelligence allowed = { original_tag = GRE }
+      available = { has_completed_focus = RR_empire } traits = { RR_palace_intelligence_trait } cost = 100 }
+    }
+RR_military_secretary = { name = RR_military_secretary
+      portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }
+      advisor = { slot = political_advisor idea_token = RR_military_secretary allowed = { original_tag = GRE }
+      available = { has_completed_focus = RR_empire } traits = { RR_military_secretary_trait } cost = 125 }
+    }
+RR_frontier_governor = { name = RR_frontier_governor
+      portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }
+      advisor = { slot = political_advisor idea_token = RR_frontier_governor allowed = { original_tag = GRE }
+      available = { has_completed_focus = RR_government } traits = { RR_frontier_governor_trait } cost = 100 }
+    }
+RR_cipher_director = { name = RR_cipher_director
+      portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }
+      advisor = { slot = political_advisor idea_token = RR_cipher_director allowed = { original_tag = GRE }
+      available = { has_completed_focus = RR_government } traits = { RR_cipher_director_trait } cost = 125 }
+    }
+RR_overseas_director = { name = RR_overseas_director
+      portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }
+      advisor = { slot = political_advisor idea_token = RR_overseas_director allowed = { original_tag = GRE }
+      available = { has_completed_focus = RR_government } traits = { RR_overseas_director_trait } cost = 125 }
+    }
+RR_senate_secretary = { name = RR_senate_secretary
+      portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }
+      advisor = { slot = political_advisor idea_token = RR_senate_secretary allowed = { original_tag = GRE }
+      available = { has_country_flag = RR_senate_rebuilt } traits = { RR_senate_secretary_trait } cost = 100 }
+    }
+RR_jurist = { name = RR_jurist
+      portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }
+      advisor = { slot = political_advisor idea_token = RR_jurist allowed = { original_tag = GRE }
+      available = { has_completed_focus = RR_codex } traits = { RR_jurist_trait } cost = 100 }
+    }
+RR_census_minister = { name = RR_census_minister
+      portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }
+      advisor = { slot = political_advisor idea_token = RR_census_minister allowed = { original_tag = GRE }
+      available = { has_country_flag = RR_census_done } traits = { RR_census_minister_trait } cost = 100 }
+    }
+RR_university_director = { name = RR_university_director
+      portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }
+      advisor = { slot = political_advisor idea_token = RR_university_director allowed = { original_tag = GRE }
+      available = { has_completed_focus = RR_scholars } traits = { RR_university_director_trait } cost = 100 }
+    }
+}

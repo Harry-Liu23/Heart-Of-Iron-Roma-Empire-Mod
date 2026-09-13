@@ -1,0 +1,26 @@
+ideas = { industrial_concern = {
+RR_construction_1 = {
+          picture = generic_industrial_concern_1 allowed = { original_tag = GRE }
+          available = { has_country_flag = RR_enterprises controls_state = 47 NOT = { has_completed_focus = RR_industrial_combine } }
+          visible = { has_country_flag = RR_enterprises NOT = { has_completed_focus = RR_industrial_combine } }
+          cost = 100 modifier = { production_speed_industrial_complex_factor = 0.05 production_speed_infrastructure_factor = 0.1 }
+        }
+RR_construction_2 = {
+          picture = generic_industrial_concern_1 allowed = { original_tag = GRE }
+          available = { has_country_flag = RR_enterprises controls_state = 47 has_completed_focus = RR_industrial_combine }
+          visible = { has_country_flag = RR_enterprises has_completed_focus = RR_industrial_combine }
+          cost = 100 modifier = { production_speed_industrial_complex_factor = 0.1 production_speed_infrastructure_factor = 0.15 }
+        }
+RR_electrical_1 = {
+          picture = generic_industrial_concern_1 allowed = { original_tag = GRE }
+          available = { has_country_flag = RR_enterprises controls_state = 47 NOT = { has_completed_focus = RR_industrial_combine } }
+          visible = { has_country_flag = RR_enterprises NOT = { has_completed_focus = RR_industrial_combine } }
+          cost = 100 modifier = { industry_research = 0.05 electronics_research = 0.05 }
+        }
+RR_electrical_2 = {
+          picture = generic_industrial_concern_1 allowed = { original_tag = GRE }
+          available = { has_country_flag = RR_enterprises controls_state = 47 has_completed_focus = RR_industrial_combine }
+          visible = { has_country_flag = RR_enterprises has_completed_focus = RR_industrial_combine }
+          cost = 100 modifier = { industry_research = 0.075 electronics_research = 0.075 }
+        }
+} }

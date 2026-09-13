@@ -1,0 +1,9 @@
+ideologies = { empire = {
+ types = { roman_restoration = { can_be_randomly_selected = no } }
+ color = { 112 42 130 }
+ rules = { can_force_government = yes can_send_volunteers = yes can_puppet = yes }
+ war_impact_on_world_tension = 1.0 faction_impact_on_world_tension = 1.0
+ modifiers = { justify_war_goal_when_in_major_war_time = -.8 lend_lease_tension = .5 }
+ can_collaborate = yes ai_ideology_wanted_units_factor = 1.1
+ dynamic_faction_names = { RR_imperial_concord }
+} }

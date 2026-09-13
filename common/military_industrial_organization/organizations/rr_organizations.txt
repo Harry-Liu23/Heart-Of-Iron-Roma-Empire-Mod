@@ -1,0 +1,84 @@
+RR_mio_piraeus = {
+      name = RR_mio_piraeus icon = GFX_idea_generic_industrial_concern_1
+      allowed = { original_tag = GRE has_dlc = "Arms Against Tyranny" }
+      visible = { owner = { has_country_flag = RR_enterprises } }
+      available = { owner = { has_country_flag = RR_enterprises controls_state = 47 } }
+      equipment_type = { infantry_equipment artillery_equipment } research_categories = { infantry_weapons artillery }
+      research_bonus = 0
+      initial_trait = { name = RR_mio_piraeus_initial equipment_bonus = { reliability = .05 }
+        production_bonus = { production_capacity_factor = .05  } }
+      trait = { token = RR_quality name = RR_mio_piraeus_quality position = { x = 0 y = 0 }
+        equipment_bonus = { reliability = .02 } }
+      trait = { token = RR_workshops name = RR_mio_piraeus_workshops position = { x = 1 y = 1 }
+        any_parent = { RR_quality } production_bonus = { production_capacity_factor = .02 } }
+    }
+RR_mio_thessaloniki = {
+      name = RR_mio_thessaloniki icon = GFX_idea_generic_industrial_concern_1
+      allowed = { original_tag = GRE has_dlc = "Arms Against Tyranny" }
+      visible = { owner = { has_country_flag = RR_enterprises } }
+      available = { owner = { has_country_flag = RR_enterprises controls_state = 731 } }
+      equipment_type = { motorized_equipment mechanized_equipment } research_categories = { motorized_equipment }
+      research_bonus = 0
+      initial_trait = { name = RR_mio_thessaloniki_initial equipment_bonus = {  }
+        production_bonus = { production_capacity_factor = .05 production_efficiency_gain_factor = .05 } }
+      trait = { token = RR_quality name = RR_mio_thessaloniki_quality position = { x = 0 y = 0 }
+        equipment_bonus = { reliability = .02 } }
+      trait = { token = RR_workshops name = RR_mio_thessaloniki_workshops position = { x = 1 y = 1 }
+        any_parent = { RR_quality } production_bonus = { production_capacity_factor = .02 } }
+    }
+RR_mio_naval_office = {
+      name = RR_mio_naval_office icon = GFX_idea_generic_industrial_concern_1
+      allowed = { original_tag = GRE has_dlc = "Arms Against Tyranny" }
+      visible = { owner = { has_country_flag = RR_enterprises } }
+      available = { owner = { has_country_flag = RR_enterprises controls_state = 47 } }
+      equipment_type = { capital_ship screen_ship } research_categories = { naval_equipment }
+      research_bonus = 0
+      initial_trait = { name = RR_mio_naval_office_initial equipment_bonus = { reliability = .05 }
+        production_bonus = { production_capacity_factor = .05  } }
+      trait = { token = RR_quality name = RR_mio_naval_office_quality position = { x = 0 y = 0 }
+        equipment_bonus = { reliability = .02 } }
+      trait = { token = RR_workshops name = RR_mio_naval_office_workshops position = { x = 1 y = 1 }
+        any_parent = { RR_quality } production_bonus = { production_capacity_factor = .02 } }
+    }
+RR_mio_constantinople_shipyard = {
+      name = RR_mio_constantinople_shipyard icon = GFX_idea_generic_industrial_concern_1
+      allowed = { original_tag = GRE has_dlc = "Arms Against Tyranny" }
+      visible = { owner = { has_country_flag = RR_enterprises } }
+      available = { owner = { has_country_flag = RR_enterprises controls_state = 797 } }
+      equipment_type = { capital_ship } research_categories = { naval_equipment }
+      research_bonus = 0
+      initial_trait = { name = RR_mio_constantinople_shipyard_initial equipment_bonus = { reliability = .05 }
+        production_bonus = { production_capacity_factor = .05  } }
+      trait = { token = RR_quality name = RR_mio_constantinople_shipyard_quality position = { x = 0 y = 0 }
+        equipment_bonus = { reliability = .02 } }
+      trait = { token = RR_workshops name = RR_mio_constantinople_shipyard_workshops position = { x = 1 y = 1 }
+        any_parent = { RR_quality } production_bonus = { production_capacity_factor = .02 } }
+    }
+RR_mio_smyrna_aircraft = {
+      name = RR_mio_smyrna_aircraft icon = GFX_idea_generic_industrial_concern_1
+      allowed = { original_tag = GRE has_dlc = "Arms Against Tyranny" }
+      visible = { owner = { has_country_flag = RR_enterprises } }
+      available = { owner = { has_country_flag = RR_enterprises controls_state = 339 } }
+      equipment_type = { mio_cat_eq_all_small_plane } research_categories = { light_air }
+      research_bonus = 0
+      initial_trait = { name = RR_mio_smyrna_aircraft_initial equipment_bonus = { range = .05 }
+        production_bonus = { production_capacity_factor = .05  } }
+      trait = { token = RR_quality name = RR_mio_smyrna_aircraft_quality position = { x = 0 y = 0 }
+        equipment_bonus = { reliability = .02 } }
+      trait = { token = RR_workshops name = RR_mio_smyrna_aircraft_workshops position = { x = 1 y = 1 }
+        any_parent = { RR_quality } production_bonus = { production_capacity_factor = .02 } }
+    }
+RR_mio_ankara_armor = {
+      name = RR_mio_ankara_armor icon = GFX_idea_generic_industrial_concern_1
+      allowed = { original_tag = GRE has_dlc = "Arms Against Tyranny" }
+      visible = { owner = { has_country_flag = RR_enterprises } }
+      available = { owner = { has_country_flag = RR_enterprises controls_state = 49 } }
+      equipment_type = { armor } research_categories = { armor }
+      research_bonus = 0
+      initial_trait = { name = RR_mio_ankara_armor_initial equipment_bonus = { reliability = .05 }
+        production_bonus = { production_capacity_factor = .05  } }
+      trait = { token = RR_quality name = RR_mio_ankara_armor_quality position = { x = 0 y = 0 }
+        equipment_bonus = { reliability = .02 } }
+      trait = { token = RR_workshops name = RR_mio_ankara_armor_workshops position = { x = 1 y = 1 }
+        any_parent = { RR_quality } production_bonus = { production_capacity_factor = .02 } }
+    }

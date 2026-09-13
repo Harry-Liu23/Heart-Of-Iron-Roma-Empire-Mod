@@ -1,0 +1,2591 @@
+{
+  "focuses": [
+    {
+      "id": "RR_empire",
+      "name": "帝国派登场",
+      "group": "政治",
+      "x": 66,
+      "y": 2,
+      "days": 70,
+      "parents": [
+        [
+          "GRE_metaxism_focus",
+          "GRE_bring_home_the_exiled_republicans"
+        ]
+      ],
+      "reward": "add_political_power = 100 add_stability = .1 RR_set_movement1 = yes RR_recruit_court = yes add_to_variable = { GRE_monarchist_loyalty = 1 } country_event = { id = rr.0 }",
+      "summary": "政治点+100，稳定度+10；帝国倾向每日+0.03；开放君士坦丁十一世、14名指挥官与帝国顾问。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "GRE_compromise_with_the_monarchists",
+        "GRE_reevaluating_the_drachma",
+        "GRE_four_year_plan",
+        "GRE_the_kings_government"
+      ]
+    },
+    {
+      "id": "RR_programme",
+      "name": "帝国复兴纲领",
+      "group": "政治",
+      "x": 66,
+      "y": 3,
+      "days": 35,
+      "parents": [
+        [
+          "RR_empire"
+        ]
+      ],
+      "reward": "add_political_power = 75 RR_set_movement2 = yes country_event = { id = rr.1 days = 35 }",
+      "summary": "政治点+75；帝国倾向升至每日+0.05；国策完成后再等待35天触发帝国问题。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_referendum",
+      "name": "帝国公投",
+      "group": "政治",
+      "x": 64,
+      "y": 4,
+      "days": 35,
+      "parents": [
+        [
+          "RR_programme"
+        ]
+      ],
+      "reward": "RR_take_power = yes add_timed_idea = { idea = RR_vote_mandate days = 365 } country_event = { id = rr.2 }",
+      "summary": "君士坦丁十一世执政；365天：政治点获取+5%、稳定度+5。",
+      "available": "has_country_flag = RR_crown",
+      "bypass": "has_government = empire has_country_leader = { character = RR_constantine ruling_only = yes }",
+      "mutex": [
+        "RR_march"
+      ]
+    },
+    {
+      "id": "RR_march",
+      "name": "向雅典进军",
+      "group": "政治",
+      "x": 68,
+      "y": 4,
+      "days": 35,
+      "parents": [
+        [
+          "RR_programme"
+        ]
+      ],
+      "reward": "RR_take_power = yes add_stability = -.1 add_timed_idea = { idea = RR_purge days = 180 } country_event = { id = rr.3 days = 180 }",
+      "summary": "君士坦丁十一世执政；稳定度−10；180天整肃余波：政治点获取−10%、工厂产出−5%，期满事件给予365天秩序重建。",
+      "available": "has_country_flag = RR_basileus",
+      "bypass": "has_government = empire has_country_leader = { character = RR_constantine ruling_only = yes }",
+      "mutex": [
+        "RR_referendum"
+      ]
+    },
+    {
+      "id": "RR_government",
+      "name": "帝国政府",
+      "group": "政治",
+      "x": 66,
+      "y": 5,
+      "days": 35,
+      "parents": [
+        [
+          "RR_referendum",
+          "RR_march"
+        ]
+      ],
+      "reward": "add_political_power = 150 RR_emperor_administration = yes",
+      "summary": "政治点+150；皇帝追加每日政治点+0.15；开放行政、科研和顾问。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_codex",
+      "name": "重订罗马法典",
+      "group": "政治",
+      "x": 65,
+      "y": 6,
+      "days": 35,
+      "parents": [
+        [
+          "RR_government"
+        ]
+      ],
+      "reward": "set_country_flag = RR_jurist",
+      "summary": "开放大法官：任用时法律与政治顾问成本−15%、意识形态变化抵制+25%；开放75政治点的清理积案临时治理决议。",
+      "available": "has_country_flag = RR_senate_rebuilt",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_citizenship",
+      "name": "统一帝国公民身份",
+      "group": "政治",
+      "x": 66,
+      "y": 7,
+      "days": 35,
+      "parents": [
+        [
+          "RR_codex"
+        ]
+      ],
+      "reward": "remove_ideas = RR_census add_ideas = RR_citizens RR_set_movement4 = yes",
+      "summary": "人口普查精神升级为适役人口系数+20%、动员速度+15%；帝国倾向每日+0.12。",
+      "available": "has_country_flag = RR_census_done",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_authority",
+      "name": "恢复帝国权威",
+      "group": "政治",
+      "x": 66,
+      "y": 8,
+      "days": 35,
+      "parents": [
+        [
+          "RR_citizenship"
+        ]
+      ],
+      "reward": "add_political_power = 100 add_ideas = RR_administration",
+      "summary": "政治点+100；每日政治点+0.25；确立自主外交，不依附外国领导的阵营。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_memory",
+      "name": "铭记安纳托利亚灾厄",
+      "group": "文化",
+      "x": 59,
+      "y": 3,
+      "days": 35,
+      "parents": [
+        [
+          "RR_empire"
+        ]
+      ],
+      "reward": "add_ideas = RR_martyrs",
+      "summary": "适役人口系数+10%，战争支持度+5。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_wisdom_focus",
+      "name": "先贤与雅典的智慧",
+      "group": "文化",
+      "x": 59,
+      "y": 4,
+      "days": 35,
+      "parents": [
+        [
+          "RR_memory"
+        ]
+      ],
+      "reward": "add_ideas = RR_wisdom add_timed_idea = { idea = RR_cultural_debate days = 600 } country_event = { id = rr.30 }",
+      "summary": "稳定度+5、科研速度+5%；600天每日政治点+0.10；事件选择1次工业技术50%研究加成，或600天额外每日政治点+0.10。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_warrior_culture",
+      "name": "底比斯与马其顿的兵法",
+      "group": "文化",
+      "x": 59,
+      "y": 5,
+      "days": 35,
+      "parents": [
+        [
+          "RR_wisdom_focus"
+        ]
+      ],
+      "reward": "remove_ideas = RR_wisdom add_ideas = RR_culture",
+      "summary": "文化精神升级为稳定度+10、科研+5%、核心防御+5%、指挥点增长+5%。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_jewel",
+      "name": "拜占庭掌上明珠",
+      "group": "文化",
+      "x": 59,
+      "y": 6,
+      "days": 35,
+      "parents": [
+        [
+          "RR_warrior_culture"
+        ]
+      ],
+      "reward": "set_country_flag = RR_capital_unlocked",
+      "summary": "开放25政治点迁都君士坦丁堡决议；不触发土耳其交涉事件。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_legitimacy",
+      "name": "宣称拜占庭正统",
+      "group": "第一次光复",
+      "x": 73,
+      "y": 4,
+      "days": 35,
+      "parents": [
+        [
+          "RR_programme"
+        ]
+      ],
+      "reward": "set_country_flag = RR_turkey_diplomacy",
+      "summary": "开放对土交涉决议：75政治点，1937年1月1日起可用。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_new_rome",
+      "name": "新罗马再临",
+      "group": "第一次光复",
+      "x": 73,
+      "y": 5,
+      "days": 35,
+      "parents": [
+        [
+          "RR_legitimacy"
+        ]
+      ],
+      "reward": "set_cosmetic_tag = RR_BYZ 49 = { add_core_of = ROOT }\n339 = { add_core_of = ROOT }\n340 = { add_core_of = ROOT }\n341 = { add_core_of = ROOT }\n342 = { add_core_of = ROOT }\n343 = { add_core_of = ROOT }\n344 = { add_core_of = ROOT }\n345 = { add_core_of = ROOT }\n346 = { add_core_of = ROOT }\n347 = { add_core_of = ROOT }\n348 = { add_core_of = ROOT }\n349 = { add_core_of = ROOT }\n350 = { add_core_of = ROOT }\n352 = { add_core_of = ROOT }\n353 = { add_core_of = ROOT }\n354 = { add_core_of = ROOT }\n355 = { add_core_of = ROOT }\n356 = { add_core_of = ROOT }\n797 = { add_core_of = ROOT }\n798 = { add_core_of = ROOT }\n800 = { add_core_of = ROOT } country_event = { id = rr.7 }",
+      "summary": "国名改为拜占庭；获得全部1936年土耳其本土地块的核心。",
+      "available": "797 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_unify_homeland",
+      "name": "完成故土统一",
+      "group": "第一次光复",
+      "x": 73,
+      "y": 6,
+      "days": 35,
+      "parents": [
+        [
+          "RR_new_rome"
+        ]
+      ],
+      "reward": "if = { limit = { TUR = { exists = yes } } create_wargoal = { type = take_core_state target = TUR expire = 180 } }",
+      "summary": "获得对土耳其180天收复核心战争目标；已统一全部故土则跳过。",
+      "available": "",
+      "bypass": "49 = { is_owned_by = ROOT is_controlled_by = ROOT }\n339 = { is_owned_by = ROOT is_controlled_by = ROOT }\n340 = { is_owned_by = ROOT is_controlled_by = ROOT }\n341 = { is_owned_by = ROOT is_controlled_by = ROOT }\n342 = { is_owned_by = ROOT is_controlled_by = ROOT }\n343 = { is_owned_by = ROOT is_controlled_by = ROOT }\n344 = { is_owned_by = ROOT is_controlled_by = ROOT }\n345 = { is_owned_by = ROOT is_controlled_by = ROOT }\n346 = { is_owned_by = ROOT is_controlled_by = ROOT }\n347 = { is_owned_by = ROOT is_controlled_by = ROOT }\n348 = { is_owned_by = ROOT is_controlled_by = ROOT }\n349 = { is_owned_by = ROOT is_controlled_by = ROOT }\n350 = { is_owned_by = ROOT is_controlled_by = ROOT }\n352 = { is_owned_by = ROOT is_controlled_by = ROOT }\n353 = { is_owned_by = ROOT is_controlled_by = ROOT }\n354 = { is_owned_by = ROOT is_controlled_by = ROOT }\n355 = { is_owned_by = ROOT is_controlled_by = ROOT }\n356 = { is_owned_by = ROOT is_controlled_by = ROOT }\n797 = { is_owned_by = ROOT is_controlled_by = ROOT }\n798 = { is_owned_by = ROOT is_controlled_by = ROOT }\n800 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "mutex": []
+    },
+    {
+      "id": "RR_diplomatic_order",
+      "name": "帝国的外交秩序",
+      "group": "第一次光复",
+      "x": 76,
+      "y": 6,
+      "days": 35,
+      "parents": [
+        [
+          "RR_new_rome"
+        ]
+      ],
+      "reward": "set_rule = { can_create_factions = yes } if = { limit = { is_in_faction = no is_subject = no } create_faction = RR_imperial_concord }",
+      "summary": "独立且未加入阵营时建立“帝国协约”。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_great_restoration",
+      "name": "准备伟大光复",
+      "group": "第一次光复",
+      "x": 71,
+      "y": 9,
+      "days": 70,
+      "parents": [
+        [
+          "RR_authority"
+        ],
+        [
+          "RR_new_rome"
+        ]
+      ],
+      "reward": "add_political_power = 150",
+      "summary": "政治点+150；完成制度改革并统一土耳其故土后，开放后续制度、宗教和征服分支。",
+      "available": "49 = { is_owned_by = ROOT is_controlled_by = ROOT }\n339 = { is_owned_by = ROOT is_controlled_by = ROOT }\n340 = { is_owned_by = ROOT is_controlled_by = ROOT }\n341 = { is_owned_by = ROOT is_controlled_by = ROOT }\n342 = { is_owned_by = ROOT is_controlled_by = ROOT }\n343 = { is_owned_by = ROOT is_controlled_by = ROOT }\n344 = { is_owned_by = ROOT is_controlled_by = ROOT }\n345 = { is_owned_by = ROOT is_controlled_by = ROOT }\n346 = { is_owned_by = ROOT is_controlled_by = ROOT }\n347 = { is_owned_by = ROOT is_controlled_by = ROOT }\n348 = { is_owned_by = ROOT is_controlled_by = ROOT }\n349 = { is_owned_by = ROOT is_controlled_by = ROOT }\n350 = { is_owned_by = ROOT is_controlled_by = ROOT }\n352 = { is_owned_by = ROOT is_controlled_by = ROOT }\n353 = { is_owned_by = ROOT is_controlled_by = ROOT }\n354 = { is_owned_by = ROOT is_controlled_by = ROOT }\n355 = { is_owned_by = ROOT is_controlled_by = ROOT }\n356 = { is_owned_by = ROOT is_controlled_by = ROOT }\n797 = { is_owned_by = ROOT is_controlled_by = ROOT }\n798 = { is_owned_by = ROOT is_controlled_by = ROOT }\n800 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_themes",
+      "name": "新时代军区",
+      "group": "安纳托利亚制度",
+      "x": 62,
+      "y": 10,
+      "days": 35,
+      "parents": [
+        [
+          "RR_great_restoration"
+        ]
+      ],
+      "reward": "add_political_power = 75 RR_set_provincial1 = yes",
+      "summary": "政治点+75；行省行政每日政治点+0.10；开放可选行省议会决议。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_eastern_empire",
+      "name": "东方帝国复兴",
+      "group": "安纳托利亚制度",
+      "x": 62,
+      "y": 11,
+      "days": 35,
+      "parents": [
+        [
+          "RR_themes"
+        ]
+      ],
+      "reward": "add_ideas = RR_legal_order",
+      "summary": "法律与政治顾问成本−5%；开放制度会议决议。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_constitution",
+      "name": "帝国宪制确立",
+      "group": "安纳托利亚制度",
+      "x": 62,
+      "y": 12,
+      "days": 35,
+      "parents": [
+        [
+          "RR_eastern_empire"
+        ]
+      ],
+      "reward": "if = { limit = { has_country_flag = RR_central } RR_set_central_final = yes } else = { RR_set_pronoia_final = yes } RR_end_instability = yes country_event = { id = rr.12 }",
+      "summary": "中央制每日政治点最终+0.35，普罗尼亚制最终+0.20；政局动荡替换为罗马元老议会，政治点获取+5%。",
+      "available": "OR = { has_country_flag = RR_central has_country_flag = RR_pronoia }",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_faith",
+      "name": "帝国与信仰",
+      "group": "宗教",
+      "x": 68,
+      "y": 10,
+      "days": 35,
+      "parents": [
+        [
+          "RR_great_restoration"
+        ]
+      ],
+      "reward": "add_political_power = 75",
+      "summary": "政治点+75；选择教会帝国或公民认同路线。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_church_crown",
+      "name": "教会与皇权",
+      "group": "宗教：教会",
+      "x": 66,
+      "y": 11,
+      "days": 35,
+      "parents": [
+        [
+          "RR_faith"
+        ]
+      ],
+      "reward": "RR_set_church1 = yes",
+      "summary": "教会与帝国升级至第1档：适役人口+5%、稳定度+5、战争支持+5、科研−3%。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_private_faith"
+      ]
+    },
+    {
+      "id": "RR_dioceses",
+      "name": "复兴教区网络",
+      "group": "宗教：教会",
+      "x": 66,
+      "y": 12,
+      "days": 70,
+      "parents": [
+        [
+          "RR_church_crown"
+        ]
+      ],
+      "reward": "RR_set_church2 = yes",
+      "summary": "教会与帝国升级至第2档：适役人口+15%、稳定度+10、战争支持+10、科研−5%。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_faith_guard",
+      "name": "信仰的守护者",
+      "group": "宗教：教会",
+      "x": 66,
+      "y": 13,
+      "days": 70,
+      "parents": [
+        [
+          "RR_dioceses"
+        ]
+      ],
+      "reward": "RR_set_church3 = yes",
+      "summary": "教会与帝国升级至第3档：适役人口+25%、稳定度+15、战争支持+15、科研−8%。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_sacred_contract",
+      "name": "神圣帝国契约",
+      "group": "宗教：教会",
+      "x": 66,
+      "y": 14,
+      "days": 70,
+      "parents": [
+        [
+          "RR_faith_guard"
+        ]
+      ],
+      "reward": "RR_set_church4 = yes",
+      "summary": "教会与帝国升级至第4档：适役人口+35%、稳定度+20、战争支持+20、科研−10%。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_private_faith",
+      "name": "信仰属于私人",
+      "group": "宗教：公民",
+      "x": 70,
+      "y": 11,
+      "days": 35,
+      "parents": [
+        [
+          "RR_faith"
+        ]
+      ],
+      "reward": "RR_set_identity1 = yes",
+      "summary": "认同的转变：稳定度−5、战争支持−10；开放公民教育改革决议。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_church_crown"
+      ]
+    },
+    {
+      "id": "RR_roman_community",
+      "name": "罗马人的共同体",
+      "group": "宗教：公民",
+      "x": 70,
+      "y": 12,
+      "days": 70,
+      "parents": [
+        [
+          "RR_private_faith"
+        ]
+      ],
+      "reward": "RR_set_identity3 = yes",
+      "summary": "认同精神升级：稳定度+10、战争支持+5、科研+6%、适役人口系数+15%。",
+      "available": "has_country_flag = RR_civic_education",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_citizen_above_creed",
+      "name": "公民高于教籍",
+      "group": "宗教：公民",
+      "x": 70,
+      "y": 13,
+      "days": 35,
+      "parents": [
+        [
+          "RR_roman_community"
+        ]
+      ],
+      "reward": "RR_set_identity4 = yes",
+      "summary": "认同精神最终：稳定度+15、战争支持+10、科研+10%、适役人口系数+25%。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_balkan_rights",
+      "name": "巴尔干的帝国权利",
+      "group": "战争：巴尔干",
+      "x": 75,
+      "y": 10,
+      "days": 35,
+      "parents": [
+        [
+          "RR_great_restoration"
+        ]
+      ],
+      "reward": "if = { limit = { BUL = { exists = yes } } set_country_flag = RR_balkan_target_BUL } if = { limit = { BUL = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } }\n        create_wargoal = { type = annex_everything target = BUL expire = 365 } }\nif = { limit = { ALB = { exists = yes } } set_country_flag = RR_balkan_target_ALB } if = { limit = { ALB = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } }\n        create_wargoal = { type = annex_everything target = ALB expire = 365 } }\nif = { limit = { YUG = { exists = yes } } set_country_flag = RR_balkan_target_YUG } if = { limit = { YUG = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } }\n        create_wargoal = { type = annex_everything target = YUG expire = 365 } }\nif = { limit = { ROM = { exists = yes } } set_country_flag = RR_balkan_target_ROM } if = { limit = { ROM = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } }\n        create_wargoal = { type = annex_everything target = ROM expire = 365 } }",
+      "summary": "一次性获得对仍存在的保加利亚、阿尔巴尼亚、南斯拉夫、罗马尼亚365天吞并战争目标。",
+      "available": "",
+      "bypass": "BUL = { exists = no } ALB = { exists = no } YUG = { exists = no } ROM = { exists = no }",
+      "mutex": []
+    },
+    {
+      "id": "RR_balkan_provinces",
+      "name": "重建巴尔干行省",
+      "group": "战争：巴尔干",
+      "x": 75,
+      "y": 11,
+      "days": 70,
+      "parents": [
+        [
+          "RR_balkan_rights"
+        ]
+      ],
+      "reward": "44 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n45 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n46 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n48 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n76 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n77 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n78 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n79 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n80 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n81 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n82 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n83 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n84 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n102 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n103 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n104 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n105 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n106 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n107 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n108 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n109 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n211 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n212 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n764 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n766 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n801 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n802 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n803 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n804 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n805 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n853 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n934 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n970 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }\n971 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_core_of = ROOT } }47 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }\n        add_extra_state_shared_building_slots = 2\n        add_building_construction = { type = industrial_complex level = 2 instant_build = yes } } }",
+      "summary": "整合已收复的巴尔干地区为核心；本土2民工、2槽。只要求统一提出要求时仍存在的目标国家；已不存在的国家跳过。",
+      "available": "OR = { NOT = { has_country_flag = RR_balkan_target_BUL } AND = { 211 = { is_owned_by = ROOT is_controlled_by = ROOT }\n212 = { is_owned_by = ROOT is_controlled_by = ROOT }\n48 = { is_owned_by = ROOT is_controlled_by = ROOT }\n801 = { is_owned_by = ROOT is_controlled_by = ROOT } } }\nOR = { NOT = { has_country_flag = RR_balkan_target_ALB } AND = { 44 = { is_owned_by = ROOT is_controlled_by = ROOT }\n805 = { is_owned_by = ROOT is_controlled_by = ROOT }\n934 = { is_owned_by = ROOT is_controlled_by = ROOT } } }\nOR = { NOT = { has_country_flag = RR_balkan_target_YUG } AND = { 102 = { is_owned_by = ROOT is_controlled_by = ROOT }\n103 = { is_owned_by = ROOT is_controlled_by = ROOT }\n104 = { is_owned_by = ROOT is_controlled_by = ROOT }\n105 = { is_owned_by = ROOT is_controlled_by = ROOT }\n106 = { is_owned_by = ROOT is_controlled_by = ROOT }\n107 = { is_owned_by = ROOT is_controlled_by = ROOT }\n108 = { is_owned_by = ROOT is_controlled_by = ROOT }\n109 = { is_owned_by = ROOT is_controlled_by = ROOT }\n45 = { is_owned_by = ROOT is_controlled_by = ROOT }\n764 = { is_owned_by = ROOT is_controlled_by = ROOT }\n802 = { is_owned_by = ROOT is_controlled_by = ROOT }\n803 = { is_owned_by = ROOT is_controlled_by = ROOT }\n804 = { is_owned_by = ROOT is_controlled_by = ROOT }\n853 = { is_owned_by = ROOT is_controlled_by = ROOT }\n970 = { is_owned_by = ROOT is_controlled_by = ROOT } } }\nOR = { NOT = { has_country_flag = RR_balkan_target_ROM } AND = { 46 = { is_owned_by = ROOT is_controlled_by = ROOT }\n76 = { is_owned_by = ROOT is_controlled_by = ROOT }\n766 = { is_owned_by = ROOT is_controlled_by = ROOT }\n77 = { is_owned_by = ROOT is_controlled_by = ROOT }\n78 = { is_owned_by = ROOT is_controlled_by = ROOT }\n79 = { is_owned_by = ROOT is_controlled_by = ROOT }\n80 = { is_owned_by = ROOT is_controlled_by = ROOT }\n81 = { is_owned_by = ROOT is_controlled_by = ROOT }\n82 = { is_owned_by = ROOT is_controlled_by = ROOT }\n83 = { is_owned_by = ROOT is_controlled_by = ROOT }\n84 = { is_owned_by = ROOT is_controlled_by = ROOT }\n971 = { is_owned_by = ROOT is_controlled_by = ROOT } } }",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_taurus",
+      "name": "打开托罗斯山门",
+      "group": "战争：黎凡特",
+      "x": 80,
+      "y": 10,
+      "days": 35,
+      "parents": [
+        [
+          "RR_great_restoration"
+        ]
+      ],
+      "reward": "every_other_country = { limit = { OR = { owns_state = 554 owns_state = 553 } NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } }\n        ROOT = { create_wargoal = { type = annex_everything target = PREV expire = 365 } } }",
+      "summary": "获得对北叙利亚目标地区当前外国拥有者的365天吞并战争目标。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_antioch",
+      "name": "重返安条克",
+      "group": "战争：黎凡特",
+      "x": 80,
+      "y": 11,
+      "days": 35,
+      "parents": [
+        [
+          "RR_taurus"
+        ]
+      ],
+      "reward": "add_political_power = 50 554 = { add_core_of = ROOT }\n553 = { add_core_of = ROOT }every_other_country = { limit = { OR = { owns_state = 454 owns_state = 455 } NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } }\n        ROOT = { create_wargoal = { type = annex_everything target = PREV expire = 365 } } }",
+      "summary": "政治点+50；北叙利亚整合核心；开放南方目标及圣城守护者决议。",
+      "available": "554 = { is_owned_by = ROOT is_controlled_by = ROOT }\n553 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_alexandria",
+      "name": "亚历山大里亚再临",
+      "group": "战争：埃及",
+      "x": 84,
+      "y": 11,
+      "days": 35,
+      "parents": [
+        [
+          "RR_great_restoration"
+        ]
+      ],
+      "reward": "447 = { add_core_of = ROOT }\n446 = { add_core_of = ROOT }\n452 = { add_core_of = ROOT }\n453 = { add_core_of = ROOT }\n456 = { add_core_of = ROOT }447 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }\n        add_extra_state_shared_building_slots = 1\n        add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }",
+      "summary": "整合埃及目标地区为核心；亚历山大地区+1民工、1槽。不要求先完成粮仓决议。",
+      "available": "447 = { is_owned_by = ROOT is_controlled_by = ROOT }\n446 = { is_owned_by = ROOT is_controlled_by = ROOT }\n452 = { is_owned_by = ROOT is_controlled_by = ROOT }\n453 = { is_owned_by = ROOT is_controlled_by = ROOT }\n456 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_avenge_1204",
+      "name": "洗雪1204",
+      "group": "战争：意大利",
+      "x": 74,
+      "y": 12,
+      "days": 35,
+      "parents": [
+        [
+          "RR_balkan_provinces"
+        ]
+      ],
+      "reward": "add_war_support = .05 if = { limit = { ITA = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } }\n        create_wargoal = { type = annex_everything target = ITA expire = 365 } }",
+      "summary": "战争支持度+5；对意大利365天吞并战争目标。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_western_crown"
+      ]
+    },
+    {
+      "id": "RR_western_crown",
+      "name": "西部帝冠",
+      "group": "战争：意大利",
+      "x": 77,
+      "y": 12,
+      "days": 35,
+      "parents": [
+        [
+          "RR_balkan_provinces"
+        ]
+      ],
+      "reward": "add_political_power = 75 if = { limit = { ITA = { exists = yes } } ITA = { country_event = { id = rr.20 } } }",
+      "summary": "政治点+75；向意大利提出帝冠协定，拒绝后获得战争目标。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_avenge_1204"
+      ]
+    },
+    {
+      "id": "RR_italy_return",
+      "name": "重返意大利",
+      "group": "战争：意大利",
+      "x": 75,
+      "y": 13,
+      "days": 35,
+      "parents": [
+        [
+          "RR_avenge_1204",
+          "RR_western_crown"
+        ]
+      ],
+      "reward": "add_army_experience = 25 114 = { add_core_of = ROOT }\n115 = { add_core_of = ROOT }\n117 = { add_core_of = ROOT }\n156 = { add_core_of = ROOT }\n157 = { add_core_of = ROOT }\n158 = { add_core_of = ROOT }\n159 = { add_core_of = ROOT }\n160 = { add_core_of = ROOT }\n161 = { add_core_of = ROOT }\n162 = { add_core_of = ROOT }\n163 = { add_core_of = ROOT }\n2 = { add_core_of = ROOT }\n39 = { add_core_of = ROOT }",
+      "summary": "陆军经验+25；拥有意大利本土后整合为核心。",
+      "available": "114 = { is_owned_by = ROOT is_controlled_by = ROOT }\n115 = { is_owned_by = ROOT is_controlled_by = ROOT }\n117 = { is_owned_by = ROOT is_controlled_by = ROOT }\n156 = { is_owned_by = ROOT is_controlled_by = ROOT }\n157 = { is_owned_by = ROOT is_controlled_by = ROOT }\n158 = { is_owned_by = ROOT is_controlled_by = ROOT }\n159 = { is_owned_by = ROOT is_controlled_by = ROOT }\n160 = { is_owned_by = ROOT is_controlled_by = ROOT }\n161 = { is_owned_by = ROOT is_controlled_by = ROOT }\n162 = { is_owned_by = ROOT is_controlled_by = ROOT }\n163 = { is_owned_by = ROOT is_controlled_by = ROOT }\n2 = { is_owned_by = ROOT is_controlled_by = ROOT }\n39 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_two_romes",
+      "name": "旧罗马与新罗马",
+      "group": "战争：意大利",
+      "x": 75,
+      "y": 14,
+      "days": 35,
+      "parents": [
+        [
+          "RR_italy_return"
+        ]
+      ],
+      "reward": "add_stability = .05",
+      "summary": "稳定度+5；要求拥有并控制罗马与君士坦丁堡。",
+      "available": "2 = { is_owned_by = ROOT is_controlled_by = ROOT }\n797 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_anti_democracy",
+      "name": "向共和宣战",
+      "group": "战争：意识形态",
+      "x": 72,
+      "y": 15,
+      "days": 35,
+      "parents": [
+        [
+          "RR_two_romes"
+        ]
+      ],
+      "reward": "if = { limit = { ENG = { has_government = democratic } } if = { limit = { ENG = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } }\n        create_wargoal = { type = topple_government target = ENG expire = 365 } } }\nif = { limit = { FRA = { has_government = democratic } } if = { limit = { FRA = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } }\n        create_wargoal = { type = topple_government target = FRA expire = 365 } } }",
+      "summary": "对民主英国、法国取得365天推翻政府战争目标；与反法西斯、反共产两线互斥。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_anti_fascism",
+        "RR_anti_communism"
+      ]
+    },
+    {
+      "id": "RR_anti_fascism",
+      "name": "向法西斯宣战",
+      "group": "战争：意识形态",
+      "x": 75,
+      "y": 15,
+      "days": 35,
+      "parents": [
+        [
+          "RR_two_romes"
+        ]
+      ],
+      "reward": "if = { limit = { GER = { has_government = fascism } } if = { limit = { GER = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } }\n        create_wargoal = { type = topple_government target = GER expire = 365 } } }",
+      "summary": "对法西斯德国取得365天推翻政府战争目标。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_anti_democracy"
+      ]
+    },
+    {
+      "id": "RR_anti_communism",
+      "name": "向共产宣战",
+      "group": "战争：意识形态",
+      "x": 78,
+      "y": 15,
+      "days": 35,
+      "parents": [
+        [
+          "RR_two_romes"
+        ]
+      ],
+      "reward": "if = { limit = { SOV = { has_government = communism } } if = { limit = { SOV = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } }\n        create_wargoal = { type = annex_everything target = SOV expire = 365 } } } every_other_country = { limit = { has_government = communism is_neighbor_of = SOV NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } ROOT = { create_wargoal = { type = annex_everything target = PREV expire = 365 } } }",
+      "summary": "对共产主义苏联及其陆地邻接共产国家取得365天吞并战争目标。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_anti_democracy"
+      ]
+    },
+    {
+      "id": "RR_restore_rome",
+      "name": "重建罗马帝国",
+      "group": "罗马终点",
+      "x": 80,
+      "y": 16,
+      "days": 70,
+      "parents": [
+        [
+          "RR_two_romes"
+        ]
+      ],
+      "reward": "add_ideas = RR_rome",
+      "summary": "每日政治点+0.15、稳定度+5、适役人口系数+10%；开放一次性国号与首都决议。",
+      "available": "has_country_flag = RR_mare_done 114 = { is_owned_by = ROOT is_controlled_by = ROOT }\n115 = { is_owned_by = ROOT is_controlled_by = ROOT }\n117 = { is_owned_by = ROOT is_controlled_by = ROOT }\n156 = { is_owned_by = ROOT is_controlled_by = ROOT }\n157 = { is_owned_by = ROOT is_controlled_by = ROOT }\n158 = { is_owned_by = ROOT is_controlled_by = ROOT }\n159 = { is_owned_by = ROOT is_controlled_by = ROOT }\n160 = { is_owned_by = ROOT is_controlled_by = ROOT }\n161 = { is_owned_by = ROOT is_controlled_by = ROOT }\n162 = { is_owned_by = ROOT is_controlled_by = ROOT }\n163 = { is_owned_by = ROOT is_controlled_by = ROOT }\n2 = { is_owned_by = ROOT is_controlled_by = ROOT }\n39 = { is_owned_by = ROOT is_controlled_by = ROOT }\n49 = { is_owned_by = ROOT is_controlled_by = ROOT }\n339 = { is_owned_by = ROOT is_controlled_by = ROOT }\n340 = { is_owned_by = ROOT is_controlled_by = ROOT }\n341 = { is_owned_by = ROOT is_controlled_by = ROOT }\n342 = { is_owned_by = ROOT is_controlled_by = ROOT }\n343 = { is_owned_by = ROOT is_controlled_by = ROOT }\n344 = { is_owned_by = ROOT is_controlled_by = ROOT }\n345 = { is_owned_by = ROOT is_controlled_by = ROOT }\n346 = { is_owned_by = ROOT is_controlled_by = ROOT }\n347 = { is_owned_by = ROOT is_controlled_by = ROOT }\n348 = { is_owned_by = ROOT is_controlled_by = ROOT }\n349 = { is_owned_by = ROOT is_controlled_by = ROOT }\n350 = { is_owned_by = ROOT is_controlled_by = ROOT }\n352 = { is_owned_by = ROOT is_controlled_by = ROOT }\n353 = { is_owned_by = ROOT is_controlled_by = ROOT }\n354 = { is_owned_by = ROOT is_controlled_by = ROOT }\n355 = { is_owned_by = ROOT is_controlled_by = ROOT }\n356 = { is_owned_by = ROOT is_controlled_by = ROOT }\n797 = { is_owned_by = ROOT is_controlled_by = ROOT }\n798 = { is_owned_by = ROOT is_controlled_by = ROOT }\n800 = { is_owned_by = ROOT is_controlled_by = ROOT }\n44 = { is_owned_by = ROOT is_controlled_by = ROOT }\n45 = { is_owned_by = ROOT is_controlled_by = ROOT }\n46 = { is_owned_by = ROOT is_controlled_by = ROOT }\n48 = { is_owned_by = ROOT is_controlled_by = ROOT }\n76 = { is_owned_by = ROOT is_controlled_by = ROOT }\n77 = { is_owned_by = ROOT is_controlled_by = ROOT }\n78 = { is_owned_by = ROOT is_controlled_by = ROOT }\n79 = { is_owned_by = ROOT is_controlled_by = ROOT }\n80 = { is_owned_by = ROOT is_controlled_by = ROOT }\n81 = { is_owned_by = ROOT is_controlled_by = ROOT }\n82 = { is_owned_by = ROOT is_controlled_by = ROOT }\n83 = { is_owned_by = ROOT is_controlled_by = ROOT }\n84 = { is_owned_by = ROOT is_controlled_by = ROOT }\n102 = { is_owned_by = ROOT is_controlled_by = ROOT }\n103 = { is_owned_by = ROOT is_controlled_by = ROOT }\n104 = { is_owned_by = ROOT is_controlled_by = ROOT }\n105 = { is_owned_by = ROOT is_controlled_by = ROOT }\n106 = { is_owned_by = ROOT is_controlled_by = ROOT }\n107 = { is_owned_by = ROOT is_controlled_by = ROOT }\n108 = { is_owned_by = ROOT is_controlled_by = ROOT }\n109 = { is_owned_by = ROOT is_controlled_by = ROOT }\n211 = { is_owned_by = ROOT is_controlled_by = ROOT }\n212 = { is_owned_by = ROOT is_controlled_by = ROOT }\n764 = { is_owned_by = ROOT is_controlled_by = ROOT }\n766 = { is_owned_by = ROOT is_controlled_by = ROOT }\n801 = { is_owned_by = ROOT is_controlled_by = ROOT }\n802 = { is_owned_by = ROOT is_controlled_by = ROOT }\n803 = { is_owned_by = ROOT is_controlled_by = ROOT }\n804 = { is_owned_by = ROOT is_controlled_by = ROOT }\n805 = { is_owned_by = ROOT is_controlled_by = ROOT }\n853 = { is_owned_by = ROOT is_controlled_by = ROOT }\n934 = { is_owned_by = ROOT is_controlled_by = ROOT }\n970 = { is_owned_by = ROOT is_controlled_by = ROOT }\n971 = { is_owned_by = ROOT is_controlled_by = ROOT }\n554 = { is_owned_by = ROOT is_controlled_by = ROOT }\n553 = { is_owned_by = ROOT is_controlled_by = ROOT }\n454 = { is_owned_by = ROOT is_controlled_by = ROOT }\n455 = { is_owned_by = ROOT is_controlled_by = ROOT }\n447 = { is_owned_by = ROOT is_controlled_by = ROOT }\n446 = { is_owned_by = ROOT is_controlled_by = ROOT }\n452 = { is_owned_by = ROOT is_controlled_by = ROOT }\n453 = { is_owned_by = ROOT is_controlled_by = ROOT }\n456 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_farmers",
+      "name": "强制农民进厂",
+      "group": "经济：入口",
+      "x": 91,
+      "y": 3,
+      "days": 35,
+      "parents": [
+        [
+          "RR_empire"
+        ]
+      ],
+      "reward": " \n\t\t\tif = { \n\t\t\t\tlimit = { \n\t\t\t\t\thas_idea = GRE_agrarian_society\n\t\t\t\t}\n\t\t\t\tswap_ideas = {\n\t\t\t\t\tremove_idea = GRE_agrarian_society\n\t\t\t\t\tadd_idea = GRE_industrializing_society\n\t\t\t\t}\n\t\t\t\tadd_stability = -0.15\n\t\t\t}\n\t\t\telse_if = { \n\t\t\t\tlimit = { \n\t\t\t\t\thas_idea = GRE_agricultural_communes_idea\n\t\t\t\t}\n\t\t\t\tadd_timed_idea = {\n\t\t\t\t\tidea = GRE_rural_exodus \n\t\t\t\t\tdays = 280\n\t\t\t\t}\n\t\t\t\tadd_stability = -0.10\n\t\t\t}\n\t\t set_country_flag = RR_debt_open",
+      "summary": "农业社会转为工业化社会：工厂产出+5%、适役人口系数−7%；一次性稳定度−15；开放原版还债决议。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_bulk_debt",
+      "name": "大量偿还债务",
+      "group": "经济：入口",
+      "x": 91,
+      "y": 4,
+      "days": 35,
+      "parents": [
+        [
+          "RR_farmers"
+        ]
+      ],
+      "reward": "\n\t\t\tadd_stability = 0.05\n\t\t\tcustom_effect_tooltip = RR_bulk_debt_ENG_tt\n\t\t\tcustom_effect_tooltip = RR_bulk_debt_FRA_tt\n\t\t\tcustom_effect_tooltip = RR_bulk_debt_ITA_tt\n\t\t",
+      "summary": "稳定度+5；开放每次50政治点、30天的大额偿债决议。",
+      "available": "",
+      "bypass": "OR = { has_country_flag = GRE_completely_debt_free has_country_flag = GRE_defaulted_on_debt_flag }",
+      "mutex": []
+    },
+    {
+      "id": "RR_fiscal",
+      "name": "实现财政独立",
+      "group": "企业",
+      "x": 89,
+      "y": 5,
+      "days": 35,
+      "parents": [
+        [
+          "RR_bulk_debt"
+        ]
+      ],
+      "reward": "add_political_power = 120 set_country_flag = RR_enterprises RR_update_enterprises = yes",
+      "summary": "政治点+120；开放帝国工业企业和1级军工机构。要求债务已部分或全部偿还。",
+      "available": "OR = { has_idea = GRE_debt_to_the_ifc_2 has_idea = GRE_debt_to_the_ifc_3 has_country_flag = GRE_completely_debt_free }",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_autarky",
+      "name": "实现自给自足",
+      "group": "经济：产业",
+      "x": 95,
+      "y": 5,
+      "days": 35,
+      "parents": [
+        [
+          "RR_bulk_debt"
+        ]
+      ],
+      "reward": "\n\t\t\tswap_ideas = {\n\t\t\t\tremove_idea = GRE_foreign_monopolies\n\t\t\t\tadd_idea = GRE_foreign_monopolies_2\n\t\t\t}\n\t\t\tadd_stability = 0.1\n\t\t\tadd_ideas = limited_exports\n\t\t",
+      "summary": "稳定度+10；有限出口；外国垄断消费品系数惩罚从+40%降至+30%。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_enterprise_bureau",
+      "name": "帝国企业总局",
+      "group": "企业",
+      "x": 89,
+      "y": 6,
+      "days": 35,
+      "parents": [
+        [
+          "RR_fiscal"
+        ]
+      ],
+      "reward": "47 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }\n        add_extra_state_shared_building_slots = 1\n        add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } } add_ideas = RR_enterprise_office",
+      "summary": "1民工、1槽；工业企业任用成本−25%。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_arsenals",
+      "name": "扩建国家兵工厂",
+      "group": "企业",
+      "x": 87,
+      "y": 7,
+      "days": 35,
+      "parents": [
+        [
+          "RR_enterprise_bureau"
+        ]
+      ],
+      "reward": "47 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }\n        add_extra_state_shared_building_slots = 2\n        add_building_construction = { type = arms_factory level = 2 instant_build = yes } } } RR_arsenal_funds = yes",
+      "summary": "2军工、2槽；指定帝国兵工机构资金获取+10%。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_machinery"
+      ]
+    },
+    {
+      "id": "RR_machinery",
+      "name": "发展国营机械工业",
+      "group": "企业",
+      "x": 91,
+      "y": 7,
+      "days": 35,
+      "parents": [
+        [
+          "RR_enterprise_bureau"
+        ]
+      ],
+      "reward": "47 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }\n        add_extra_state_shared_building_slots = 2\n        add_building_construction = { type = industrial_complex level = 2 instant_build = yes } } } add_tech_bonus = { name = RR_research_bonus bonus = 0.5 uses = 1 category = industry }",
+      "summary": "2民工、2槽；1次工业技术50%研究加成。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_arsenals"
+      ]
+    },
+    {
+      "id": "RR_standardization",
+      "name": "工业标准化",
+      "group": "企业",
+      "x": 89,
+      "y": 8,
+      "days": 35,
+      "parents": [
+        [
+          "RR_arsenals",
+          "RR_machinery"
+        ]
+      ],
+      "reward": "add_ideas = RR_standards add_tech_bonus = { name = RR_research_bonus bonus = 0.5 uses = 1 category = cat_production } add_tech_bonus = { name = RR_research_bonus bonus = 0.5 uses = 1 category = electronics }",
+      "summary": "生产效率增长+3%、生产效率保持+5%；生产、电子技术各1次50%研究加成。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_industrial_combine",
+      "name": "帝国工业联合体",
+      "group": "企业",
+      "x": 89,
+      "y": 9,
+      "days": 35,
+      "parents": [
+        [
+          "RR_standardization"
+        ]
+      ],
+      "reward": "add_ideas = RR_industrial_union RR_upgrade_concerns = yes",
+      "summary": "工厂产出+3%、生产效率上限+5%；国有工业企业升级至Ⅱ级。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_tobacco",
+      "name": "扩大烟草产业",
+      "group": "经济：产业",
+      "x": 93,
+      "y": 6,
+      "days": 35,
+      "parents": [
+        [
+          "RR_autarky"
+        ]
+      ],
+      "reward": "\n\t\t\tswap_ideas = {\n\t\t\t\tremove_idea = GRE_foreign_monopolies_2\n\t\t\t\tadd_idea = GRE_foreign_monopolies_3\n\t\t\t}\n\t\t\t731 = { \n\t\t\t\tif = {\n\t\t\t\t\tlimit = {\n\t\t\t\t\t\tfree_building_slots = {\n\t\t\t\t\t\t\tbuilding = industrial_complex\n\t\t\t\t\t\t\tsize > 3\n\t\t\t\t\t\t\tinclude_locked = yes\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tadd_extra_state_shared_building_slots = 3\n\t\t\t\t\tadd_building_construction = {\n\t\t\t\t\t\ttype = industrial_complex\n\t\t\t\t\t\tlevel = 3\n\t\t\t\t\t\tinstant_build = yes\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\t\n\t\t\t184 = {\n\t\t\t\tif = { \n\t\t\t\t\tlimit = {\n\t\t\t\t\t\tfree_building_slots = {\n\t\t\t\t\t\t\tbuilding = industrial_complex\n\t\t\t\t\t\t\tsize > 1\n\t\t\t\t\t\t\tinclude_locked = yes\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tadd_extra_state_shared_building_slots = 1\n\t\t\t\t\tadd_building_construction = {\n\t\t\t\t\t\ttype = industrial_complex\n\t\t\t\t\t\tlevel = 1\n\t\t\t\t\t\tinstant_build = yes\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\t\n\t\t\tGER = {\n\t\t\t\tadd_opinion_modifier = {\n\t\t\t\t\ttarget = ROOT\n\t\t\t\t\tmodifier = GRE_tobacco_exports\n\t\t\t\t}\n\t\t\t}\n\t\t\tUSA = {\n\t\t\t\tadd_opinion_modifier = {\n\t\t\t\t\ttarget = ROOT\n\t\t\t\t\tmodifier = GRE_tobacco_exports\n\t\t\t\t}\n\t\t\t}\n\t\t\tFRA = {\n\t\t\t\tadd_opinion_modifier = {\n\t\t\t\t\ttarget = ROOT\n\t\t\t\t\tmodifier = GRE_tobacco_exports\n\t\t\t\t}\n\t\t\t}\n\t\t\tENG = {\n\t\t\t\tadd_opinion_modifier = {\n\t\t\t\t\ttarget = ROOT\n\t\t\t\t\tmodifier = GRE_tobacco_exports\n\t\t\t\t}\n\t\t\t}\n\t\t\thidden_effect = { \n\t\t\t\tGER = {\n\t\t\t\t\tadd_opinion_modifier = {\n\t\t\t\t\t\ttarget = ROOT\n\t\t\t\t\t\tmodifier = GRE_luxury_exports\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tUSA = {\n\t\t\t\t\tadd_opinion_modifier = {\n\t\t\t\t\t\ttarget = ROOT\n\t\t\t\t\t\tmodifier = GRE_luxury_exports\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tFRA = {\n\t\t\t\t\tadd_opinion_modifier = {\n\t\t\t\t\t\ttarget = ROOT\n\t\t\t\t\t\tmodifier = GRE_luxury_exports\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tENG = {\n\t\t\t\t\tadd_opinion_modifier = {\n\t\t\t\t\t\ttarget = ROOT\n\t\t\t\t\t\tmodifier = GRE_luxury_exports\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t",
+      "summary": "4民工、4槽；外国垄断消费品惩罚降至+20%；保留贸易关系改善。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_mining"
+      ]
+    },
+    {
+      "id": "RR_mining",
+      "name": "扩张采矿工业",
+      "group": "经济：产业",
+      "x": 97,
+      "y": 6,
+      "days": 35,
+      "parents": [
+        [
+          "RR_autarky"
+        ]
+      ],
+      "reward": "\n\t\t\tswap_ideas = {\n\t\t\t\tremove_idea = GRE_foreign_monopolies_2\n\t\t\t\tadd_idea = GRE_foreign_monopolies_3\n\t\t\t}\n\t\t\t47 = {\n\t\t\t\tif = { \n\t\t\t\t\tlimit = {\n\t\t\t\t\t\tfree_building_slots = {\n\t\t\t\t\t\t\tbuilding = arms_factory\n\t\t\t\t\t\t\tsize > 2\n\t\t\t\t\t\t\tinclude_locked = yes\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tadd_extra_state_shared_building_slots = 2\n\t\t\t\t\tadd_building_construction = {\n\t\t\t\t\t\ttype = arms_factory\n\t\t\t\t\t\tlevel = 2\n\t\t\t\t\t\tinstant_build = yes\n\t\t\t\t\t}\n\t\t\t\t}\t\n\t\t\t}\n\t\t\t185 = {\n\t\t\t\tif = { \n\t\t\t\t\tlimit = {\n\t\t\t\t\t\tfree_building_slots = {\n\t\t\t\t\t\t\tbuilding = arms_factory\n\t\t\t\t\t\t\tsize > 1\n\t\t\t\t\t\t\tinclude_locked = yes\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tadd_extra_state_shared_building_slots = 1\n\t\t\t\t\tadd_building_construction = {\n\t\t\t\t\t\ttype = arms_factory\n\t\t\t\t\t\tlevel = 1\n\t\t\t\t\t\tinstant_build = yes\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\t\n\t\t\tadd_tech_bonus = {\n\t\t\t\tname = RR_mining\n\t\t\t\tbonus = 1.0\n\t\t\t\tuses = 2\n\t\t\t\tcategory = excavation_tech\n\t\t\t}\t\t\t\n\t\t",
+      "summary": "3军工、3槽；2次开采技术100%研究加成；外国垄断消费品惩罚降至+20%。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_tobacco"
+      ]
+    },
+    {
+      "id": "RR_tourism",
+      "name": "鼓励旅游业",
+      "group": "经济：产业",
+      "x": 93,
+      "y": 7,
+      "days": 35,
+      "parents": [
+        [
+          "RR_tobacco",
+          "RR_mining"
+        ]
+      ],
+      "reward": "\n\t\t\tswap_ideas = {\n\t\t\t\tremove_idea = GRE_foreign_monopolies_3\n\t\t\t\tadd_idea = GRE_foreign_monopolies_4\n\t\t\t}\n\t\t\tadd_stability = 0.05\n\t\t\tcountry_event = { id = rr.32 }\n\t\t\tcustom_effect_tooltip = RR_tourism_tt\n\t\t",
+      "summary": "一次性稳定度+5；外国垄断惩罚降至+10%；事件选择和平旅游方案：商旅为稳定度+10、政治点获取+15%、消费品系数−10%；地方建设为稳定度+10、消费品系数−15%、自有岛州基础设施建设+10%。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_mobilize_economy"
+      ]
+    },
+    {
+      "id": "RR_mobilize_economy",
+      "name": "经济动员",
+      "group": "经济：产业",
+      "x": 97,
+      "y": 7,
+      "days": 35,
+      "parents": [
+        [
+          "RR_tobacco",
+          "RR_mining"
+        ]
+      ],
+      "reward": "\n\t\t\tswap_ideas = {\n\t\t\t\tremove_idea = GRE_foreign_monopolies_3\n\t\t\t\tadd_idea = GRE_foreign_monopolies_4\n\t\t\t}\n\t\t\tadd_war_support = 0.05\n\t\t\tif = {\n\t\t\t\tlimit = {\n\t\t\t\t\tNOT = { has_idea = partial_economic_mobilisation }\n\t\t\t\t\tNOT = { has_idea = war_economy }\n\t\t\t\t\tNOT = { has_idea = tot_economic_mobilisation }\n\t\t\t\t}\n\t\t\t\tadd_ideas = partial_economic_mobilisation        \n\t\t\t}\n\t\t\telse_if = {\n\t\t\t\tlimit = {\n\t\t\t\t\tNOT = { has_idea = war_economy }\n\t\t\t\t\tNOT = { has_idea = tot_economic_mobilisation }\n\t\t\t\t}\n\t\t\t\tadd_ideas = war_economy        \n\t\t\t}\n            else = {\n                add_political_power = 150\n            }            \n        ",
+      "summary": "战争支持+5；升级部分动员或战争经济，已战时经济则150政治点；垄断惩罚降至+10%。",
+      "available": "has_war_support > .2",
+      "bypass": "",
+      "mutex": [
+        "RR_tourism"
+      ]
+    },
+    {
+      "id": "RR_athens",
+      "name": "振兴雅典",
+      "group": "经济：产业",
+      "x": 92,
+      "y": 8,
+      "days": 35,
+      "parents": [
+        [
+          "RR_tourism",
+          "RR_mobilize_economy"
+        ]
+      ],
+      "reward": "\n\t\t\t47 = {\n\t\t\t\tif = { \n\t\t\t\t\tlimit = {\n\t\t\t\t\t\tfree_building_slots = {\n\t\t\t\t\t\t\tbuilding = industrial_complex\n\t\t\t\t\t\t\tsize > 1\n\t\t\t\t\t\t\tinclude_locked = yes\n\t\t\t\t\t\t}\n\t\t\t\t\t\tfree_building_slots = {\n\t\t\t\t\t\t\tbuilding = arms_factory\n\t\t\t\t\t\t\tsize > 0\n\t\t\t\t\t\t\tinclude_locked = yes\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\t\n\t\t\t\tadd_extra_state_shared_building_slots = 4\n\t\t\t\tadd_building_construction = {\n\t\t\t\t\ttype = industrial_complex\n\t\t\t\t\tlevel = 2\n\t\t\t\t\tinstant_build = yes\n\t\t\t\t}\n\t\t\t\tadd_building_construction = {\n\t\t\t\t\ttype = arms_factory\n\t\t\t\t\tlevel = 1\n\t\t\t\t\tinstant_build = yes\n\t\t\t\t}\n\t\t\t}\t\t\t\n\t\t",
+      "summary": "雅典2民工、1军工、4建筑槽。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_islands",
+        "RR_slums"
+      ]
+    },
+    {
+      "id": "RR_islands",
+      "name": "开发群岛领地",
+      "group": "经济：产业",
+      "x": 95,
+      "y": 8,
+      "days": 35,
+      "parents": [
+        [
+          "RR_tourism",
+          "RR_mobilize_economy"
+        ]
+      ],
+      "reward": "\n\t\t\t187 = {\n\t\t\t\tif = { \n\t\t\t\t\tlimit = {\n\t\t\t\t\t\tfree_building_slots = {\n\t\t\t\t\t\t\tbuilding = dockyard\n\t\t\t\t\t\t\tsize > 0\n\t\t\t\t\t\t\tinclude_locked = yes\n\t\t\t\t\t\t}\n\t\t\t\t\t\tis_fully_controlled_by = ROOT\n\t\t\t\t\t}\n\t\t\t\t\tadd_extra_state_shared_building_slots = 2\n\t\t\t\t\tadd_building_construction = {\n\t\t\t\t\t\ttype = dockyard\n\t\t\t\t\t\tlevel = 1\n\t\t\t\t\t\tinstant_build = yes\n\t\t\t\t\t}\n\t\t\t\t}\t\n\t\t\t}\n\t\t\t182 = {\n\t\t\t\tif = { \n\t\t\t\t\tlimit = {\n\t\t\t\t\t\tfree_building_slots = {\n\t\t\t\t\t\t\tbuilding = industrial_complex\n\t\t\t\t\t\t\tsize > 1\n\t\t\t\t\t\t\tinclude_locked = yes\n\t\t\t\t\t\t}\n\t\t\t\t\t\tis_fully_controlled_by = ROOT\n\t\t\t\t\t}\n\t\t\t\t\tadd_extra_state_shared_building_slots = 3\n\t\t\t\t\tadd_building_construction = {\n\t\t\t\t\t\ttype = industrial_complex\n\t\t\t\t\t\tlevel = 2\n\t\t\t\t\t\tinstant_build = yes\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\t\n\t\t\tif = { \n\t\t\t\tlimit = { \n\t\t\t\t\tOR = {\n\t\t\t\t\t\t183 = {\n\t\t\t\t\t\t\tis_fully_controlled_by = ROOT\n\t\t\t\t\t\t}\n\t\t\t\t\t\tCYP = {\n\t\t\t\t\t\t\tis_subject_of = ROOT\n\t\t\t\t\t\t\tcontrols_state = 183\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\t\t\n\t\t\t\t183 = {\n\t\t\t\t\tif = {\n\t\t\t\t\t\tlimit = {\n\t\t\t\t\t\t\tfree_building_slots = {\n\t\t\t\t\t\t\t\tbuilding = arms_factory\n\t\t\t\t\t\t\t\tsize > 1\n\t\t\t\t\t\t\t\tinclude_locked = yes\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\t\n\t\t\t\t\tadd_extra_state_shared_building_slots = 3\n\t\t\t\t\tadd_building_construction = {\n\t\t\t\t\t\ttype = arms_factory\n\t\t\t\t\t\tlevel = 2\n\t\t\t\t\t\tinstant_build = yes\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tif = { \n\t\t\t\tlimit = { \n\t\t\t\t\t164 = {\n\t\t\t\t\t\tis_fully_controlled_by = ROOT\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\t164 = {\n\t\t\t\t\tif = {\n\t\t\t\t\t\tlimit = {\n\t\t\t\t\t\t\tfree_building_slots = {\n\t\t\t\t\t\t\t\tbuilding = dockyard\n\t\t\t\t\t\t\t\tsize > 0\n\t\t\t\t\t\t\t\tinclude_locked = yes\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\t\n\t\t\t\t\tadd_extra_state_shared_building_slots = 1\n\t\t\t\t\tadd_building_construction = {\n\t\t\t\t\t\ttype = dockyard\n\t\t\t\t\t\tlevel = 1\n\t\t\t\t\t\tinstant_build = yes\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tif = { \n\t\t\t\tlimit = { \n\t\t\t\t\tNOT = { \n\t\t\t\t\t\tcontrols_state = 183\n\t\t\t\t\t\tcontrols_state = 164\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcustom_effect_tooltip = RR_islands_tt\n\t\t\t}\t\n\t\t\telse_if = { \n\t\t\t\tlimit = { \n\t\t\t\t\tNOT = { \n\t\t\t\t\t\tcontrols_state = 164\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcustom_effect_tooltip = RR_islands_dodecanese_tt\n\t\t\t}\n\t\t\telse_if = { \n\t\t\t\tlimit = { \n\t\t\t\t\tNOT = { \n\t\t\t\t\t\tcontrols_state = 183\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcustom_effect_tooltip = RR_islands_cyprus_tt\n\t\t\t}\n\t\t\thidden_effect = { \n\t\t\t\tif = { \n\t\t\t\t\tlimit = { \n\t\t\t\t\t\t183 = { is_owned_by = GRE }\n\t\t\t\t\t\tNOT = { 183 = { is_core_of = GRE } }\n\t\t\t\t\t}\n\t\t\t\t\tadd_state_core = 183\n\t\t\t\t}\n\t\t\t\tif = {\n\t\t\t\t\tlimit = {\n\t\t\t\t\t\tCYP = {\n\t\t\t\t\t\t\tis_subject_of = ROOT\n\t\t\t\t\t\t\towns_state = 183\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tannex_country = {\n\t\t\t\t\t\ttarget = CYP\n\t\t\t\t\t\ttransfer_troops = yes\n\t\t\t\t\t}\t\n\t\t\t\t\tadd_state_core = 183\n\t\t\t\t}\n\t\t\t}\n\t\t",
+      "summary": "基础2民工、1船坞、5槽；控制塞浦路斯再2军工3槽，控制多德卡尼斯再1船坞1槽；原版塞浦路斯整合。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_athens",
+        "RR_slums"
+      ]
+    },
+    {
+      "id": "RR_slums",
+      "name": "清理贫民窟",
+      "group": "经济：产业",
+      "x": 98,
+      "y": 8,
+      "days": 35,
+      "parents": [
+        [
+          "RR_tourism",
+          "RR_mobilize_economy"
+        ]
+      ],
+      "reward": "\n\t\t\trandom_owned_controlled_state = {\n\t\t\t\tprioritize = { 184 }\n\t\t\t\tadd_extra_state_shared_building_slots = 2\n\t\t\t}\t\t\n\t\t\trandom_owned_controlled_state = {\n\t\t\t\tprioritize = { 731 }\n\t\t\t\tadd_extra_state_shared_building_slots = 1\n\t\t\t}\t\t\n\t\t\trandom_owned_controlled_state = {\n\t\t\t\tprioritize = { 186 }\n\t\t\t\tadd_extra_state_shared_building_slots = 1\n\t\t\t}\t\t\n\t\t\trandom_owned_controlled_state = {\n\t\t\t\tprioritize = { 185 }\n\t\t\t\tadd_extra_state_shared_building_slots = 1\n\t\t\t}\t\t\t\n\t\t\tadd_manpower = 66750\n\t\t",
+      "summary": "5建筑槽、66,750人力。",
+      "available": "",
+      "bypass": "",
+      "mutex": [
+        "RR_athens",
+        "RR_islands"
+      ]
+    },
+    {
+      "id": "RR_monopolies",
+      "name": "打击外国垄断企业",
+      "group": "经济：产业",
+      "x": 95,
+      "y": 9,
+      "days": 35,
+      "parents": [
+        [
+          "RR_athens",
+          "RR_islands",
+          "RR_slums"
+        ]
+      ],
+      "reward": "\n\t\t\tadd_stability = 0.05\n\t\t\tif = { \n\t\t\t\tlimit = {\n\t\t\t\t\tNOT = {\n\t\t\t\t\t\thas_idea = GRE_foreign_monopolies_4\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\teffect_tooltip = { remove_ideas = GRE_foreign_monopolies }\n\t\t\t}\n\t\t\telse = {\n\t\t\t\tremove_ideas = GRE_foreign_monopolies_4\n\t\t\t}\n\n\t\t\tIF = {\n\t\t\t\tlimit = {\n\t\t\t\t\thas_dlc = \"Arms Against Tyranny\"\n\t\t\t\t}\t\n\t\t\t\tcustom_effect_tooltip = available_mio_tt\n\t\t\t\tshow_mio_tooltip = GRE_biamax_organization\n\t\t\t\tshow_mio_tooltip = GRE_pyrkal_organization\n\t\t\t\tshow_mio_tooltip = GRE_petropoulos_organization\n\t\t\t\tmio:GRE_biamax_organization = {\n\t\t\t\t\tadd_mio_size = 1\n\t\t\t\t}\n\t\t\t\tmio:GRE_pyrkal_organization = {\n\t\t\t\t\tadd_mio_size = 1\n\t\t\t\t}\n\t\t\t\tmio:GRE_petropoulos_organization = {\n\t\t\t\t\tadd_mio_size = 1\n\t\t\t\t}\n\t\t\t}\n\t\t",
+      "summary": "稳定度+5；移除外国垄断；原版三家本土军工机构开放并各增加1级。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_lignite",
+      "name": "褐煤液化",
+      "group": "经济：资源",
+      "x": 102,
+      "y": 3,
+      "days": 35,
+      "parents": [
+        [
+          "RR_empire"
+        ]
+      ],
+      "reward": "\t\n            random_owned_controlled_state = {\n\t\t\t\tprioritize = { 186 }\n               \tlimit = {\n                    free_building_slots = {\n                       \tbuilding = synthetic_refinery\n                        size > 0\n                        include_locked = yes\n                    }\n                }\n                add_extra_state_shared_building_slots = 1\n                add_building_construction = {\n                    type = synthetic_refinery\n                    level = 1\n                    instant_build = yes\n                }\n            }\n            effect_tooltip = { \n            \tadd_ideas = GRE_dep\n            }\n        ",
+      "summary": "1合成炼油厂、1建筑槽。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_soil",
+      "name": "开拓土地资源",
+      "group": "经济：资源",
+      "x": 102,
+      "y": 4,
+      "days": 35,
+      "parents": [
+        [
+          "RR_lignite"
+        ]
+      ],
+      "reward": "\n\t\t\t47 = { \n\t\t\t\tadd_resource = { \n\t\t\t\t\ttype = aluminium\n\t\t\t\t\tamount = 12\n\t\t\t\t}\n\t\t\t}\n\t\t\t186 = { \n\t\t\t\tadd_resource = { \n\t\t\t\t\ttype = aluminium\n\t\t\t\t\tamount = 8\n\t\t\t\t}\n\t\t\t\tadd_resource = { \n\t\t\t\t\ttype = steel\n\t\t\t\t\tamount = 15\n\t\t\t\t}\n\t\t\t\tadd_resource = { \n\t\t\t\t\ttype = tungsten\n\t\t\t\t\tamount = 5\n\t\t\t\t}\n\t\t\t}\n\t\t\t187 = { \n\t\t\t\tadd_resource = { \n\t\t\t\t\ttype = aluminium\n\t\t\t\t\tamount = 21\n\t\t\t\t}\n\t\t\t\tadd_resource = { \n\t\t\t\t\ttype = steel\n\t\t\t\t\tamount = 9\n\t\t\t\t}\n\t\t\t}\n\t\t",
+      "summary": "指定希腊州铝+41、钢+24、钨+5。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_farmlands",
+      "name": "马其顿富饶沃土",
+      "group": "经济：资源",
+      "x": 102,
+      "y": 5,
+      "days": 35,
+      "parents": [
+        [
+          "RR_soil"
+        ]
+      ],
+      "reward": "add_ideas = RR_farmland_common country_event = { id = rr.33 }",
+      "summary": "损耗−5%、补给消耗−5%、核心补给战斗惩罚−10%、补给范围+10%；事件选择消费品工厂系数−5%，或适役人口系数+5%。",
+      "available": "731 = { is_fully_controlled_by = ROOT is_core_of = ROOT }",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_scholars",
+      "name": "召回流亡学者",
+      "group": "科研",
+      "x": 108,
+      "y": 6,
+      "days": 35,
+      "parents": [
+        [
+          "RR_government"
+        ]
+      ],
+      "reward": "country_event = { id = rr.31 }",
+      "summary": "开放大学总监；事件选择1次电子技术50%研究加成或1次工业技术50%研究加成。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_university",
+      "name": "重建帝国大学",
+      "group": "科研",
+      "x": 108,
+      "y": 7,
+      "days": 70,
+      "parents": [
+        [
+          "RR_scholars"
+        ]
+      ],
+      "reward": "RR_research_slot = yes RR_set_science1 = yes",
+      "summary": "新增1科研槽；科研体系+3%；开放教育体系与高教标准决议。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_academy",
+      "name": "帝国科学研究院",
+      "group": "科研",
+      "x": 108,
+      "y": 8,
+      "days": 35,
+      "parents": [
+        [
+          "RR_university"
+        ]
+      ],
+      "reward": "RR_research_slot = yes RR_set_science3 = yes add_tech_bonus = { name = RR_research_bonus bonus = 0.5 uses = 1 category = industry }",
+      "summary": "新增1科研槽；科研体系升级至+7%；1次工程类50%研究加成。",
+      "available": "date > 1937.12.31",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_academic_commonwealth",
+      "name": "罗马学术共同体",
+      "group": "科研",
+      "x": 108,
+      "y": 9,
+      "days": 35,
+      "parents": [
+        [
+          "RR_academy"
+        ]
+      ],
+      "reward": "RR_research_slot = yes RR_set_science4 = yes",
+      "summary": "新增1科研槽，最终6槽；科研体系最终+10%。",
+      "available": "date > 1938.12.31",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_facility_office",
+      "name": "实验设施管理局",
+      "group": "实验设施",
+      "x": 112,
+      "y": 6,
+      "days": 14,
+      "parents": [
+        [
+          "RR_government"
+        ]
+      ],
+      "reward": "add_ideas = RR_facilities",
+      "summary": "实验设施建设速度+20%。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_research_committee",
+      "name": "专项研究委员会",
+      "group": "实验设施",
+      "x": 112,
+      "y": 7,
+      "days": 14,
+      "parents": [
+        [
+          "RR_facility_office"
+        ]
+      ],
+      "reward": "add_ideas = RR_committee",
+      "summary": "特别项目研究速度+15%；开放100政治点、180天国家实验室计划。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_scientist_training",
+      "name": "科学家培养计划",
+      "group": "实验设施",
+      "x": 112,
+      "y": 8,
+      "days": 14,
+      "parents": [
+        [
+          "RR_research_committee"
+        ]
+      ],
+      "reward": "add_ideas = RR_scientists",
+      "summary": "科学家研究加成+10%、突破贡献+10%。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    }
+  ],
+  "decisions": [
+    {
+      "id": "RR_rebuild_senate",
+      "name": "重建元老院",
+      "cost": 100,
+      "days": 45,
+      "visible": "has_completed_focus = RR_government",
+      "available": "",
+      "reward": "set_country_flag = RR_senate_rebuilt",
+      "summary": "100政治点，45天；开放法典国策和元老院秘书。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_population_census",
+      "name": "帝国人口普查",
+      "cost": 125,
+      "days": 60,
+      "visible": "has_completed_focus = RR_government",
+      "available": "",
+      "reward": "set_country_flag = RR_census_done add_ideas = RR_census if = { limit = { NOT = { OR = { has_idea = extensive_conscription has_idea = service_by_requirement has_idea = all_adults_serve has_idea = scraping_the_barrel } } } add_ideas = extensive_conscription }",
+      "summary": "125政治点，60天；适役人口系数+10%、动员速度+15%；免费升至广泛征兵，保留更高法律。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_provincial_council",
+      "name": "重建行省议会",
+      "cost": 100,
+      "days": 45,
+      "visible": "has_completed_focus = RR_themes",
+      "available": "",
+      "reward": "if = { limit = { NOT = { OR = { has_country_flag = RR_central has_country_flag = RR_pronoia } } } RR_set_provincial2 = yes } set_country_flag = RR_council_done",
+      "summary": "100政治点，45天；制度选择前行省每日政治点升至+0.15；不阻挡后续国策，制度选择后不覆盖更高档位。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_institution_meeting",
+      "name": "召开帝国制度会议",
+      "cost": 125,
+      "days": 30,
+      "visible": "has_completed_focus = RR_eastern_empire",
+      "available": "",
+      "reward": "country_event = { id = rr.11 }",
+      "summary": "125政治点，30天；事件二选一：中央集权军区制或新普罗尼亚体系。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_civic_schooling",
+      "name": "公民教育改革",
+      "cost": 100,
+      "days": 60,
+      "visible": "has_completed_focus = RR_private_faith",
+      "available": "",
+      "reward": "set_country_flag = RR_civic_education RR_set_identity2 = yes",
+      "summary": "100政治点，60天；认同精神改为稳定度0、战争支持−5、科研+3%、适役人口系数+5%；开放罗马人的共同体。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_turkey_demand",
+      "name": "对土交涉",
+      "cost": 75,
+      "days": 0,
+      "visible": "has_completed_focus = RR_legitimacy",
+      "available": "date > 1936.12.31 has_government = empire is_subject = no NOT = { has_war_with = TUR } OR = { is_in_faction = no is_faction_leader = yes } TUR = { exists = yes }",
+      "reward": "TUR = { country_event = { id = rr.5 } }",
+      "summary": "75政治点，1937年1月1日起；帝国执政、独立、与土耳其和平、不在外国领导的阵营。土耳其90%拒绝并立即开战，10%接受并割让约定领土。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_capital_constantinople",
+      "name": "迁都君士坦丁堡",
+      "cost": 25,
+      "days": 0,
+      "visible": "has_completed_focus = RR_jewel NOT = { has_country_flag = RR_rome_proclaimed }",
+      "available": "has_completed_focus = RR_new_rome has_war = no 797 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "reward": "set_capital = { state = 797 } RR_rename_constantinople = yes 797 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }\n        add_extra_state_shared_building_slots = 2\n        add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }797 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }\n        add_extra_state_shared_building_slots = 0\n        add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } 797 = { add_dynamic_modifier = { modifier = RR_capital_base } } set_country_flag = RR_capital_built",
+      "summary": "25政治点；迁都并更名君士坦丁堡；1民工、2槽、1基础设施；当地建设+10%、防御+5%、适役人口+10%。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_holy_city",
+      "name": "圣城守护者",
+      "cost": 0,
+      "days": 0,
+      "visible": "has_completed_focus = RR_antioch",
+      "available": "454 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "reward": "add_stability = .05 454 = { add_core_of = ROOT }\n455 = { add_core_of = ROOT } set_country_flag = RR_holy_city",
+      "summary": "免费，立即；控制并拥有耶路撒冷后稳定度+5，整合圣地；不影响后续国策。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_granary",
+      "name": "帝国的粮仓",
+      "cost": 100,
+      "days": 7,
+      "visible": "has_completed_focus = RR_great_restoration",
+      "available": "",
+      "reward": "every_other_country = { limit = { OR = { owns_state = 447 owns_state = 446 owns_state = 452 owns_state = 453 owns_state = 456 } NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } }\n        ROOT = { create_wargoal = { type = annex_everything target = PREV expire = 365 } } }",
+      "summary": "100政治点，7天；获得对埃及目标地区外国拥有者的365天吞并战争目标；不阻挡亚历山大国策。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_our_sea",
+      "name": "我们的海",
+      "cost": 100,
+      "days": 30,
+      "visible": "has_completed_focus = RR_antioch has_completed_focus = RR_alexandria",
+      "available": "554 = { is_owned_by = ROOT is_controlled_by = ROOT }\n553 = { is_owned_by = ROOT is_controlled_by = ROOT }\n454 = { is_owned_by = ROOT is_controlled_by = ROOT }\n455 = { is_owned_by = ROOT is_controlled_by = ROOT }\n447 = { is_owned_by = ROOT is_controlled_by = ROOT }\n446 = { is_owned_by = ROOT is_controlled_by = ROOT }\n452 = { is_owned_by = ROOT is_controlled_by = ROOT }\n453 = { is_owned_by = ROOT is_controlled_by = ROOT }\n456 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "reward": "add_navy_experience = 50 add_ideas = RR_mare set_country_flag = RR_mare_done",
+      "summary": "100政治点，30天；海军经验+50、船坞产出+5%；满足罗马重建条件。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_proclaim_rome",
+      "name": "宣布罗马帝国重建",
+      "cost": 100,
+      "days": 0,
+      "visible": "has_completed_focus = RR_restore_rome",
+      "available": "797 = { is_owned_by = ROOT is_controlled_by = ROOT }\n2 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "reward": "country_event = { id = rr.13 }",
+      "summary": "100政治点，一次性；国名改为罗马帝国，选择君士坦丁堡或罗马为首都并建设该城。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_higher_education",
+      "name": "统一高等教育标准",
+      "cost": 75,
+      "days": 45,
+      "visible": "has_completed_focus = RR_university NOT = { has_completed_focus = RR_academy }",
+      "available": "",
+      "reward": "if = { limit = { NOT = { OR = { has_idea = RR_science3 has_idea = RR_science4 } } } RR_set_science2 = yes }",
+      "summary": "75政治点，45天；提前将科研体系升至+5%；已有更高阶段则不覆盖。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_education_system",
+      "name": "建立教育体系",
+      "cost": 125,
+      "days": 180,
+      "visible": "has_completed_focus = RR_university",
+      "available": "",
+      "reward": "add_ideas = RR_education set_country_flag = RR_education_done country_event = { id = rr.14 }",
+      "summary": "125政治点，180天；永久科研+3%，每月稳定度+0.1个百分点；不阻挡后续国策。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_national_laboratory",
+      "name": "国家实验室计划",
+      "cost": 100,
+      "days": 180,
+      "visible": "has_completed_focus = RR_research_committee",
+      "available": "has_dlc = \"Gotterdammerung\"",
+      "reward": "country_event = { id = rr.15 }",
+      "summary": "100政治点，180天；选择建设1座陆战、海军或航空实验设施。不阻挡后续国策，需要特别项目DLC。",
+      "once": true,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_assembly_decision",
+      "name": "公民大会",
+      "cost": 25,
+      "days": 90,
+      "visible": "has_completed_focus = RR_programme",
+      "available": "NOT = { has_idea = RR_assembly }",
+      "reward": "",
+      "summary": "25政治点，持续90天，结束后冷却180天；同类不能叠加。",
+      "once": false,
+      "start": "add_timed_idea = { idea = RR_assembly days = 90 }",
+      "remove_trigger": "",
+      "cooldown": 180
+    },
+    {
+      "id": "RR_tour_decision",
+      "name": "皇帝巡省",
+      "cost": 35,
+      "days": 90,
+      "visible": "has_government = empire",
+      "available": "NOT = { has_idea = RR_tour }",
+      "reward": "",
+      "summary": "35政治点，持续90天，结束后冷却180天；同类不能叠加。",
+      "once": false,
+      "start": "add_timed_idea = { idea = RR_tour days = 90 }",
+      "remove_trigger": "",
+      "cooldown": 180
+    },
+    {
+      "id": "RR_registration_decision",
+      "name": "公民登记动员",
+      "cost": 50,
+      "days": 120,
+      "visible": "has_completed_focus = RR_citizenship",
+      "available": "NOT = { has_idea = RR_registration }",
+      "reward": "",
+      "summary": "50政治点，持续120天，结束后冷却240天；同类不能叠加。",
+      "once": false,
+      "start": "add_timed_idea = { idea = RR_registration days = 120 }",
+      "remove_trigger": "",
+      "cooldown": 240
+    },
+    {
+      "id": "RR_conference_decision",
+      "name": "帝国学术会议",
+      "cost": 50,
+      "days": 180,
+      "visible": "has_completed_focus = RR_university",
+      "available": "NOT = { has_idea = RR_conference } NOT = { OR = { has_idea = RR_conference has_idea = RR_emergency_research } }",
+      "reward": "",
+      "summary": "50政治点，持续180天，结束后冷却365天；同类不能叠加。",
+      "once": false,
+      "start": "add_timed_idea = { idea = RR_conference days = 180 }",
+      "remove_trigger": "",
+      "cooldown": 365
+    },
+    {
+      "id": "RR_emergency_research_decision",
+      "name": "紧急科研拨款",
+      "cost": 75,
+      "days": 180,
+      "visible": "has_completed_focus = RR_academy",
+      "available": "NOT = { has_idea = RR_emergency_research } NOT = { OR = { has_idea = RR_conference has_idea = RR_emergency_research } }",
+      "reward": "",
+      "summary": "75政治点，持续180天，结束后冷却365天；同类不能叠加。",
+      "once": false,
+      "start": "add_timed_idea = { idea = RR_emergency_research days = 180 }",
+      "remove_trigger": "",
+      "cooldown": 365
+    },
+    {
+      "id": "RR_legal_review_decision",
+      "name": "法律编纂",
+      "cost": 50,
+      "days": 120,
+      "visible": "has_completed_focus = RR_codex",
+      "available": "NOT = { has_idea = RR_legal_review }",
+      "reward": "",
+      "summary": "50政治点，持续120天，结束后冷却365天；同类不能叠加。",
+      "once": false,
+      "start": "add_timed_idea = { idea = RR_legal_review days = 120 }",
+      "remove_trigger": "",
+      "cooldown": 365
+    },
+    {
+      "id": "RR_festival_decision",
+      "name": "罗马庆典",
+      "cost": 75,
+      "days": 180,
+      "visible": "has_country_flag = RR_rome_proclaimed",
+      "available": "NOT = { has_idea = RR_festival }",
+      "reward": "",
+      "summary": "75政治点，持续180天，结束后冷却365天；同类不能叠加。",
+      "once": false,
+      "start": "add_timed_idea = { idea = RR_festival days = 180 }",
+      "remove_trigger": "",
+      "cooldown": 365
+    },
+    {
+      "id": "RR_triumph_decision",
+      "name": "凯旋仪式",
+      "cost": 50,
+      "days": 90,
+      "visible": "has_government = empire",
+      "available": "has_country_flag = RR_victory_pending NOT = { has_idea = RR_triumph }",
+      "reward": "",
+      "summary": "胜利后50政治点，90天稳定度+5、战争支持+5；每场胜利一次。",
+      "once": false,
+      "start": "clr_country_flag = RR_victory_pending add_timed_idea = { idea = RR_triumph days = 90 }",
+      "remove_trigger": "",
+      "cooldown": 0
+    },
+    {
+      "id": "RR_clear_cases",
+      "name": "清理积案",
+      "cost": 75,
+      "days": 30,
+      "visible": "has_completed_focus = RR_codex",
+      "available": "NOT = { has_idea = RR_case_review }",
+      "reward": "add_timed_idea = { idea = RR_case_review days = 120 }",
+      "summary": "75政治点、准备30天；随后120天抵抗增长−10%、每日顺从度增长+0.02；效果结束后冷却240天。",
+      "once": false,
+      "start": "",
+      "remove_trigger": "",
+      "cooldown": 360
+    }
+  ],
+  "events": [
+    {
+      "id": "rr.0",
+      "title": "紫衣重临",
+      "body": "将军、学者和流亡者聚集在双头鹰之下。他们所拥戴的君士坦丁十一世将以旧帝国的记忆，为这个现代国家寻找新的道路。复兴已经有了旗帜，接下来需要制度、工业与人民的支持。",
+      "options": [
+        [
+          "帝国派正式登场。",
+          "",
+          100
+        ]
+      ]
+    },
+    {
+      "id": "rr.1",
+      "title": "帝国问题",
+      "body": "帝国复兴纲领公布已有三十五日。军官、教会与市民代表终于坐到一起：帝国应以公投恢复王冠，还是由执政官领导运动夺取权力？无论选择何者，旧秩序都已不能回应这个国家的愿望。",
+      "options": [
+        [
+          "王冠与双头鹰。",
+          "RR_issue_common = yes add_stability = .05 set_country_flag = RR_crown",
+          50
+        ],
+        [
+          "执政官将成为巴西琉斯。",
+          "RR_issue_common = yes add_stability = -.05 set_country_flag = RR_basileus",
+          50
+        ]
+      ]
+    },
+    {
+      "id": "rr.2",
+      "title": "国民的裁决",
+      "body": "选票已经清点完毕。支持复兴的声音汇聚为新的授权，君士坦丁十一世将以皇帝之名承担国家的命运。议会与军队承认结果，接下来必须让承诺变成治理。",
+      "options": [
+        [
+          "以人民的授权，迎回紫衣。",
+          "",
+          100
+        ]
+      ]
+    },
+    {
+      "id": "rr.3",
+      "title": "秩序重建",
+      "body": "整肃留下的恐惧正在消退。军队重新接受统一指挥，地方官署恢复运作，帝国政府终于能够把注意力从权力争夺转向国家重建。",
+      "options": [
+        [
+          "让秩序带来复兴。",
+          "if = { limit = { has_government = empire } add_timed_idea = { idea = RR_order days = 365 } }",
+          100
+        ]
+      ]
+    },
+    {
+      "id": "rr.5",
+      "title": "来自雅典的正统要求",
+      "body": "雅典的帝国政府要求我们承认拜占庭的历史正统，交出东色雷斯、伊斯坦布尔以及划定的爱琴海沿岸地区。使者明确表示，拒绝将意味着立即开战。这不是一封可以无限搁置的照会。",
+      "options": [
+        [
+          "土耳其不会向旧帝国低头。",
+          "GRE = { declare_war_on = { target = TUR type = annex_everything } add_timed_idea = { idea = RR_first_war days = 180 } country_event = { id = rr.6 } }",
+          90
+        ],
+        [
+          "接受协定，避免战争。",
+          "if = { limit = { owns_state = 797 } GRE = { transfer_state = 797 } }\nif = { limit = { owns_state = 341 } GRE = { transfer_state = 341 } }\nif = { limit = { owns_state = 347 } GRE = { transfer_state = 347 } }\nif = { limit = { owns_state = 340 } GRE = { transfer_state = 340 } }\nif = { limit = { owns_state = 339 } GRE = { transfer_state = 339 } } GRE = { country_event = { id = rr.8 } }",
+          10
+        ]
+      ]
+    },
+    {
+      "id": "rr.6",
+      "title": "交涉破裂",
+      "body": "安卡拉拒绝了帝国的要求。边境部队已经接到命令，第一次光复战争开始了。街头的集会与新征召的队伍表明，故土的记忆仍能动员这个国家。",
+      "options": [
+        [
+          "帝国将为自己的要求而战。",
+          "",
+          100
+        ]
+      ]
+    },
+    {
+      "id": "rr.7",
+      "title": "新罗马再临",
+      "body": "双头鹰再度俯瞰博斯普鲁斯海峡。政府宣布以拜占庭之名延续国家，安纳托利亚故土也被正式纳入帝国的核心领土纲领。",
+      "options": [
+        [
+          "旧日的名字，新的国家。",
+          "RR_rename_constantinople = yes",
+          100
+        ]
+      ]
+    },
+    {
+      "id": "rr.8",
+      "title": "安卡拉接受协定",
+      "body": "土耳其政府接受了领土协定。交接委员会将进入东色雷斯与爱琴海沿岸，帝国必须以行政能力证明，它能够治理刚刚接收的土地。",
+      "options": [
+        [
+          "让交接有序进行。",
+          "",
+          100
+        ]
+      ]
+    },
+    {
+      "id": "rr.11",
+      "title": "帝国应如何治理",
+      "body": "征服不能替代制度。军区官员主张将税收和征兵纳入中央编制，另一批代表则希望以服役义务换取地方经营权。两种安排都能维持帝国，却将塑造不同的国家。",
+      "options": [
+        [
+          "中央集权军区制。",
+          "set_country_flag = RR_central RR_set_central = yes",
+          50
+        ],
+        [
+          "新普罗尼亚体系。",
+          "set_country_flag = RR_pronoia RR_set_pronoia = yes",
+          50
+        ]
+      ]
+    },
+    {
+      "id": "rr.12",
+      "title": "帝国宪制确立",
+      "body": "将军、行省代表与元老终于在同一份法令上留下姓名。国家不再依赖一次次紧急命令维持统治，皇帝的权威与议会的职责有了明确边界。昔日争夺政府的派系，将在制度之内争论。",
+      "options": [
+        [
+          "让争论留在议事厅，让秩序遍及行省。",
+          "",
+          100
+        ]
+      ]
+    },
+    {
+      "id": "rr.13",
+      "title": "罗马帝国的首都",
+      "body": "旧罗马与新罗马都已回到同一面旗帜之下。重建帝国的宣告将从哪座城市发出？这个选择不仅关乎历史，也将决定下一轮公共建设和人口投入的方向。",
+      "options": [
+        [
+          "君士坦丁堡仍是帝国之心。",
+          "RR_proclaim_rome = yes set_capital = { state = 797 } RR_rename_constantinople = yes 797 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }\n        add_extra_state_shared_building_slots = 3\n        add_building_construction = { type = industrial_complex level = 2 instant_build = yes } } }797 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }\n        add_extra_state_shared_building_slots = 0\n        add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } 797 = { remove_dynamic_modifier = RR_capital_base add_dynamic_modifier = { modifier = RR_capital_imperial } }",
+          50
+        ],
+        [
+          "让元老院与人民重返罗马。",
+          "RR_proclaim_rome = yes set_capital = { state = 2 } 2 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }\n        add_extra_state_shared_building_slots = 4\n        add_building_construction = { type = industrial_complex level = 3 instant_build = yes } } }2 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }\n        add_extra_state_shared_building_slots = 0\n        add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } 2 = { add_dynamic_modifier = { modifier = RR_capital_rome } }",
+          50
+        ]
+      ]
+    },
+    {
+      "id": "rr.14",
+      "title": "国家教育体系建立",
+      "body": "从地方学校到帝国大学，新的课程、教师训练和教育行政终于连成一个体系。它不会在一夜之间改变社会，但每一届学生都将使国家更有能力理解和运用现代科学。",
+      "options": [
+        [
+          "让知识成为公民共同的财富。",
+          "",
+          100
+        ]
+      ]
+    },
+    {
+      "id": "rr.15",
+      "title": "国家实验室的研究方向",
+      "body": "筹备工作已经完成。研究委员会建议集中有限的设备与人员，先建成一座能够承担特别项目的实验设施。",
+      "options": [
+        [
+          "优先陆战研究。",
+          "RR_build_land_lab = yes",
+          34
+        ],
+        [
+          "优先海军研究。",
+          "RR_build_naval_lab = yes",
+          33
+        ],
+        [
+          "优先航空研究。",
+          "RR_build_air_lab = yes",
+          33
+        ]
+      ]
+    },
+    {
+      "id": "rr.20",
+      "title": "西部帝冠协定",
+      "body": "拜占庭提出西部帝冠协定：意大利交接本土地区，保留海外属地。接受意味着终止半岛上的主权争端；拒绝将使历史争论转化为军事对抗。",
+      "options": [
+        [
+          "意大利不会交出自己的主权。",
+          "GRE = { if = { limit = { ITA = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } }\n        create_wargoal = { type = annex_everything target = ITA expire = 365 } } }",
+          90
+        ],
+        [
+          "接受协定，交接意大利本土。",
+          "if = { limit = { owns_state = 114 } GRE = { transfer_state = 114 } }\nif = { limit = { owns_state = 115 } GRE = { transfer_state = 115 } }\nif = { limit = { owns_state = 117 } GRE = { transfer_state = 117 } }\nif = { limit = { owns_state = 156 } GRE = { transfer_state = 156 } }\nif = { limit = { owns_state = 157 } GRE = { transfer_state = 157 } }\nif = { limit = { owns_state = 158 } GRE = { transfer_state = 158 } }\nif = { limit = { owns_state = 159 } GRE = { transfer_state = 159 } }\nif = { limit = { owns_state = 160 } GRE = { transfer_state = 160 } }\nif = { limit = { owns_state = 161 } GRE = { transfer_state = 161 } }\nif = { limit = { owns_state = 162 } GRE = { transfer_state = 162 } }\nif = { limit = { owns_state = 163 } GRE = { transfer_state = 163 } }\nif = { limit = { owns_state = 2 } GRE = { transfer_state = 2 } }\nif = { limit = { owns_state = 39 } GRE = { transfer_state = 39 } }",
+          10
+        ]
+      ]
+    },
+    {
+      "id": "rr.30",
+      "title": "书斋与广场",
+      "body": "整理古籍的学者和主持公开讲学的教师都请求得到支持。前者希望将旧知识转化为现代研究，后者希望让更多公民理解复兴的共同事业。国家可以维持基础经费，但这一次专项拨款必须确定重点。",
+      "options": [
+        [
+          "支持校勘与研究。",
+          "add_tech_bonus = { name = RR_research_bonus bonus = 0.5 uses = 1 category = industry }",
+          50
+        ],
+        [
+          "让知识走向公众。",
+          "add_timed_idea = { idea = RR_public_lectures days = 600 }",
+          50
+        ]
+      ]
+    },
+    {
+      "id": "rr.31",
+      "title": "归国学者的研究方向",
+      "body": "归来的学者带来了手稿、实验记录和在海外积累的经验。有人希望先建立电子与通信研究团队，另一些人则主张把有限经费用于工业工程。两条道路都能服务复兴，现在需要确定第一笔拨款的用途。",
+      "options": [
+        [
+          "支持电子与通信研究。",
+          "add_tech_bonus = { name = RR_research_bonus bonus = 0.5 uses = 1 category = electronics }",
+          50
+        ],
+        [
+          "支持工业工程研究。",
+          "add_tech_bonus = { name = RR_research_bonus bonus = 0.5 uses = 1 category = industry }",
+          50
+        ]
+      ]
+    },
+    {
+      "id": "rr.32",
+      "title": "旅人带来了什么？",
+      "body": "港口迎来了商人、学者与朝圣者。旅馆和市场希望把新客流转化为贸易，地方官署则建议把收入投入岛屿道路与公共设施。旅游的繁荣有赖于和平，而如何使用它的收益，将由我们决定。",
+      "options": [
+        [
+          "发展商旅与集市。",
+          "set_country_flag = RR_tourism_merchants clr_country_flag = RR_tourism_pilgrims RR_refresh_tourism = yes",
+          50
+        ],
+        [
+          "支持朝圣与地方建设。",
+          "set_country_flag = RR_tourism_pilgrims clr_country_flag = RR_tourism_merchants RR_refresh_tourism = yes",
+          50
+        ]
+      ]
+    },
+    {
+      "id": "rr.33",
+      "title": "田籍上的人民",
+      "body": "田籍已经完成整理。财政官希望以更稳定的税粮供应减轻国库负担，军务官则建议在保障土地经营的同时登记可供征召的军户。新增的行政能力足以推进其中一项改革。",
+      "options": [
+        [
+          "先让税粮进入仓库。",
+          "remove_ideas = RR_farmland_service add_ideas = RR_farmland_tax",
+          50
+        ],
+        [
+          "登记军户，准备服役。",
+          "remove_ideas = RR_farmland_tax add_ideas = RR_farmland_service",
+          50
+        ]
+      ]
+    }
+  ],
+  "ideas": {
+    "RR_movement1": {
+      "empire_drift": 0.03
+    },
+    "RR_movement2": {
+      "empire_drift": 0.05
+    },
+    "RR_movement3": {
+      "empire_drift": 0.08
+    },
+    "RR_movement4": {
+      "empire_drift": 0.12
+    },
+    "RR_consensus": {
+      "war_support_factor": 0.05
+    },
+    "RR_administration": {
+      "political_power_gain": 0.25
+    },
+    "RR_vote_mandate": {
+      "political_power_factor": 0.05,
+      "stability_factor": 0.05
+    },
+    "RR_purge": {
+      "political_power_factor": -0.1,
+      "industrial_capacity_factory": -0.05
+    },
+    "RR_order": {
+      "political_power_gain": 0.1,
+      "stability_factor": 0.05,
+      "war_support_factor": 0.05
+    },
+    "RR_census": {
+      "conscription_factor": 0.1,
+      "mobilization_speed": 0.15
+    },
+    "RR_citizens": {
+      "conscription_factor": 0.2,
+      "mobilization_speed": 0.15
+    },
+    "RR_martyrs": {
+      "conscription_factor": 0.1,
+      "war_support_factor": 0.05
+    },
+    "RR_wisdom": {
+      "stability_factor": 0.05,
+      "research_speed_factor": 0.05
+    },
+    "RR_culture": {
+      "stability_factor": 0.1,
+      "research_speed_factor": 0.05,
+      "army_core_defence_factor": 0.05,
+      "command_power_gain_mult": 0.05
+    },
+    "RR_cultural_debate": {
+      "political_power_gain": 0.1
+    },
+    "RR_first_war": {
+      "conscription_factor": 0.05,
+      "army_core_defence_factor": 0.05
+    },
+    "RR_senate": {
+      "political_power_factor": 0.05
+    },
+    "RR_provincial1": {
+      "political_power_gain": 0.1
+    },
+    "RR_provincial2": {
+      "political_power_gain": 0.15
+    },
+    "RR_central": {
+      "political_power_gain": 0.3,
+      "stability_factor": 0.05,
+      "research_speed_factor": 0.03,
+      "conscription_factor": 0
+    },
+    "RR_central_final": {
+      "political_power_gain": 0.35,
+      "stability_factor": 0.05,
+      "research_speed_factor": 0.03,
+      "conscription_factor": 0
+    },
+    "RR_pronoia": {
+      "political_power_gain": 0.15,
+      "stability_factor": 0.1,
+      "research_speed_factor": 0,
+      "conscription_factor": 0.15
+    },
+    "RR_pronoia_final": {
+      "political_power_gain": 0.2,
+      "stability_factor": 0.1,
+      "research_speed_factor": 0,
+      "conscription_factor": 0.15
+    },
+    "RR_legal_order": {
+      "political_advisor_cost_factor": -0.05,
+      "economy_cost_factor": -0.05,
+      "trade_laws_cost_factor": -0.05,
+      "mobilization_laws_cost_factor": -0.05
+    },
+    "RR_church1": {
+      "conscription_factor": 0.05,
+      "stability_factor": 0.05,
+      "war_support_factor": 0.05,
+      "research_speed_factor": -0.03
+    },
+    "RR_church2": {
+      "conscription_factor": 0.15,
+      "stability_factor": 0.1,
+      "war_support_factor": 0.1,
+      "research_speed_factor": -0.05
+    },
+    "RR_church3": {
+      "conscription_factor": 0.25,
+      "stability_factor": 0.15,
+      "war_support_factor": 0.15,
+      "research_speed_factor": -0.08
+    },
+    "RR_church4": {
+      "conscription_factor": 0.35,
+      "stability_factor": 0.2,
+      "war_support_factor": 0.2,
+      "research_speed_factor": -0.1
+    },
+    "RR_identity1": {
+      "conscription_factor": 0,
+      "stability_factor": -0.05,
+      "war_support_factor": -0.1,
+      "research_speed_factor": 0
+    },
+    "RR_identity2": {
+      "conscription_factor": 0.05,
+      "stability_factor": 0,
+      "war_support_factor": -0.05,
+      "research_speed_factor": 0.03
+    },
+    "RR_identity3": {
+      "conscription_factor": 0.15,
+      "stability_factor": 0.1,
+      "war_support_factor": 0.05,
+      "research_speed_factor": 0.06
+    },
+    "RR_identity4": {
+      "conscription_factor": 0.25,
+      "stability_factor": 0.15,
+      "war_support_factor": 0.1,
+      "research_speed_factor": 0.1
+    },
+    "RR_mare": {
+      "industrial_capacity_dockyard": 0.05
+    },
+    "RR_rome": {
+      "political_power_gain": 0.15,
+      "stability_factor": 0.05,
+      "conscription_factor": 0.1
+    },
+    "RR_science1": {
+      "research_speed_factor": 0.03
+    },
+    "RR_science2": {
+      "research_speed_factor": 0.05
+    },
+    "RR_science3": {
+      "research_speed_factor": 0.07
+    },
+    "RR_science4": {
+      "research_speed_factor": 0.1
+    },
+    "RR_education": {
+      "research_speed_factor": 0.03
+    },
+    "RR_facilities": {
+      "production_speed_facility_factor": 0.2
+    },
+    "RR_committee": {
+      "special_project_speed_factor": 0.15
+    },
+    "RR_scientists": {
+      "scientist_research_bonus_factor": 0.1,
+      "scientist_breakthrough_bonus_factor": 0.1
+    },
+    "RR_enterprise_office": {
+      "industrial_concern_cost_factor": -0.25
+    },
+    "RR_standards": {
+      "production_factory_efficiency_gain_factor": 0.03,
+      "line_change_production_efficiency_factor": 0.05
+    },
+    "RR_industrial_union": {
+      "industrial_capacity_factory": 0.03,
+      "production_factory_max_efficiency_factor": 0.05
+    },
+    "RR_assembly": {
+      "empire_drift": 0.05
+    },
+    "RR_tour": {
+      "stability_factor": 0.05,
+      "political_power_gain": 0.2
+    },
+    "RR_registration": {
+      "conscription_factor": 0.1,
+      "mobilization_speed": 0.1
+    },
+    "RR_conference": {
+      "research_speed_factor": 0.05,
+      "special_project_speed_factor": 0.05
+    },
+    "RR_emergency_research": {
+      "research_speed_factor": 0.1
+    },
+    "RR_legal_review": {
+      "political_advisor_cost_factor": -0.15,
+      "economy_cost_factor": -0.15,
+      "trade_laws_cost_factor": -0.15,
+      "mobilization_laws_cost_factor": -0.15
+    },
+    "RR_festival": {
+      "stability_factor": 0.1,
+      "war_support_factor": 0.05
+    },
+    "RR_triumph": {
+      "stability_factor": 0.05,
+      "war_support_factor": 0.05
+    },
+    "RR_public_lectures": {
+      "political_power_gain": 0.1
+    },
+    "RR_tourism_merchants": {
+      "stability_factor": 0.1,
+      "political_power_factor": 0.15,
+      "consumer_goods_factor": -0.1
+    },
+    "RR_tourism_pilgrims": {
+      "stability_factor": 0.1,
+      "consumer_goods_factor": -0.15
+    },
+    "RR_farmland_common": {
+      "attrition": -0.05,
+      "supply_consumption_factor": -0.05,
+      "supply_combat_penalties_on_core_factor": -0.1,
+      "supply_node_range": 0.1
+    },
+    "RR_farmland_tax": {
+      "consumer_goods_factor": -0.05
+    },
+    "RR_farmland_service": {
+      "conscription_factor": 0.05
+    },
+    "RR_case_review": {
+      "resistance_growth": -0.1,
+      "compliance_growth": 0.02
+    }
+  },
+  "traits": {
+    "RR_purple_emperor": {
+      "stability_factor": 0.05,
+      "war_support_factor": 0.05
+    },
+    "RR_imperial_administrator": {
+      "political_power_gain": 0.15
+    },
+    "RR_narses_trait": {
+      "political_power_gain": 0.15,
+      "industrial_capacity_factory": 0.03,
+      "intel_network_gain_factor": 0.1
+    },
+    "RR_propagandist_trait": {
+      "empire_drift": 0.08,
+      "stability_factor": 0.03,
+      "research_speed_factor": 0.02
+    },
+    "RR_reconstruction_minister_trait": {
+      "production_speed_industrial_complex_factor": 0.05,
+      "production_speed_infrastructure_factor": 0.1,
+      "decryption_factor": 0.05
+    },
+    "RR_palace_intelligence_trait": {
+      "intel_network_gain_factor": 0.05,
+      "empire_drift": 0.03,
+      "political_power_gain": 0.05,
+      "intelligence_agency_defense": 0.5
+    },
+    "RR_military_secretary_trait": {
+      "experience_gain_army": 0.03,
+      "training_time_army_factor": -0.05,
+      "political_power_gain": 0.05
+    },
+    "RR_frontier_governor_trait": {
+      "conscription_factor": 0.05,
+      "army_core_defence_factor": 0.03,
+      "resistance_growth": -0.05
+    },
+    "RR_cipher_director_trait": {
+      "decryption_factor": 0.1,
+      "agency_upgrade_time": -0.1
+    },
+    "RR_overseas_director_trait": {
+      "intel_network_gain_factor": 0.15,
+      "operation_cost": -0.1
+    },
+    "RR_senate_secretary_trait": {
+      "political_power_gain": 0.2,
+      "stability_factor": 0.03
+    },
+    "RR_jurist_trait": {
+      "political_advisor_cost_factor": -0.15,
+      "drift_defence_factor": 0.25,
+      "economy_cost_factor": -0.15,
+      "trade_laws_cost_factor": -0.15,
+      "mobilization_laws_cost_factor": -0.15
+    },
+    "RR_census_minister_trait": {
+      "conscription_factor": 0.1,
+      "mobilization_speed": 0.1
+    },
+    "RR_university_director_trait": {
+      "research_speed_factor": 0.05,
+      "special_project_speed_factor": 0.05
+    }
+  },
+  "commanders": [
+    [
+      "belisarius",
+      "贝利萨留",
+      4,
+      "brilliant_strategist war_hero career_officer trickster",
+      false
+    ],
+    [
+      "heraclius",
+      "希拉克略",
+      4,
+      "brilliant_strategist panzer_leader career_officer trait_cautious",
+      false
+    ],
+    [
+      "john_ii",
+      "约翰二世·科穆宁",
+      3,
+      "brilliant_strategist trait_mountaineer trait_cautious",
+      false
+    ],
+    [
+      "ouranos",
+      "尼基弗鲁斯·乌拉诺斯",
+      3,
+      "career_officer infantry_leader trickster",
+      false
+    ],
+    [
+      "troglita",
+      "约翰·特罗格利塔",
+      3,
+      "cavalry_leader war_hero trait_cautious",
+      false
+    ],
+    [
+      "axouch",
+      "约翰·阿克苏赫",
+      3,
+      "career_officer organizer trait_cautious",
+      false
+    ],
+    [
+      "philanthropenos",
+      "阿莱克修斯·菲兰斯罗佩诺斯",
+      3,
+      "trickster trait_reckless war_hero",
+      false
+    ],
+    [
+      "kekaumenos",
+      "卡塔卡隆·凯考梅诺斯",
+      3,
+      "trait_mountaineer career_officer trait_reckless",
+      false
+    ],
+    [
+      "argyros",
+      "尤斯塔修斯·阿尔吉罗斯",
+      2,
+      "cavalry_leader old_guard trait_cautious",
+      false
+    ],
+    [
+      "lachanodrakon",
+      "米海尔·拉哈诺德拉孔",
+      2,
+      "infantry_leader harsh_leader old_guard",
+      false
+    ],
+    [
+      "leo_iii",
+      "利奥三世",
+      3,
+      "inflexible_strategist war_hero career_officer",
+      false
+    ],
+    [
+      "constantine_v",
+      "君士坦丁五世",
+      3,
+      "infantry_leader career_officer trait_reckless",
+      false
+    ],
+    [
+      "alexios_i",
+      "阿莱克修斯一世·科穆宁",
+      3,
+      "brilliant_strategist organizer logistics_wizard trait_cautious",
+      true
+    ],
+    [
+      "kourkouas",
+      "约翰·库尔库阿斯",
+      4,
+      "inflexible_strategist unyielding_defender defensive_doctrine old_guard",
+      true
+    ]
+  ],
+  "advisors": [
+    [
+      "narses",
+      "纳尔西斯",
+      125,
+      "empire",
+      {
+        "political_power_gain": 0.15,
+        "industrial_capacity_factory": 0.03,
+        "intel_network_gain_factor": 0.1
+      }
+    ],
+    [
+      "propagandist",
+      "帝国宣传官",
+      75,
+      "empire",
+      {
+        "empire_drift": 0.08,
+        "stability_factor": 0.03,
+        "research_speed_factor": 0.02
+      }
+    ],
+    [
+      "reconstruction_minister",
+      "重建大臣",
+      100,
+      "empire",
+      {
+        "production_speed_industrial_complex_factor": 0.05,
+        "production_speed_infrastructure_factor": 0.1,
+        "decryption_factor": 0.05
+      }
+    ],
+    [
+      "palace_intelligence",
+      "宫廷情报总监",
+      100,
+      "empire",
+      {
+        "intel_network_gain_factor": 0.05,
+        "empire_drift": 0.03,
+        "political_power_gain": 0.05,
+        "counter_intelligence": 0.5
+      }
+    ],
+    [
+      "military_secretary",
+      "军务大臣",
+      125,
+      "empire",
+      {
+        "experience_gain_army": 0.03,
+        "training_time_army_factor": -0.05,
+        "political_power_gain": 0.05
+      }
+    ],
+    [
+      "frontier_governor",
+      "边疆总督",
+      100,
+      "government",
+      {
+        "conscription_factor": 0.05,
+        "army_core_defence_factor": 0.03,
+        "resistance_growth": -0.05
+      }
+    ],
+    [
+      "cipher_director",
+      "帝国密码局长",
+      125,
+      "government",
+      {
+        "decryption_factor": 0.1,
+        "agency_upgrade_time": -0.1
+      }
+    ],
+    [
+      "overseas_director",
+      "海外事务总监",
+      125,
+      "government",
+      {
+        "intel_network_gain_factor": 0.15,
+        "operation_cost": -0.1
+      }
+    ],
+    [
+      "senate_secretary",
+      "元老院秘书",
+      100,
+      "flag:senate_rebuilt",
+      {
+        "political_power_gain": 0.2,
+        "stability_factor": 0.03
+      }
+    ],
+    [
+      "jurist",
+      "大法官",
+      100,
+      "codex",
+      {
+        "laws_cost": -0.15,
+        "political_advisor_cost_factor": -0.15,
+        "drift_defence_factor": 0.25
+      }
+    ],
+    [
+      "census_minister",
+      "人口事务大臣",
+      100,
+      "flag:census_done",
+      {
+        "conscription_factor": 0.1,
+        "mobilization_speed": 0.1
+      }
+    ],
+    [
+      "university_director",
+      "大学总监",
+      100,
+      "scholars",
+      {
+        "research_speed_factor": 0.05,
+        "special_project_speed_factor": 0.05
+      }
+    ]
+  ],
+  "mios": [
+    [
+      "piraeus",
+      "比雷埃夫斯兵工局",
+      47,
+      "infantry_equipment artillery_equipment",
+      "infantry_weapons artillery",
+      "reliability = .05",
+      ""
+    ],
+    [
+      "thessaloniki",
+      "塞萨洛尼基车辆工厂",
+      731,
+      "motorized_equipment mechanized_equipment",
+      "motorized_equipment",
+      "",
+      "production_efficiency_gain_factor = .05"
+    ],
+    [
+      "naval_office",
+      "帝国海军船政局",
+      47,
+      "capital_ship screen_ship",
+      "naval_equipment",
+      "reliability = .05",
+      ""
+    ],
+    [
+      "constantinople_shipyard",
+      "君士坦丁堡帝国造船厂",
+      797,
+      "capital_ship",
+      "naval_equipment",
+      "reliability = .05",
+      ""
+    ],
+    [
+      "smyrna_aircraft",
+      "士麦那航空工厂",
+      339,
+      "mio_cat_eq_all_small_plane",
+      "light_air",
+      "range = .05",
+      ""
+    ],
+    [
+      "ankara_armor",
+      "安纳托利亚装甲联合厂",
+      49,
+      "armor",
+      "armor",
+      "reliability = .05",
+      ""
+    ]
+  ],
+  "state_sets": {
+    "TUR": [
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      352,
+      353,
+      354,
+      355,
+      356,
+      49,
+      797,
+      798,
+      800
+    ],
+    "BUL": [
+      211,
+      212,
+      48,
+      801
+    ],
+    "ALB": [
+      44,
+      805,
+      934
+    ],
+    "YUG": [
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      45,
+      764,
+      802,
+      803,
+      804,
+      853,
+      970
+    ],
+    "ROM": [
+      46,
+      76,
+      766,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      971
+    ],
+    "ITA": [
+      114,
+      115,
+      117,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      2,
+      273,
+      39,
+      448,
+      449,
+      450,
+      451,
+      550,
+      559,
+      661,
+      662,
+      663,
+      736,
+      844,
+      849,
+      850,
+      852
+    ]
+  },
+  "game_source": "E:\\game\\Gfat\\steamapps\\common\\Hearts of Iron IV",
+  "target_version": "1.18.*",
+  "source_version": "Operation Postern v1.19.2.0.a729 (d245)"
+}

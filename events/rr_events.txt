@@ -1,0 +1,109 @@
+add_namespace = rr
+country_event = { id = rr.0 title = rr.0.t desc = rr.0.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.0.0 ai_chance = { factor = 100 }  }
+}
+country_event = { id = rr.1 title = rr.1.t desc = rr.1.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.1.0 ai_chance = { factor = 50 } RR_issue_common = yes add_stability = .05 set_country_flag = RR_crown }
+option = { name = rr.1.1 ai_chance = { factor = 50 } RR_issue_common = yes add_stability = -.05 set_country_flag = RR_basileus }
+}
+country_event = { id = rr.2 title = rr.2.t desc = rr.2.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.2.0 ai_chance = { factor = 100 }  }
+}
+country_event = { id = rr.3 title = rr.3.t desc = rr.3.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.3.0 ai_chance = { factor = 100 } if = { limit = { has_government = empire } add_timed_idea = { idea = RR_order days = 365 } } }
+}
+country_event = { id = rr.5 title = rr.5.t desc = rr.5.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.5.0 ai_chance = { factor = 90 } GRE = { declare_war_on = { target = TUR type = annex_everything } add_timed_idea = { idea = RR_first_war days = 180 } country_event = { id = rr.6 } } }
+option = { name = rr.5.1 ai_chance = { factor = 10 } if = { limit = { owns_state = 797 } GRE = { transfer_state = 797 } }
+if = { limit = { owns_state = 341 } GRE = { transfer_state = 341 } }
+if = { limit = { owns_state = 347 } GRE = { transfer_state = 347 } }
+if = { limit = { owns_state = 340 } GRE = { transfer_state = 340 } }
+if = { limit = { owns_state = 339 } GRE = { transfer_state = 339 } } GRE = { country_event = { id = rr.8 } } }
+}
+country_event = { id = rr.6 title = rr.6.t desc = rr.6.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.6.0 ai_chance = { factor = 100 }  }
+}
+country_event = { id = rr.7 title = rr.7.t desc = rr.7.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.7.0 ai_chance = { factor = 100 } RR_rename_constantinople = yes }
+}
+country_event = { id = rr.8 title = rr.8.t desc = rr.8.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.8.0 ai_chance = { factor = 100 }  }
+}
+country_event = { id = rr.11 title = rr.11.t desc = rr.11.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.11.0 ai_chance = { factor = 50 } set_country_flag = RR_central RR_set_central = yes }
+option = { name = rr.11.1 ai_chance = { factor = 50 } set_country_flag = RR_pronoia RR_set_pronoia = yes }
+}
+country_event = { id = rr.12 title = rr.12.t desc = rr.12.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.12.0 ai_chance = { factor = 100 }  }
+}
+country_event = { id = rr.13 title = rr.13.t desc = rr.13.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.13.0 ai_chance = { factor = 50 } RR_proclaim_rome = yes set_capital = { state = 797 } RR_rename_constantinople = yes 797 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
+        add_extra_state_shared_building_slots = 3
+        add_building_construction = { type = industrial_complex level = 2 instant_build = yes } } }797 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
+        add_extra_state_shared_building_slots = 0
+        add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } 797 = { remove_dynamic_modifier = RR_capital_base add_dynamic_modifier = { modifier = RR_capital_imperial } } }
+option = { name = rr.13.1 ai_chance = { factor = 50 } RR_proclaim_rome = yes set_capital = { state = 2 } 2 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
+        add_extra_state_shared_building_slots = 4
+        add_building_construction = { type = industrial_complex level = 3 instant_build = yes } } }2 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
+        add_extra_state_shared_building_slots = 0
+        add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } 2 = { add_dynamic_modifier = { modifier = RR_capital_rome } } }
+}
+country_event = { id = rr.14 title = rr.14.t desc = rr.14.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.14.0 ai_chance = { factor = 100 }  }
+}
+country_event = { id = rr.15 title = rr.15.t desc = rr.15.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.15.0 ai_chance = { factor = 34 } RR_build_land_lab = yes }
+option = { name = rr.15.1 ai_chance = { factor = 33 } RR_build_naval_lab = yes }
+option = { name = rr.15.2 ai_chance = { factor = 33 } RR_build_air_lab = yes }
+}
+country_event = { id = rr.20 title = rr.20.t desc = rr.20.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.20.0 ai_chance = { factor = 90 } GRE = { if = { limit = { ITA = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } }
+        create_wargoal = { type = annex_everything target = ITA expire = 365 } } } }
+option = { name = rr.20.1 ai_chance = { factor = 10 } if = { limit = { owns_state = 114 } GRE = { transfer_state = 114 } }
+if = { limit = { owns_state = 115 } GRE = { transfer_state = 115 } }
+if = { limit = { owns_state = 117 } GRE = { transfer_state = 117 } }
+if = { limit = { owns_state = 156 } GRE = { transfer_state = 156 } }
+if = { limit = { owns_state = 157 } GRE = { transfer_state = 157 } }
+if = { limit = { owns_state = 158 } GRE = { transfer_state = 158 } }
+if = { limit = { owns_state = 159 } GRE = { transfer_state = 159 } }
+if = { limit = { owns_state = 160 } GRE = { transfer_state = 160 } }
+if = { limit = { owns_state = 161 } GRE = { transfer_state = 161 } }
+if = { limit = { owns_state = 162 } GRE = { transfer_state = 162 } }
+if = { limit = { owns_state = 163 } GRE = { transfer_state = 163 } }
+if = { limit = { owns_state = 2 } GRE = { transfer_state = 2 } }
+if = { limit = { owns_state = 39 } GRE = { transfer_state = 39 } } }
+}
+country_event = { id = rr.30 title = rr.30.t desc = rr.30.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.30.0 ai_chance = { factor = 50 } add_tech_bonus = { name = RR_research_bonus bonus = 0.5 uses = 1 category = industry } }
+option = { name = rr.30.1 ai_chance = { factor = 50 } add_timed_idea = { idea = RR_public_lectures days = 600 } }
+}
+country_event = { id = rr.31 title = rr.31.t desc = rr.31.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.31.0 ai_chance = { factor = 50 } add_tech_bonus = { name = RR_research_bonus bonus = 0.5 uses = 1 category = electronics } }
+option = { name = rr.31.1 ai_chance = { factor = 50 } add_tech_bonus = { name = RR_research_bonus bonus = 0.5 uses = 1 category = industry } }
+}
+country_event = { id = rr.32 title = rr.32.t desc = rr.32.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.32.0 ai_chance = { factor = 50 } set_country_flag = RR_tourism_merchants clr_country_flag = RR_tourism_pilgrims RR_refresh_tourism = yes }
+option = { name = rr.32.1 ai_chance = { factor = 50 } set_country_flag = RR_tourism_pilgrims clr_country_flag = RR_tourism_merchants RR_refresh_tourism = yes }
+}
+country_event = { id = rr.33 title = rr.33.t desc = rr.33.d
+picture = GFX_report_event_generic_parliament is_triggered_only = yes
+option = { name = rr.33.0 ai_chance = { factor = 50 } remove_ideas = RR_farmland_service add_ideas = RR_farmland_tax }
+option = { name = rr.33.1 ai_chance = { factor = 50 } remove_ideas = RR_farmland_tax add_ideas = RR_farmland_service }
+}
