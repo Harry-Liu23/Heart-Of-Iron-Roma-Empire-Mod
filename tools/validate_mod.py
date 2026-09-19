@@ -61,7 +61,7 @@ check('RR_anti_democracy' not in focuses['RR_anti_fascism']['parents'],'anti ide
 check('RR_anti_communism' not in focuses['RR_anti_fascism']['mutex'],'fascism and communism may both be taken')
 dec={d['id']:d for d in manifest['decisions']}
 d=dec['RR_turkey_demand']
-check(d['cost']==75 and '1936.12.31' in d['available'],'Turkish demand date/cost')
+check(d['cost']==75 and 'date' not in d['available'],'Turkish demand date/cost')
 check('has_war_support' not in d['available'] and 'has_stability' not in d['available'],'extra Turkish demand gates')
 check(dec['RR_national_laboratory']['days']==180,'lab decision duration')
 check(dec['RR_holy_city']['cost']==0 and dec['RR_holy_city']['days']==0,'holy city immediate/free')
@@ -111,6 +111,26 @@ loc=text(ROOT/'localisation/simp_chinese/rr_content_l_simp_chinese.yml')
 locids=set(re.findall(r'(?m)^\s*(\S+):\d* ',loc))
 for f in focuses.values():check(f['id'] in locids and f['id']+'_desc' in locids,'missing focus localization')
 for d in dec:check(d in locids and d+'_desc' in locids,'missing decision localization')
+# In-game tooltip regression coverage.
+check(focuses['RR_empire']['parents']==[['GRE_metaxism_focus']], 'empire only follows Metaxism')
+check(focuses['RR_great_restoration']['available']=='owns_state = 797 NOT = { country_exists = TUR }', 'restoration only Constantinople and no Turkey')
+check('GRE_default_on_italian_debt_effect' in focuses['RR_programme']['reward'], 'programme copies vanilla conditional debt effect')
+check('add_political_power = 75' not in focuses['RR_programme']['reward'], 'programme does not retain superseded reward')
+check('unlock_decision_tooltip = byz_restore_byzantium' in focuses['RR_new_rome']['reward'], 'vanilla restoration decision unlock tooltip')
+formable=text(ROOT/'common/decisions/formable_nation_decisions.txt')
+check(formable.count('has_completed_focus = RR_new_rome')==2, 'restoration decision visibility and availability accept imperial route')
+check('swap_ideas = { remove_idea = RR_census add_idea = RR_citizens }' in focuses['RR_citizenship']['reward'], 'census upgrades atomically')
+for k in ['RR_crown','RR_basileus','RR_census_done','RR_civic_education','RR_central','RR_pronoia']:
+    check(k in locids, 'localized availability flag '+k)
+check('remove_ideas = RR_movement' not in effects, 'no unconditional removal of movement tiers')
+for k in ['GRE_request_communist_support','GRE_the_kings_government']:
+    check(k in focuses['RR_empire']['mutex'], 'imperial reciprocal exclusion '+k)
+check('GRE_reevaluating_the_drachma' not in focuses['RR_empire']['mutex'], 'drachma compatible with empire')
+for key in ['RR_farmers','RR_lignite']:
+    check(focuses[key]['parents']==[['RR_empire'],['GRE_reevaluating_the_drachma']], 'economic entry AND gate '+key)
+check('popularity = 0.10' in focuses['RR_empire']['reward'], 'initial empire support')
+check('rr.34' not in event, 'use vanilla debt decision instead of duplicate event')
+exec(compile((ROOT/'tools/validate_army.py').read_text(encoding='utf-8'), 'validate_army.py', 'exec'), globals())
 report={'checks':checks,'failures':failures,'engine_session_tested':False}
 (ROOT/'docs/validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False,indent=2))

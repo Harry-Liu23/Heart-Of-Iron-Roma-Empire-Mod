@@ -19,78 +19,93 @@ RR_heraclius = { name = RR_heraclius
       advisor = { slot = high_command idea_token = RR_heraclius ledger = army
           allowed = { original_tag = GRE } available = { has_completed_focus = RR_empire }
           traits = { army_armored_1 } cost = 150 }
+    advisor = { slot = theorist idea_token = RR_heraclius_theorist ledger = army
+        allowed = { original_tag = GRE } available = { has_completed_focus = RR_revise_strategikon }
+        traits = { RR_heraclius_theorist_trait } cost = 100
+        research_bonus = { armor = 0.1 }
     }
+}
 RR_john_ii = { name = RR_john_ii
       portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
       corps_commander = { traits = { brilliant_strategist trait_mountaineer trait_cautious } skill = 3
       attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
-      
+
+    advisor = { slot = theorist idea_token = RR_john_ii_theorist ledger = army
+        allowed = { original_tag = GRE } available = { has_completed_focus = RR_rebuild_themes }
+        traits = { RR_john_ii_theorist_trait } cost = 100
+        research_bonus = { infantry_weapons = 0.05 artillery = 0.05 }
     }
+}
 RR_ouranos = { name = RR_ouranos
       portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
       corps_commander = { traits = { career_officer infantry_leader trickster } skill = 3
       attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
-      
+
     }
 RR_troglita = { name = RR_troglita
       portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
       corps_commander = { traits = { cavalry_leader war_hero trait_cautious } skill = 3
       attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
-      
+
     }
 RR_axouch = { name = RR_axouch
       portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
       corps_commander = { traits = { career_officer organizer trait_cautious } skill = 3
       attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
-      
+
     }
 RR_philanthropenos = { name = RR_philanthropenos
       portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
       corps_commander = { traits = { trickster trait_reckless war_hero } skill = 3
       attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
-      
+
     }
 RR_kekaumenos = { name = RR_kekaumenos
       portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
       corps_commander = { traits = { trait_mountaineer career_officer trait_reckless } skill = 3
       attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
-      
+
     }
 RR_argyros = { name = RR_argyros
       portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
       corps_commander = { traits = { cavalry_leader old_guard trait_cautious } skill = 2
       attack_skill = 2 defense_skill = 3 planning_skill = 3 logistics_skill = 2 }
-      
+
     }
 RR_lachanodrakon = { name = RR_lachanodrakon
       portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
       corps_commander = { traits = { infantry_leader harsh_leader old_guard } skill = 2
       attack_skill = 2 defense_skill = 3 planning_skill = 3 logistics_skill = 2 }
-      
+
     }
 RR_leo_iii = { name = RR_leo_iii
       portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
       corps_commander = { traits = { inflexible_strategist war_hero career_officer } skill = 3
       attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
-      
+
     }
 RR_constantine_v = { name = RR_constantine_v
       portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
       corps_commander = { traits = { infantry_leader career_officer trait_reckless } skill = 3
       attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
-      
+
     }
 RR_alexios_i = { name = RR_alexios_i
       portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
       field_marshal = { traits = { brilliant_strategist organizer logistics_wizard trait_cautious } skill = 3
       attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
-      
+
+    advisor = { slot = theorist idea_token = RR_alexios_i_theorist ledger = army
+        allowed = { original_tag = GRE } available = { has_completed_focus = RR_roman_military_glory }
+        traits = { RR_alexios_i_theorist_trait } cost = 100
+        research_bonus = {  }
     }
+}
 RR_kourkouas = { name = RR_kourkouas
       portraits = { army = { large = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" small = GFX_idea_generic_army_chief_off_western_european_2d } }
       field_marshal = { traits = { inflexible_strategist unyielding_defender defensive_doctrine old_guard } skill = 4
       attack_skill = 3 defense_skill = 3 planning_skill = 4 logistics_skill = 3 }
-      
+
     }
 RR_narses = { name = RR_narses
       portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_1.dds" small = GFX_idea_generic_political_advisor_europe_1 } }

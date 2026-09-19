@@ -17,12 +17,12 @@ write('common/dynamic_modifiers/rr_capitals.txt',dyn.replace('local_defence =','
 def alter_focus(text,key,transform):return text.replace(VANILLA[key],transform(VANILLA[key]),1)
 base=BASE
 base=alter_focus(base,'GRE_metaxism_focus',lambda s:re.sub(r'\s*prerequisite = \{ focus = GRE_the_kings_government \}','',s))
-for v in ['GRE_compromise_with_the_monarchists','GRE_reevaluating_the_drachma','GRE_four_year_plan','GRE_the_kings_government']:
+for v in VANILLA_MUTEX:
     base=alter_focus(base,v,lambda s:s.replace('id = '+v,'id = '+v+'\n mutually_exclusive = { focus = RR_empire }',1))
-next(f for f in FOCUSES if f['id']=='RR_empire')['mutex'].append('GRE_the_kings_government')
+# Reciprocal exclusions are defined in content_ingame_fixes.py.
 for key,old in VANILLA.items():
     if key in ['GRE_bring_home_the_exiled_republicans','GRE_metaxism_focus','GRE_the_kings_government','GRE_compromise_with_the_monarchists','GRE_reevaluating_the_drachma','GRE_four_year_plan']:continue
-    base=base.replace(old,old.replace('id = '+key,'id = '+key+'\n available = { NOT = { has_completed_focus = RR_empire } }',1),1)
+    base=re.sub(r'\bid = '+re.escape(key)+r'(?=\s)', 'id = '+key+'\n available = { NOT = { has_completed_focus = RR_empire } }',base,count=1)
 def merge_fields(s,field):
     chunks=[]
     for m in list(re.finditer(r'(?m)^\s*'+field+r'\s*=\s*\{',s)):
@@ -38,7 +38,7 @@ for m in reversed(list(re.finditer(r'(?m)^\s*focus\s*=\s*\{',base))):
     a=base.index('{',m.start());end=block_end(base,a)
     base=base[:m.start()]+merge_fields(merge_fields(base[m.start():end],'available'),'mutually_exclusive')+base[end:]
 base=base.replace('add = 10','add = 100',1)
-icons={'政治':'GFX_goal_generic_political_pressure','文化':'GFX_goal_generic_national_unity','科研':'GFX_focus_research','实验设施':'GFX_goal_generic_secret_weapon','企业':'GFX_goal_generic_production2'}
+icons={'陆军：步兵':'GFX_goal_generic_army_doctrines','陆军：装甲':'GFX_goal_generic_army_tanks','陆军：合流':'GFX_goal_generic_allies_build_infantry','政治':'GFX_goal_generic_political_pressure','文化':'GFX_goal_generic_national_unity','科研':'GFX_focus_research','实验设施':'GFX_goal_generic_secret_weapon','企业':'GFX_goal_generic_production2'}
 focus_text=[]
 for f in FOCUSES:
     lines=[f"focus = {{ id = {f['id']}",f"icon = {icons.get(f['group'],'GFX_goal_generic_construct_civ_factory')}",f"x = {f['x']} y = {f['y']} cost = {f['days']/7:g}"]
@@ -55,11 +55,11 @@ for p in ['common/national_focus/rr_greece.txt','common/ideas/rr_byzantine_ideas
     if old.exists() and not backup.exists():
         backup.parent.mkdir(parents=True,exist_ok=True);backup.write_bytes(old.read_bytes())
     write(p,'# Superseded by integrated 0.2 content; original archived in docs/prototype.')
-write('common/ideas/rr_spirits.txt','ideas = { country = {\n'+'\n'.join(k+' = { allowed = { original_tag = GRE } allowed_civil_war = { always = yes } picture = generic_political_advisor_europe_1 removal_cost = -1 modifier = { '+' '.join(f'{m} = {v}' for m,v in mods.items())+' } }' for k,mods in IDEAS.items())+'\n} }')
+write('common/ideas/rr_spirits.txt','ideas = { country = {\n'+'\n'.join(k+' = { allowed = { original_tag = GRE } allowed_civil_war = { always = yes } picture = generic_political_advisor_europe_1 removal_cost = -1 modifier = { '+' '.join(f'{m} = {v}' for m,v in mods.items())+' }'+(' '+IDEA_EXTRA[k] if IDEA_EXTRA.get(k) else '')+' }' for k,mods in IDEAS.items())+'\n} }')
 
 debt_body=get_block(read('common/decisions/GRE.txt'),'GRE_pay_back_debt_to_the_ifc_category')
 for a,b in ECON_MAP.items():debt_body=debt_body.replace(a,b)
-debt_body=debt_body.replace('GRE_reevaluating_the_drachma','RR_farmers')
+# Keep the original currency focus as the debt-decision prerequisite.
 debt_ids=re.findall(r'(?m)^\s*(GRE_\w+)\s*=\s*\{',debt_body)
 for old in debt_ids:
     if old.startswith(('GRE_small_installment','GRE_large_installment','GRE_restructuring_our_debt','GRE_defaulting_on_our_debt')):
@@ -67,9 +67,6 @@ for old in debt_ids:
         debt_body=re.sub(r'\b'+old+r'\b',new,debt_body)
         loc(new,old.replace('GRE_','').replace('_',' '))
         loc(new+'_desc','原版希腊偿债机制。债务进度、费用和等待时间保持原版。')
-m=re.search(r'(?m)^\s*RR_debt_defaulting_on_our_debt\s*=\s*\{',debt_body)
-if m:
-    a=debt_body.index('{',m.start());debt_body=debt_body[:m.start()]+debt_body[block_end(debt_body,a):]
 write('common/decisions/rr_debt.txt','RR_debt_category = {\n'+debt_body+'\n}')
 loc('RR_debt_category','帝国财政：国际金融委员会债务')
 dec_text=[]
@@ -86,7 +83,7 @@ for d in DECISIONS:
     lines.append('}');dec_text.append('\n'.join(lines))
 write('common/decisions/rr_decisions.txt','RR_imperial_decisions = {\n'+'\n'.join(dec_text)+'\n}')
 write('common/decisions/categories/rr_categories.txt','''RR_imperial_decisions = { icon = generic_political_actions allowed = { original_tag = GRE } visible = { has_completed_focus = RR_empire } }
-RR_debt_category = { icon = gre_paying_ifc_debt allowed = { original_tag = GRE has_dlc = "Battle for the Bosporus" } visible = { has_completed_focus = RR_farmers } }''')
+RR_debt_category = { icon = gre_paying_ifc_debt allowed = { original_tag = GRE has_dlc = "Battle for the Bosporus" } visible = { has_completed_focus = RR_empire has_completed_focus = GRE_reevaluating_the_drachma } }''')
 loc('RR_imperial_decisions','帝国复兴事务')
 event_text=['add_namespace = rr']
 for e in EVENTS:
@@ -108,7 +105,8 @@ write('common/on_actions/rr_on_actions.txt','''on_actions = {
 gre_effects=read('common/scripted_effects/GRE_scripted_effects.txt')
 old_body=get_block(gre_effects,'GRE_political_instability_update_effect')
 new_body='if = { limit = { NOT = { has_country_flag = RR_constitution_done } } '+old_body+' } else = { add_ideas = RR_senate }'
-write('common/scripted_effects/GRE_scripted_effects.txt',gre_effects.replace(old_body,new_body,1))
+gre_effects=gre_effects.replace(old_body,new_body,1)
+write('common/scripted_effects/GRE_scripted_effects.txt',gre_effects)
 write('common/ideologies/rr_empire.txt','''ideologies = { empire = {
  types = { roman_restoration = { can_be_randomly_selected = no } }
  color = { 112 42 130 }
@@ -134,7 +132,7 @@ s=s.replace('has_completed_focus = GRE_crack_down_on_foreign_monopolies','OR = {
 write('common/military_industrial_organization/organizations/GRE_organization.txt',s)
 for p in (GAME/'localisation/simp_chinese').glob('*.yml'):
     if 'bftb' not in p.name:continue
-    for key,text in re.findall(r'(?m)^\s*(GRE_(?:small_installment|large_installment|restructuring_our_debt)\w*):\d*\s*"(.*)"',p.read_text(encoding='utf-8-sig')):
+    for key,text in re.findall(r'(?m)^\s*(GRE_(?:small_installment|large_installment|restructuring_our_debt|defaulting_on_our_debt)\w*):\d*\s*"(.*)"',p.read_text(encoding='utf-8-sig')):
         LOC['RR_debt_'+key[4:]]=text
 for f in FOCUSES:
     LOC[f['id']+'_desc']=f['summary']
@@ -150,7 +148,7 @@ for lang in ['simp_chinese','english']:
         backup=ROOT/'docs/prototype'/p.name
         if not backup.exists():backup.write_bytes(p.read_bytes())
         write(str(p.relative_to(ROOT)),'l_'+lang+':',bom=True)
-manifest=dict(focuses=FOCUSES,decisions=DECISIONS,events=EVENTS,ideas=IDEAS,traits=TRAITS,commanders=COMMANDERS,advisors=ADVISORS,mios=MIO_DATA,state_sets=STATE_SETS,game_source=str(GAME),target_version='1.18.*',source_version=json.loads(read('launcher-settings.json')).get('version','unknown'))
+manifest=dict(focuses=FOCUSES,decisions=DECISIONS,events=EVENTS,ideas=IDEAS,traits=TRAITS,commanders=COMMANDERS,advisors=ADVISORS,mios=MIO_DATA,army=ARMY_DATA,idea_extra=IDEA_EXTRA,state_sets=STATE_SETS,game_source=str(GAME),target_version='1.18.*',source_version=json.loads(read('launcher-settings.json')).get('version','unknown'))
 write('docs/content_manifest.json',json.dumps(manifest,ensure_ascii=False,indent=2))
 write('descriptor.mod','version="0.2.0"\ntags={ "Alternative History" "National Focuses" "Events" }\nname="Roma Invicta: Byzantine Restoration"\nsupported_version="1.18.*"')
 write('roma_restoration.mod','version="0.2.0"\ntags={ "Alternative History" "National Focuses" "Events" }\nname="Roma Invicta: Byzantine Restoration"\nsupported_version="1.18.*"\npath="'+ROOT.as_posix()+'"')

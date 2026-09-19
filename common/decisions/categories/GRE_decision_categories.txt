@@ -28,7 +28,7 @@ GRE_pay_back_debt_to_the_ifc_category = { visible = { NOT = { has_completed_focu
 
 GRE_investment_decisions_category  = {
 	priority = 4
-	icon = gre_investment_decisions	
+	icon = gre_investment_decisions
 
 	allowed = {
 		original_tag = GRE

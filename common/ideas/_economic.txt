@@ -145,7 +145,7 @@ ideas = {
 
 			available = {
 				has_war_support > 0.15
-				
+
 				IF = {
 					limit = {
 						original_tag = HUN
@@ -175,26 +175,26 @@ ideas = {
 						}
 						custom_trigger_tooltip = {
 							tooltip = wuw_HUN_not_has_trianon_for_laws_tt
-							NOT = { 
+							NOT = {
 								OR = {
-									has_idea = HUN_treaty_of_triannon_aat_wuw 
-									has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_debuff 
-									has_idea = HUN_treaty_of_triannon_aat_wuw_no_army_exp_debuff 
-									has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_or_army_debuff 
+									has_idea = HUN_treaty_of_triannon_aat_wuw
+									has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_debuff
+									has_idea = HUN_treaty_of_triannon_aat_wuw_no_army_exp_debuff
+									has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_or_army_debuff
 								}
 							}
-							
-						}		
+
+						}
 					}
 					ELSE = {
 						custom_trigger_tooltip = {
 							tooltip = wuw_HUN_not_has_trianon_for_laws_tt
-							NOT = { 
+							NOT = {
 								OR = {
-									has_idea = HUN_treaty_of_triannon_wuw 
-									has_idea = HUN_treaty_of_triannon_wuw_no_army_exp_debuff 
-									has_idea = HUN_treaty_of_triannon_wuw_no_air_debuff 
-									has_idea = HUN_treaty_of_triannon_wuw_no_air_or_army_debuff 
+									has_idea = HUN_treaty_of_triannon_wuw
+									has_idea = HUN_treaty_of_triannon_wuw_no_army_exp_debuff
+									has_idea = HUN_treaty_of_triannon_wuw_no_air_debuff
+									has_idea = HUN_treaty_of_triannon_wuw_no_air_or_army_debuff
 								}
 							}
 						}
@@ -438,24 +438,24 @@ ideas = {
 
 					is_major = yes
 				}
-				
+
 				modifier = {
 					add = 80
 					original_tag = SOV
 					date < 1937.1.1
-					NOT = { 
+					NOT = {
 						OR = {
-							has_idea = war_economy 
+							has_idea = war_economy
 							has_idea = tot_economic_mobilisation
 						}
 					}
 				}
-				
+
 				modifier = {
 					original_tag = SIA
-					NOT = { 
+					NOT = {
 						OR = {
-							has_idea = war_economy 
+							has_idea = war_economy
 							has_idea = tot_economic_mobilisation
 						}
 					}
@@ -548,26 +548,26 @@ ideas = {
 						}
 						custom_trigger_tooltip = {
 							tooltip = wuw_HUN_not_has_trianon_for_laws_tt
-							NOT = { 
+							NOT = {
 								OR = {
-									has_idea = HUN_treaty_of_triannon_aat_wuw 
-									has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_debuff 
-									has_idea = HUN_treaty_of_triannon_aat_wuw_no_army_exp_debuff 
-									has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_or_army_debuff 
+									has_idea = HUN_treaty_of_triannon_aat_wuw
+									has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_debuff
+									has_idea = HUN_treaty_of_triannon_aat_wuw_no_army_exp_debuff
+									has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_or_army_debuff
 								}
 							}
-							
-						}		
+
+						}
 					}
 					ELSE = {
 						custom_trigger_tooltip = {
 							tooltip = wuw_HUN_not_has_trianon_for_laws_tt
-							NOT = { 
+							NOT = {
 								OR = {
-									has_idea = HUN_treaty_of_triannon_wuw 
-									has_idea = HUN_treaty_of_triannon_wuw_no_army_exp_debuff 
-									has_idea = HUN_treaty_of_triannon_wuw_no_air_debuff 
-									has_idea = HUN_treaty_of_triannon_wuw_no_air_or_army_debuff 
+									has_idea = HUN_treaty_of_triannon_wuw
+									has_idea = HUN_treaty_of_triannon_wuw_no_army_exp_debuff
+									has_idea = HUN_treaty_of_triannon_wuw_no_air_debuff
+									has_idea = HUN_treaty_of_triannon_wuw_no_air_or_army_debuff
 								}
 							}
 						}
@@ -693,7 +693,7 @@ ideas = {
 				}
 
 				modifier = {
-					# They will take the focus to gain this for free, so they shouldn't spend pp on it too willy-nilly 
+					# They will take the focus to gain this for free, so they shouldn't spend pp on it too willy-nilly
 					factor = 0.5
 					original_tag = JAP
 					OR = {
@@ -719,9 +719,9 @@ ideas = {
 					limit = {
 						original_tag = JAP
 					}
-					NOT = { 
-						has_completed_focus = JAP_sea_national_defense_state 
-						has_completed_focus = JAP_prepare_for_the_final_war 
+					NOT = {
+						has_completed_focus = JAP_sea_national_defense_state
+						has_completed_focus = JAP_prepare_for_the_final_war
 					}
 				}
 			}
@@ -765,32 +765,32 @@ ideas = {
 						}
 						custom_trigger_tooltip = {
 							tooltip = wuw_HUN_not_has_trianon_for_laws_tt
-							NOT = { 
+							NOT = {
 								OR = {
-									has_idea = HUN_treaty_of_triannon_aat_wuw 
-									has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_debuff 
-									has_idea = HUN_treaty_of_triannon_aat_wuw_no_army_exp_debuff 
-									has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_or_army_debuff 
+									has_idea = HUN_treaty_of_triannon_aat_wuw
+									has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_debuff
+									has_idea = HUN_treaty_of_triannon_aat_wuw_no_army_exp_debuff
+									has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_or_army_debuff
 								}
 							}
-							
-						}		
+
+						}
 					}
 					ELSE = {
 						custom_trigger_tooltip = {
 							tooltip = wuw_HUN_not_has_trianon_for_laws_tt
-							NOT = { 
+							NOT = {
 								OR = {
-									has_idea = HUN_treaty_of_triannon_wuw 
-									has_idea = HUN_treaty_of_triannon_wuw_no_army_exp_debuff 
-									has_idea = HUN_treaty_of_triannon_wuw_no_air_debuff 
-									has_idea = HUN_treaty_of_triannon_wuw_no_air_or_army_debuff 
+									has_idea = HUN_treaty_of_triannon_wuw
+									has_idea = HUN_treaty_of_triannon_wuw_no_army_exp_debuff
+									has_idea = HUN_treaty_of_triannon_wuw_no_air_debuff
+									has_idea = HUN_treaty_of_triannon_wuw_no_air_or_army_debuff
 								}
 							}
 						}
 					}
 				}
-				
+
 				if = {
 					limit = {
 						has_completed_focus = USA_limited_intervention
@@ -958,7 +958,7 @@ ideas = {
 			cancel_if_invalid = no
 		}
 
-		national_defense_state = { 
+		national_defense_state = {
 
 			picture = JAP_national_defense_state
 
@@ -1183,7 +1183,7 @@ ideas = {
 						limit = {
 							tag = POL
 							85 = { is_demilitarized_zone = no }
-							has_civil_war = no 
+							has_civil_war = no
 						}
 						85 = {
 							if = {
@@ -1196,7 +1196,7 @@ ideas = {
 					}
 				}
 			}
-			
+
 			cancel_if_invalid = no
 		}
 
@@ -1665,7 +1665,7 @@ ideas = {
 						}
 					}
 				}
-				
+
 				OR = {
 					has_idea = war_economy
 					has_idea = tot_economic_mobilisation

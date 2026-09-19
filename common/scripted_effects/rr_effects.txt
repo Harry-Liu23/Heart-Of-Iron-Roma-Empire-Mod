@@ -1,146 +1,146 @@
 RR_set_movement1 = {
-remove_ideas = RR_movement2
-remove_ideas = RR_movement3
-remove_ideas = RR_movement4
-add_ideas = RR_movement1
+if = { limit = { has_idea = RR_movement2 } swap_ideas = { remove_idea = RR_movement2 add_idea = RR_movement1 } }
+else_if = { limit = { has_idea = RR_movement3 } swap_ideas = { remove_idea = RR_movement3 add_idea = RR_movement1 } }
+else_if = { limit = { has_idea = RR_movement4 } swap_ideas = { remove_idea = RR_movement4 add_idea = RR_movement1 } }
+else_if = { limit = { NOT = { has_idea = RR_movement1 } } add_ideas = RR_movement1 }
 }
 RR_set_movement2 = {
-remove_ideas = RR_movement1
-remove_ideas = RR_movement3
-remove_ideas = RR_movement4
-add_ideas = RR_movement2
+if = { limit = { has_idea = RR_movement1 } swap_ideas = { remove_idea = RR_movement1 add_idea = RR_movement2 } }
+else_if = { limit = { has_idea = RR_movement3 } swap_ideas = { remove_idea = RR_movement3 add_idea = RR_movement2 } }
+else_if = { limit = { has_idea = RR_movement4 } swap_ideas = { remove_idea = RR_movement4 add_idea = RR_movement2 } }
+else_if = { limit = { NOT = { has_idea = RR_movement2 } } add_ideas = RR_movement2 }
 }
 RR_set_movement3 = {
-remove_ideas = RR_movement1
-remove_ideas = RR_movement2
-remove_ideas = RR_movement4
-add_ideas = RR_movement3
+if = { limit = { has_idea = RR_movement1 } swap_ideas = { remove_idea = RR_movement1 add_idea = RR_movement3 } }
+else_if = { limit = { has_idea = RR_movement2 } swap_ideas = { remove_idea = RR_movement2 add_idea = RR_movement3 } }
+else_if = { limit = { has_idea = RR_movement4 } swap_ideas = { remove_idea = RR_movement4 add_idea = RR_movement3 } }
+else_if = { limit = { NOT = { has_idea = RR_movement3 } } add_ideas = RR_movement3 }
 }
 RR_set_movement4 = {
-remove_ideas = RR_movement1
-remove_ideas = RR_movement2
-remove_ideas = RR_movement3
-add_ideas = RR_movement4
+if = { limit = { has_idea = RR_movement1 } swap_ideas = { remove_idea = RR_movement1 add_idea = RR_movement4 } }
+else_if = { limit = { has_idea = RR_movement2 } swap_ideas = { remove_idea = RR_movement2 add_idea = RR_movement4 } }
+else_if = { limit = { has_idea = RR_movement3 } swap_ideas = { remove_idea = RR_movement3 add_idea = RR_movement4 } }
+else_if = { limit = { NOT = { has_idea = RR_movement4 } } add_ideas = RR_movement4 }
 }
 RR_set_provincial1 = {
-remove_ideas = RR_provincial2
-remove_ideas = RR_central
-remove_ideas = RR_central_final
-remove_ideas = RR_pronoia
-remove_ideas = RR_pronoia_final
-add_ideas = RR_provincial1
+if = { limit = { has_idea = RR_provincial2 } swap_ideas = { remove_idea = RR_provincial2 add_idea = RR_provincial1 } }
+else_if = { limit = { has_idea = RR_central } swap_ideas = { remove_idea = RR_central add_idea = RR_provincial1 } }
+else_if = { limit = { has_idea = RR_central_final } swap_ideas = { remove_idea = RR_central_final add_idea = RR_provincial1 } }
+else_if = { limit = { has_idea = RR_pronoia } swap_ideas = { remove_idea = RR_pronoia add_idea = RR_provincial1 } }
+else_if = { limit = { has_idea = RR_pronoia_final } swap_ideas = { remove_idea = RR_pronoia_final add_idea = RR_provincial1 } }
+else_if = { limit = { NOT = { has_idea = RR_provincial1 } } add_ideas = RR_provincial1 }
 }
 RR_set_provincial2 = {
-remove_ideas = RR_provincial1
-remove_ideas = RR_central
-remove_ideas = RR_central_final
-remove_ideas = RR_pronoia
-remove_ideas = RR_pronoia_final
-add_ideas = RR_provincial2
+if = { limit = { has_idea = RR_provincial1 } swap_ideas = { remove_idea = RR_provincial1 add_idea = RR_provincial2 } }
+else_if = { limit = { has_idea = RR_central } swap_ideas = { remove_idea = RR_central add_idea = RR_provincial2 } }
+else_if = { limit = { has_idea = RR_central_final } swap_ideas = { remove_idea = RR_central_final add_idea = RR_provincial2 } }
+else_if = { limit = { has_idea = RR_pronoia } swap_ideas = { remove_idea = RR_pronoia add_idea = RR_provincial2 } }
+else_if = { limit = { has_idea = RR_pronoia_final } swap_ideas = { remove_idea = RR_pronoia_final add_idea = RR_provincial2 } }
+else_if = { limit = { NOT = { has_idea = RR_provincial2 } } add_ideas = RR_provincial2 }
 }
 RR_set_central = {
-remove_ideas = RR_provincial1
-remove_ideas = RR_provincial2
-remove_ideas = RR_central_final
-remove_ideas = RR_pronoia
-remove_ideas = RR_pronoia_final
-add_ideas = RR_central
+if = { limit = { has_idea = RR_provincial1 } swap_ideas = { remove_idea = RR_provincial1 add_idea = RR_central } }
+else_if = { limit = { has_idea = RR_provincial2 } swap_ideas = { remove_idea = RR_provincial2 add_idea = RR_central } }
+else_if = { limit = { has_idea = RR_central_final } swap_ideas = { remove_idea = RR_central_final add_idea = RR_central } }
+else_if = { limit = { has_idea = RR_pronoia } swap_ideas = { remove_idea = RR_pronoia add_idea = RR_central } }
+else_if = { limit = { has_idea = RR_pronoia_final } swap_ideas = { remove_idea = RR_pronoia_final add_idea = RR_central } }
+else_if = { limit = { NOT = { has_idea = RR_central } } add_ideas = RR_central }
 }
 RR_set_central_final = {
-remove_ideas = RR_provincial1
-remove_ideas = RR_provincial2
-remove_ideas = RR_central
-remove_ideas = RR_pronoia
-remove_ideas = RR_pronoia_final
-add_ideas = RR_central_final
+if = { limit = { has_idea = RR_provincial1 } swap_ideas = { remove_idea = RR_provincial1 add_idea = RR_central_final } }
+else_if = { limit = { has_idea = RR_provincial2 } swap_ideas = { remove_idea = RR_provincial2 add_idea = RR_central_final } }
+else_if = { limit = { has_idea = RR_central } swap_ideas = { remove_idea = RR_central add_idea = RR_central_final } }
+else_if = { limit = { has_idea = RR_pronoia } swap_ideas = { remove_idea = RR_pronoia add_idea = RR_central_final } }
+else_if = { limit = { has_idea = RR_pronoia_final } swap_ideas = { remove_idea = RR_pronoia_final add_idea = RR_central_final } }
+else_if = { limit = { NOT = { has_idea = RR_central_final } } add_ideas = RR_central_final }
 }
 RR_set_pronoia = {
-remove_ideas = RR_provincial1
-remove_ideas = RR_provincial2
-remove_ideas = RR_central
-remove_ideas = RR_central_final
-remove_ideas = RR_pronoia_final
-add_ideas = RR_pronoia
+if = { limit = { has_idea = RR_provincial1 } swap_ideas = { remove_idea = RR_provincial1 add_idea = RR_pronoia } }
+else_if = { limit = { has_idea = RR_provincial2 } swap_ideas = { remove_idea = RR_provincial2 add_idea = RR_pronoia } }
+else_if = { limit = { has_idea = RR_central } swap_ideas = { remove_idea = RR_central add_idea = RR_pronoia } }
+else_if = { limit = { has_idea = RR_central_final } swap_ideas = { remove_idea = RR_central_final add_idea = RR_pronoia } }
+else_if = { limit = { has_idea = RR_pronoia_final } swap_ideas = { remove_idea = RR_pronoia_final add_idea = RR_pronoia } }
+else_if = { limit = { NOT = { has_idea = RR_pronoia } } add_ideas = RR_pronoia }
 }
 RR_set_pronoia_final = {
-remove_ideas = RR_provincial1
-remove_ideas = RR_provincial2
-remove_ideas = RR_central
-remove_ideas = RR_central_final
-remove_ideas = RR_pronoia
-add_ideas = RR_pronoia_final
+if = { limit = { has_idea = RR_provincial1 } swap_ideas = { remove_idea = RR_provincial1 add_idea = RR_pronoia_final } }
+else_if = { limit = { has_idea = RR_provincial2 } swap_ideas = { remove_idea = RR_provincial2 add_idea = RR_pronoia_final } }
+else_if = { limit = { has_idea = RR_central } swap_ideas = { remove_idea = RR_central add_idea = RR_pronoia_final } }
+else_if = { limit = { has_idea = RR_central_final } swap_ideas = { remove_idea = RR_central_final add_idea = RR_pronoia_final } }
+else_if = { limit = { has_idea = RR_pronoia } swap_ideas = { remove_idea = RR_pronoia add_idea = RR_pronoia_final } }
+else_if = { limit = { NOT = { has_idea = RR_pronoia_final } } add_ideas = RR_pronoia_final }
 }
 RR_set_church1 = {
-remove_ideas = RR_church2
-remove_ideas = RR_church3
-remove_ideas = RR_church4
-add_ideas = RR_church1
+if = { limit = { has_idea = RR_church2 } swap_ideas = { remove_idea = RR_church2 add_idea = RR_church1 } }
+else_if = { limit = { has_idea = RR_church3 } swap_ideas = { remove_idea = RR_church3 add_idea = RR_church1 } }
+else_if = { limit = { has_idea = RR_church4 } swap_ideas = { remove_idea = RR_church4 add_idea = RR_church1 } }
+else_if = { limit = { NOT = { has_idea = RR_church1 } } add_ideas = RR_church1 }
 }
 RR_set_church2 = {
-remove_ideas = RR_church1
-remove_ideas = RR_church3
-remove_ideas = RR_church4
-add_ideas = RR_church2
+if = { limit = { has_idea = RR_church1 } swap_ideas = { remove_idea = RR_church1 add_idea = RR_church2 } }
+else_if = { limit = { has_idea = RR_church3 } swap_ideas = { remove_idea = RR_church3 add_idea = RR_church2 } }
+else_if = { limit = { has_idea = RR_church4 } swap_ideas = { remove_idea = RR_church4 add_idea = RR_church2 } }
+else_if = { limit = { NOT = { has_idea = RR_church2 } } add_ideas = RR_church2 }
 }
 RR_set_church3 = {
-remove_ideas = RR_church1
-remove_ideas = RR_church2
-remove_ideas = RR_church4
-add_ideas = RR_church3
+if = { limit = { has_idea = RR_church1 } swap_ideas = { remove_idea = RR_church1 add_idea = RR_church3 } }
+else_if = { limit = { has_idea = RR_church2 } swap_ideas = { remove_idea = RR_church2 add_idea = RR_church3 } }
+else_if = { limit = { has_idea = RR_church4 } swap_ideas = { remove_idea = RR_church4 add_idea = RR_church3 } }
+else_if = { limit = { NOT = { has_idea = RR_church3 } } add_ideas = RR_church3 }
 }
 RR_set_church4 = {
-remove_ideas = RR_church1
-remove_ideas = RR_church2
-remove_ideas = RR_church3
-add_ideas = RR_church4
+if = { limit = { has_idea = RR_church1 } swap_ideas = { remove_idea = RR_church1 add_idea = RR_church4 } }
+else_if = { limit = { has_idea = RR_church2 } swap_ideas = { remove_idea = RR_church2 add_idea = RR_church4 } }
+else_if = { limit = { has_idea = RR_church3 } swap_ideas = { remove_idea = RR_church3 add_idea = RR_church4 } }
+else_if = { limit = { NOT = { has_idea = RR_church4 } } add_ideas = RR_church4 }
 }
 RR_set_identity1 = {
-remove_ideas = RR_identity2
-remove_ideas = RR_identity3
-remove_ideas = RR_identity4
-add_ideas = RR_identity1
+if = { limit = { has_idea = RR_identity2 } swap_ideas = { remove_idea = RR_identity2 add_idea = RR_identity1 } }
+else_if = { limit = { has_idea = RR_identity3 } swap_ideas = { remove_idea = RR_identity3 add_idea = RR_identity1 } }
+else_if = { limit = { has_idea = RR_identity4 } swap_ideas = { remove_idea = RR_identity4 add_idea = RR_identity1 } }
+else_if = { limit = { NOT = { has_idea = RR_identity1 } } add_ideas = RR_identity1 }
 }
 RR_set_identity2 = {
-remove_ideas = RR_identity1
-remove_ideas = RR_identity3
-remove_ideas = RR_identity4
-add_ideas = RR_identity2
+if = { limit = { has_idea = RR_identity1 } swap_ideas = { remove_idea = RR_identity1 add_idea = RR_identity2 } }
+else_if = { limit = { has_idea = RR_identity3 } swap_ideas = { remove_idea = RR_identity3 add_idea = RR_identity2 } }
+else_if = { limit = { has_idea = RR_identity4 } swap_ideas = { remove_idea = RR_identity4 add_idea = RR_identity2 } }
+else_if = { limit = { NOT = { has_idea = RR_identity2 } } add_ideas = RR_identity2 }
 }
 RR_set_identity3 = {
-remove_ideas = RR_identity1
-remove_ideas = RR_identity2
-remove_ideas = RR_identity4
-add_ideas = RR_identity3
+if = { limit = { has_idea = RR_identity1 } swap_ideas = { remove_idea = RR_identity1 add_idea = RR_identity3 } }
+else_if = { limit = { has_idea = RR_identity2 } swap_ideas = { remove_idea = RR_identity2 add_idea = RR_identity3 } }
+else_if = { limit = { has_idea = RR_identity4 } swap_ideas = { remove_idea = RR_identity4 add_idea = RR_identity3 } }
+else_if = { limit = { NOT = { has_idea = RR_identity3 } } add_ideas = RR_identity3 }
 }
 RR_set_identity4 = {
-remove_ideas = RR_identity1
-remove_ideas = RR_identity2
-remove_ideas = RR_identity3
-add_ideas = RR_identity4
+if = { limit = { has_idea = RR_identity1 } swap_ideas = { remove_idea = RR_identity1 add_idea = RR_identity4 } }
+else_if = { limit = { has_idea = RR_identity2 } swap_ideas = { remove_idea = RR_identity2 add_idea = RR_identity4 } }
+else_if = { limit = { has_idea = RR_identity3 } swap_ideas = { remove_idea = RR_identity3 add_idea = RR_identity4 } }
+else_if = { limit = { NOT = { has_idea = RR_identity4 } } add_ideas = RR_identity4 }
 }
 RR_set_science1 = {
-remove_ideas = RR_science2
-remove_ideas = RR_science3
-remove_ideas = RR_science4
-add_ideas = RR_science1
+if = { limit = { has_idea = RR_science2 } swap_ideas = { remove_idea = RR_science2 add_idea = RR_science1 } }
+else_if = { limit = { has_idea = RR_science3 } swap_ideas = { remove_idea = RR_science3 add_idea = RR_science1 } }
+else_if = { limit = { has_idea = RR_science4 } swap_ideas = { remove_idea = RR_science4 add_idea = RR_science1 } }
+else_if = { limit = { NOT = { has_idea = RR_science1 } } add_ideas = RR_science1 }
 }
 RR_set_science2 = {
-remove_ideas = RR_science1
-remove_ideas = RR_science3
-remove_ideas = RR_science4
-add_ideas = RR_science2
+if = { limit = { has_idea = RR_science1 } swap_ideas = { remove_idea = RR_science1 add_idea = RR_science2 } }
+else_if = { limit = { has_idea = RR_science3 } swap_ideas = { remove_idea = RR_science3 add_idea = RR_science2 } }
+else_if = { limit = { has_idea = RR_science4 } swap_ideas = { remove_idea = RR_science4 add_idea = RR_science2 } }
+else_if = { limit = { NOT = { has_idea = RR_science2 } } add_ideas = RR_science2 }
 }
 RR_set_science3 = {
-remove_ideas = RR_science1
-remove_ideas = RR_science2
-remove_ideas = RR_science4
-add_ideas = RR_science3
+if = { limit = { has_idea = RR_science1 } swap_ideas = { remove_idea = RR_science1 add_idea = RR_science3 } }
+else_if = { limit = { has_idea = RR_science2 } swap_ideas = { remove_idea = RR_science2 add_idea = RR_science3 } }
+else_if = { limit = { has_idea = RR_science4 } swap_ideas = { remove_idea = RR_science4 add_idea = RR_science3 } }
+else_if = { limit = { NOT = { has_idea = RR_science3 } } add_ideas = RR_science3 }
 }
 RR_set_science4 = {
-remove_ideas = RR_science1
-remove_ideas = RR_science2
-remove_ideas = RR_science3
-add_ideas = RR_science4
+if = { limit = { has_idea = RR_science1 } swap_ideas = { remove_idea = RR_science1 add_idea = RR_science4 } }
+else_if = { limit = { has_idea = RR_science2 } swap_ideas = { remove_idea = RR_science2 add_idea = RR_science4 } }
+else_if = { limit = { has_idea = RR_science3 } swap_ideas = { remove_idea = RR_science3 add_idea = RR_science4 } }
+else_if = { limit = { NOT = { has_idea = RR_science4 } } add_ideas = RR_science4 }
 }
 RR_issue_common = {
 add_political_power = 75 RR_set_movement3 = yes add_ideas = RR_consensus add_to_variable = { GRE_monarchist_loyalty = 1 }
@@ -158,8 +158,8 @@ RR_take_power = {
 set_politics = { ruling_party = empire elections_allowed = no }
 promote_character = { character = RR_constantine ideology = roman_restoration }
 set_party_name = { ideology = empire name = RR_empire_party long_name = RR_empire_party }
-remove_ideas = GRE_metaxism remove_ideas = GRE_metaxism_2
-remove_ideas = GRE_george_ii remove_ideas = GRE_george_ii_restrained
+if = { limit = { has_idea = GRE_metaxism } remove_ideas = GRE_metaxism } if = { limit = { has_idea = GRE_metaxism_2 } remove_ideas = GRE_metaxism_2 }
+if = { limit = { has_idea = GRE_george_ii } remove_ideas = GRE_george_ii } if = { limit = { has_idea = GRE_george_ii_restrained } remove_ideas = GRE_george_ii_restrained }
 if = { limit = { is_in_faction = yes is_faction_leader = no } leave_faction = yes }
 set_rule = { can_create_factions = no }
 }
@@ -167,13 +167,13 @@ RR_emperor_administration = {
 RR_constantine = { add_country_leader_trait = RR_imperial_administrator }
 }
 RR_end_instability = {
-remove_ideas = GRE_political_instability
-remove_ideas = GRE_political_instability_dummy
-remove_ideas = GRE_political_instability_republican
-remove_ideas = GRE_political_instability_republican_2
-remove_ideas = GRE_political_instability_communist
-remove_ideas = GRE_political_instability_metaxas
-remove_ideas = GRE_political_instability_fascism
+if = { limit = { has_idea = GRE_political_instability } remove_ideas = GRE_political_instability }
+if = { limit = { has_idea = GRE_political_instability_dummy } remove_ideas = GRE_political_instability_dummy }
+if = { limit = { has_idea = GRE_political_instability_republican } remove_ideas = GRE_political_instability_republican }
+if = { limit = { has_idea = GRE_political_instability_republican_2 } remove_ideas = GRE_political_instability_republican_2 }
+if = { limit = { has_idea = GRE_political_instability_communist } remove_ideas = GRE_political_instability_communist }
+if = { limit = { has_idea = GRE_political_instability_metaxas } remove_ideas = GRE_political_instability_metaxas }
+if = { limit = { has_idea = GRE_political_instability_fascism } remove_ideas = GRE_political_instability_fascism }
 set_country_flag = RR_constitution_done add_ideas = RR_senate
 }
 RR_build_land_lab = {
@@ -271,6 +271,7 @@ if = { limit = { controls_state = 47 has_country_flag = RR_restore_electrical }
       if = { limit = { has_completed_focus = RR_industrial_combine } add_ideas = RR_electrical_2 } else = { add_ideas = RR_electrical_1 }
       } clr_country_flag = RR_restore_electrical
     }
+RR_settle_army_mio_rewards = yes
 }
 RR_refresh_tourism = {
 if = { limit = { has_war = no }
@@ -292,4 +293,65 @@ if = { limit = { has_war = no }
  }
 }
 else = { remove_ideas = RR_tourism_merchants remove_ideas = RR_tourism_pilgrims }
+}
+RR_upgrade_marian_minister = {
+if = { limit = { has_idea = RR_belisarius }
+    remove_advisor_role = { character = RR_belisarius slot = army_chief }
+    add_advisor_role = { character = RR_belisarius
+    advisor = { slot = army_chief idea_token = RR_belisarius_reformed ledger = army
+        allowed = { original_tag = GRE } available = { has_completed_focus = RR_new_marian_reforms }
+        traits = { RR_marian_reformer_trait } cost = 75 }
+    activate = yes
+}
+} else = {
+    remove_advisor_role = { character = RR_belisarius slot = army_chief }
+    add_advisor_role = { character = RR_belisarius
+    advisor = { slot = army_chief idea_token = RR_belisarius_reformed ledger = army
+        allowed = { original_tag = GRE } available = { has_completed_focus = RR_new_marian_reforms }
+        traits = { RR_marian_reformer_trait } cost = 75 }
+
+}
+}
+}
+RR_settle_army_mio_rewards = {
+if = { limit = {
+        has_dlc = "Arms Against Tyranny" has_country_flag = RR_enterprises
+        has_country_flag = RR_army_reward_state_armories has_country_flag = RR_mio_piraeus_initialized
+        controls_state = 47 NOT = { has_country_flag = RR_army_paid_state_armories_piraeus }
+    }
+        mio:RR_mio_piraeus = { add_mio_funds = 1000 add_mio_research_bonus = .10 }
+        set_country_flag = RR_army_paid_state_armories_piraeus
+    }
+if = { limit = {
+        has_dlc = "Arms Against Tyranny" has_country_flag = RR_enterprises
+        has_country_flag = RR_army_reward_imperial_workshops has_country_flag = RR_mio_ankara_armor_initialized
+        controls_state = 49 NOT = { has_country_flag = RR_army_paid_imperial_workshops_ankara_armor }
+    }
+        mio:RR_mio_ankara_armor = { add_mio_funds = 1000 add_mio_research_bonus = .10 }
+        set_country_flag = RR_army_paid_imperial_workshops_ankara_armor
+    }
+if = { limit = {
+        has_dlc = "Arms Against Tyranny" has_country_flag = RR_enterprises
+        has_country_flag = RR_army_reward_roman_military_glory has_country_flag = RR_mio_piraeus_initialized
+        controls_state = 47 NOT = { has_country_flag = RR_army_paid_roman_military_glory_piraeus }
+    }
+        mio:RR_mio_piraeus = { add_mio_funds = 500  }
+        set_country_flag = RR_army_paid_roman_military_glory_piraeus
+    }
+if = { limit = {
+        has_dlc = "Arms Against Tyranny" has_country_flag = RR_enterprises
+        has_country_flag = RR_army_reward_roman_military_glory has_country_flag = RR_mio_ankara_armor_initialized
+        controls_state = 49 NOT = { has_country_flag = RR_army_paid_roman_military_glory_ankara_armor }
+    }
+        mio:RR_mio_ankara_armor = { add_mio_funds = 500  }
+        set_country_flag = RR_army_paid_roman_military_glory_ankara_armor
+    }
+if = { limit = {
+        has_dlc = "Arms Against Tyranny" has_country_flag = RR_enterprises
+        has_country_flag = RR_army_reward_roman_military_glory has_country_flag = RR_mio_thessaloniki_initialized
+        controls_state = 731 NOT = { has_country_flag = RR_army_paid_roman_military_glory_thessaloniki }
+    }
+        mio:RR_mio_thessaloniki = { add_mio_funds = 500  }
+        set_country_flag = RR_army_paid_roman_military_glory_thessaloniki
+    }
 }

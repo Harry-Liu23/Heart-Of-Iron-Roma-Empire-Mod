@@ -5,7 +5,7 @@ RR_mio_piraeus = {
       available = { owner = { has_country_flag = RR_enterprises controls_state = 47 } }
       equipment_type = { infantry_equipment artillery_equipment } research_categories = { infantry_weapons artillery }
       research_bonus = 0
-      initial_trait = { name = RR_mio_piraeus_initial equipment_bonus = { reliability = .05 }
+      initial_trait = { name = RR_mio_piraeus_initial equipment_bonus = { reliability = .05 build_cost_ic = -.05 }
         production_bonus = { production_capacity_factor = .05  } }
       trait = { token = RR_quality name = RR_mio_piraeus_quality position = { x = 0 y = 0 }
         equipment_bonus = { reliability = .02 } }
@@ -19,7 +19,7 @@ RR_mio_thessaloniki = {
       available = { owner = { has_country_flag = RR_enterprises controls_state = 731 } }
       equipment_type = { motorized_equipment mechanized_equipment } research_categories = { motorized_equipment }
       research_bonus = 0
-      initial_trait = { name = RR_mio_thessaloniki_initial equipment_bonus = {  }
+      initial_trait = { name = RR_mio_thessaloniki_initial equipment_bonus = {  build_cost_ic = -.05 reliability = .05 }
         production_bonus = { production_capacity_factor = .05 production_efficiency_gain_factor = .05 } }
       trait = { token = RR_quality name = RR_mio_thessaloniki_quality position = { x = 0 y = 0 }
         equipment_bonus = { reliability = .02 } }
@@ -73,9 +73,9 @@ RR_mio_ankara_armor = {
       allowed = { original_tag = GRE has_dlc = "Arms Against Tyranny" }
       visible = { owner = { has_country_flag = RR_enterprises } }
       available = { owner = { has_country_flag = RR_enterprises controls_state = 49 } }
-      equipment_type = { armor } research_categories = { armor }
+      equipment_type = { armor armored_car_equipment } research_categories = { armor }
       research_bonus = 0
-      initial_trait = { name = RR_mio_ankara_armor_initial equipment_bonus = { reliability = .05 }
+      initial_trait = { name = RR_mio_ankara_armor_initial equipment_bonus = { reliability = .05 build_cost_ic = -.05 }
         production_bonus = { production_capacity_factor = .05  } }
       trait = { token = RR_quality name = RR_mio_ankara_armor_quality position = { x = 0 y = 0 }
         equipment_bonus = { reliability = .02 } }

@@ -18,7 +18,7 @@ LOC, FOCUSES, DECISIONS, EVENTS, IDEAS, EFFECTS = {}, [], [], [], {}, {}
 def write(path, text, bom=False):
     p = ROOT / path
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(text.rstrip() + '\n', encoding='utf-8-sig' if bom else 'utf-8')
+    p.write_text('\n'.join(line.rstrip() for line in text.rstrip().splitlines()) + '\n', encoding='utf-8-sig' if bom else 'utf-8')
 
 def read(path):
     return (GAME / path).read_text(encoding='utf-8-sig')
@@ -78,7 +78,11 @@ def spirit(key, name, mods, desc=None):
 
 def tier_effect(name, tiers):
     for tier in tiers:
-        EFFECTS['RR_set_' + tier] = '\n'.join('remove_ideas = RR_' + x for x in tiers if x != tier) + '\n' + idea(tier)
+        branches = []
+        for old in tiers:
+            if old == tier: continue
+            branches.append(('if' if not branches else 'else_if') + ' = { limit = { has_idea = RR_' + old + ' } swap_ideas = { remove_idea = RR_' + old + ' add_idea = RR_' + tier + ' } }')
+        EFFECTS['RR_set_' + tier] = '\n'.join(branches) + '\nelse_if = { limit = { NOT = { has_idea = RR_' + tier + ' } } ' + idea(tier) + ' }'
 
 def focus(key, name, group, xy, parents=(), days=35, reward='', summary='', available='', bypass='', mutex=()):
     f = dict(id=fid(key), name=name, group=group, x=xy[0], y=xy[1], days=days,
@@ -230,7 +234,7 @@ focus('anti_fascism','向法西斯宣战','战争：意识形态',(75,15),['two_
 focus('anti_communism','向共产宣战','战争：意识形态',(78,15),['two_romes'],reward='if = { limit = { SOV = { has_government = communism } } '+wargoal('SOV')+' } every_other_country = { limit = { has_government = communism is_neighbor_of = SOV NOT = { is_in_faction_with = ROOT } NOT = { is_subject_of = ROOT } } ROOT = { create_wargoal = { type = annex_everything target = PREV expire = 365 } } }',summary='对共产主义苏联及其陆地邻接共产国家取得365天吞并战争目标。',mutex=['anti_democracy'])
 focus('restore_rome','重建罗马帝国','罗马终点',(80,16),['two_romes'],70,idea('rome'),'每日政治点+0.15、稳定度+5、适役人口系数+10%；开放一次性国号与首都决议。',available=flag('mare_done')+' '+own(ITALY+TURKEY+BALKANS+LEVANT+EGYPT))
 
-for module in ['content_economy.py', 'content_events.py', 'content_people.py', 'content_fixes.py', 'content_balance.py', 'emit_mod.py']:
+for module in ['content_economy.py', 'content_events.py', 'content_people.py', 'content_fixes.py', 'content_balance.py', 'content_ingame_fixes.py', 'content_army.py', 'emit_mod.py']:
     exec(compile((ROOT/'tools'/module).read_text(encoding='utf-8-sig'), module, 'exec'), globals())
 
 

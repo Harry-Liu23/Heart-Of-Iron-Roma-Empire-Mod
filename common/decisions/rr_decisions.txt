@@ -47,7 +47,7 @@ remove_effect = { set_country_flag = RR_civic_education RR_set_identity2 = yes }
 RR_turkey_demand = { icon = generic_political_discourse fire_only_once = no
 cost = 75
 visible = { has_completed_focus = RR_legitimacy }
-available = { date > 1936.12.31 has_government = empire is_subject = no NOT = { has_war_with = TUR } OR = { is_in_faction = no is_faction_leader = yes } TUR = { exists = yes } NOT = { has_country_flag = RR_turkey_demand_taken } }
+available = { has_government = empire is_subject = no NOT = { has_war_with = TUR } OR = { is_in_faction = no is_faction_leader = yes } TUR = { exists = yes } NOT = { has_country_flag = RR_turkey_demand_taken } }
 ai_will_do = { factor = 1 }
 complete_effect = {  set_country_flag = RR_turkey_demand_taken TUR = { country_event = { id = rr.5 } } }
 }

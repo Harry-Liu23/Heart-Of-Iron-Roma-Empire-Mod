@@ -9,19 +9,19 @@
       "days": 70,
       "parents": [
         [
-          "GRE_metaxism_focus",
-          "GRE_bring_home_the_exiled_republicans"
+          "GRE_metaxism_focus"
         ]
       ],
-      "reward": "add_political_power = 100 add_stability = .1 RR_set_movement1 = yes RR_recruit_court = yes add_to_variable = { GRE_monarchist_loyalty = 1 } country_event = { id = rr.0 }",
-      "summary": "政治点+100，稳定度+10；帝国倾向每日+0.03；开放君士坦丁十一世、14名指挥官与帝国顾问。",
-      "available": "",
+      "reward": "add_political_power = 100 add_stability = .1 RR_set_movement1 = yes RR_recruit_court = yes add_to_variable = { GRE_monarchist_loyalty = 1 } country_event = { id = rr.0 } add_popularity = { ideology = empire popularity = 0.10 }",
+      "summary": "政治点+100，稳定度+10；帝国倾向每日+0.03；开放君士坦丁十一世、14名指挥官与帝国顾问。 帝国意识形态基础支持率立即增加10个百分点。",
+      "available": "custom_trigger_tooltip = { tooltip = RR_vanilla_route_clear_tt NOT = { OR = { has_completed_focus = GRE_compromise_with_the_monarchists has_completed_focus = GRE_remembering_the_anatolian_catastrophe has_completed_focus = GRE_venerate_the_ancient_hellenes has_completed_focus = GRE_restoring_our_home has_completed_focus = GRE_the_birthplace_of_democracy has_completed_focus = GRE_theban_warriors has_completed_focus = GRE_athenian_thinkers has_completed_focus = GRE_macedonian_generals has_completed_focus = GRE_the_anatolian_refugees has_completed_focus = GRE_resurrecting_the_megali_idea has_completed_focus = GRE_the_gordian_knot has_completed_focus = GRE_horror_and_fear has_completed_focus = GRE_nenikikamen has_completed_focus = GRE_the_die_is_cast has_completed_focus = GRE_reviving_the_double_headed_eagle has_completed_focus = GRE_phoideratoi has_completed_focus = GRE_byzantine_themata has_completed_focus = GRE_request_communist_support has_completed_focus = GRE_a_socialist_economy has_completed_focus = GRE_nationalized_banks has_completed_focus = GRE_agricultural_communes has_completed_focus = GRE_soviet_subsidised_railways has_completed_focus = GRE_clearing_land_for_industrial_expansion has_completed_focus = GRE_depose_the_reactionaries has_completed_focus = GRE_the_greek_industrial_revolution has_completed_focus = GRE_red_militias has_completed_focus = GRE_prepare_for_the_great_anti_fascist_war has_completed_focus = GRE_tow_the_stalinist_line has_completed_focus = GRE_dominate_the_bulgarians has_completed_focus = GRE_ally_tito has_completed_focus = GRE_secure_the_aegean has_completed_focus = GRE_attack_the_fascists has_completed_focus = GRE_stage_an_incident_in_the_bosporus has_completed_focus = GRE_revolutionaries_of_the_south has_completed_focus = GRE_the_kings_government has_completed_focus = GRE_the_right_to_rule has_completed_focus = GRE_reorganize_the_royal_guard has_completed_focus = GRE_petition_britain_for_aid has_completed_focus = GRE_utilize_british_capital has_completed_focus = GRE_the_hellenic_spirit has_completed_focus = GRE_the_national_youth_organisation has_completed_focus = GRE_crack_down_on_the_republicans has_completed_focus = GRE_use_the_military has_completed_focus = GRE_recruit_the_fascists has_completed_focus = GRE_realign_ourselves_with_the_central_powers has_completed_focus = GRE_our_traditional_allies_in_the_aegean has_completed_focus = GRE_prepare_against_the_mediterranean_threat has_completed_focus = GRE_reclaiming_the_wayward_ally has_completed_focus = GRE_the_greater_enosis has_completed_focus = GRE_securing_the_bulgarian_menace has_completed_focus = GRE_expansion_of_athens_university has_completed_focus = GRE_protectors_of_the_mediterranean has_completed_focus = GRE_an_orthodox_state has_completed_focus = GRE_third_hellenic_civilization has_completed_focus = GRE_defending_our_kingdom has_completed_focus = GRE_reviving_the_spartan_warrior_spirit has_completed_focus = GRE_following_in_the_footsteps_of_giants has_completed_focus = GRE_the_modern_movement has_completed_focus = GRE_hellenoturkism has_completed_focus = GRE_cement_greco_german_ties has_completed_focus = GRE_subjugating_the_bulgarians has_completed_focus = GRE_greece_and_turkey_in_the_axis has_completed_focus = GRE_last_country_standing has_completed_focus = GRE_moulding_the_new_world_order has_completed_focus = GRE_lignite_liquefaction has_completed_focus = GRE_extracting_more_from_our_soil has_completed_focus = GRE_the_macedonian_farmlands has_completed_focus = GRE_utilize_our_strengths has_completed_focus = GRE_force_the_farmers_into_factories has_completed_focus = GRE_open_foreign_subsidized_factories has_completed_focus = GRE_paying_back_our_debts_in_bulk has_completed_focus = GRE_connecting_our_prefectures has_completed_focus = GRE_fiscal_responsibility has_completed_focus = GRE_sophistry_and_science has_completed_focus = GRE_bedrock_of_balkan_financial_stability has_completed_focus = GRE_exporting_more_luxury_commodoties has_completed_focus = GRE_greek_autarky has_completed_focus = GRE_expand_our_tobacco_industry has_completed_focus = GRE_increase_our_mining_operations has_completed_focus = GRE_encourage_tourism has_completed_focus = GRE_mobilise_our_economy has_completed_focus = GRE_rejuvenating_athens has_completed_focus = GRE_making_use_of_our_islands has_completed_focus = GRE_clear_the_slums has_completed_focus = GRE_crack_down_on_foreign_monopolies has_completed_focus = GRE_cooperate_with_foreign_monopolies has_completed_focus = GRE_academy_of_athens has_completed_focus = GRE_four_year_plan has_completed_focus = GRE_open_up_the_country has_completed_focus = GRE_bolster_the_schachtplan has_completed_focus = GRE_rapprochement_with_the_italians has_completed_focus = GRE_british_docking_rights has_completed_focus = GRE_renegotiate_debt_with_france has_completed_focus = GRE_appeal_to_the_soviet_union has_completed_focus = GRE_hellenic_armed_forces has_completed_focus = GRE_the_hellenic_air_force has_completed_focus = GRE_the_hellenic_army has_completed_focus = GRE_the_hellenic_navy has_completed_focus = GRE_a_modern_navy has_completed_focus = GRE_abandon_the_greek_turkish_naval_treaty has_completed_focus = GRE_a_fleet_fit_for_the_aegean has_completed_focus = GRE_disrupting_the_great_powers has_completed_focus = GRE_the_cannon has_completed_focus = GRE_the_torpedo has_completed_focus = GRE_a_long_and_proud_tradition has_completed_focus = GRE_the_backbone_of_our_army has_completed_focus = GRE_a_legacy_of_war has_completed_focus = GRE_embracing_modern_warfare has_completed_focus = GRE_new_weapons_old_tricks has_completed_focus = GRE_hellenic_armoured_corp has_completed_focus = GRE_greek_mechanisation has_completed_focus = GRE_a_land_of_mountains has_completed_focus = GRE_destroying_our_foes has_completed_focus = GRE_protecting_our_skies has_completed_focus = GRE_escorts_for_our_bombers has_completed_focus = GRE_defending_our_seas has_completed_focus = GRE_fund_the_hellenic_air_force_academy has_completed_focus = GRE_the_double_headed_aquila has_completed_focus = GRE_modern_cataphracts has_completed_focus = GRE_thema_nautikon } } }",
       "bypass": "",
       "mutex": [
         "GRE_compromise_with_the_monarchists",
-        "GRE_reevaluating_the_drachma",
         "GRE_four_year_plan",
-        "GRE_the_kings_government"
+        "GRE_the_kings_government",
+        "GRE_request_communist_support",
+        "GRE_expansion_of_athens_university"
       ]
     },
     {
@@ -36,8 +36,8 @@
           "RR_empire"
         ]
       ],
-      "reward": "add_political_power = 75 RR_set_movement2 = yes country_event = { id = rr.1 days = 35 }",
-      "summary": "政治点+75；帝国倾向升至每日+0.05；国策完成后再等待35天触发帝国问题。",
+      "reward": "\n\t\t\tif = { limit = { has_idea = GRE_schachtplan } remove_ideas = GRE_schachtplan }\n\t\t\tif = { \n\t\t\t\tlimit = { \n\t\t\t\t\tENG = { \n\t\t\t\t\t\thas_government = democratic\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tENG = { \n\t\t\t\t\tadd_opinion_modifier = { target = GRE modifier = democratic_leanings_good }\n\t\t\t\t}\n\t\t\t}\n\t\t\tif = { \n\t\t\t\tlimit = { \n\t\t\t\t\tFRA = { \n\t\t\t\t\t\thas_government = democratic\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tFRA = { \n\t\t\t\t\tadd_opinion_modifier = { target = GRE modifier = democratic_leanings_good }\n\t\t\t\t}\n\t\t\t}\n\t\t\tGER = {\n\t\t\t\tadd_opinion_modifier = { target = GRE modifier = GRE_discarded_the_schachtplan } \n\t\t\t}\n\t\t\tif = { \n\t\t\t\tlimit = { \n\t\t\t\t\tcheck_variable = { var = GRE_debt_to_the_ifc_italy_var value = 2.5 compare = greater_than_or_equals } \n\t\t\t\t}\n\t\t\t\teffect_tooltip = { \n\t\t\t\t\tITA = {\n\t\t\t\t\t\tadd_opinion_modifier = { target = GRE modifier = GRE_reneged_on_debt } \n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\thidden_effect = { GRE_default_on_italian_debt_effect = yes }\n\t\t\t}\n\t\t\ncountry_event = { id = rr.1 days = 35 }",
+      "summary": "复制原版重建家园奖励：移除沙赫特计划；民主英国、民主法国对我国关系各+15，德国−50；意大利债务变量≥2.5时，执行原版对意大利债务违约及关系−100。完成后再等35天触发帝国问题事件。",
       "available": "",
       "bypass": "",
       "mutex": []
@@ -131,7 +131,7 @@
           "RR_codex"
         ]
       ],
-      "reward": "remove_ideas = RR_census add_ideas = RR_citizens RR_set_movement4 = yes",
+      "reward": "swap_ideas = { remove_idea = RR_census add_idea = RR_citizens } RR_set_movement4 = yes",
       "summary": "人口普查精神升级为适役人口系数+20%、动员速度+15%；帝国倾向每日+0.12。",
       "available": "has_country_flag = RR_census_done",
       "bypass": "",
@@ -203,7 +203,7 @@
           "RR_wisdom_focus"
         ]
       ],
-      "reward": "remove_ideas = RR_wisdom add_ideas = RR_culture",
+      "reward": "swap_ideas = { remove_idea = RR_wisdom add_idea = RR_culture }",
       "summary": "文化精神升级为稳定度+10、科研+5%、核心防御+5%、指挥点增长+5%。",
       "available": "",
       "bypass": "",
@@ -257,8 +257,8 @@
           "RR_legitimacy"
         ]
       ],
-      "reward": "set_cosmetic_tag = RR_BYZ 49 = { add_core_of = ROOT }\n339 = { add_core_of = ROOT }\n340 = { add_core_of = ROOT }\n341 = { add_core_of = ROOT }\n342 = { add_core_of = ROOT }\n343 = { add_core_of = ROOT }\n344 = { add_core_of = ROOT }\n345 = { add_core_of = ROOT }\n346 = { add_core_of = ROOT }\n347 = { add_core_of = ROOT }\n348 = { add_core_of = ROOT }\n349 = { add_core_of = ROOT }\n350 = { add_core_of = ROOT }\n352 = { add_core_of = ROOT }\n353 = { add_core_of = ROOT }\n354 = { add_core_of = ROOT }\n355 = { add_core_of = ROOT }\n356 = { add_core_of = ROOT }\n797 = { add_core_of = ROOT }\n798 = { add_core_of = ROOT }\n800 = { add_core_of = ROOT } country_event = { id = rr.7 }",
-      "summary": "国名改为拜占庭；获得全部1936年土耳其本土地块的核心。",
+      "reward": "set_cosmetic_tag = RR_BYZ 49 = { add_core_of = ROOT }\n339 = { add_core_of = ROOT }\n340 = { add_core_of = ROOT }\n341 = { add_core_of = ROOT }\n342 = { add_core_of = ROOT }\n343 = { add_core_of = ROOT }\n344 = { add_core_of = ROOT }\n345 = { add_core_of = ROOT }\n346 = { add_core_of = ROOT }\n347 = { add_core_of = ROOT }\n348 = { add_core_of = ROOT }\n349 = { add_core_of = ROOT }\n350 = { add_core_of = ROOT }\n352 = { add_core_of = ROOT }\n353 = { add_core_of = ROOT }\n354 = { add_core_of = ROOT }\n355 = { add_core_of = ROOT }\n356 = { add_core_of = ROOT }\n797 = { add_core_of = ROOT }\n798 = { add_core_of = ROOT }\n800 = { add_core_of = ROOT } country_event = { id = rr.7 } unlock_decision_tooltip = byz_restore_byzantium",
+      "summary": "国名改为拜占庭；获得全部1936年土耳其本土地块的核心。 解锁原版重建拜占庭帝国决议，保留原版领土与独立条件及奖励。",
       "available": "797 = { is_owned_by = ROOT is_controlled_by = ROOT }",
       "bypass": "",
       "mutex": []
@@ -315,8 +315,8 @@
         ]
       ],
       "reward": "add_political_power = 150",
-      "summary": "政治点+150；完成制度改革并统一土耳其故土后，开放后续制度、宗教和征服分支。",
-      "available": "49 = { is_owned_by = ROOT is_controlled_by = ROOT }\n339 = { is_owned_by = ROOT is_controlled_by = ROOT }\n340 = { is_owned_by = ROOT is_controlled_by = ROOT }\n341 = { is_owned_by = ROOT is_controlled_by = ROOT }\n342 = { is_owned_by = ROOT is_controlled_by = ROOT }\n343 = { is_owned_by = ROOT is_controlled_by = ROOT }\n344 = { is_owned_by = ROOT is_controlled_by = ROOT }\n345 = { is_owned_by = ROOT is_controlled_by = ROOT }\n346 = { is_owned_by = ROOT is_controlled_by = ROOT }\n347 = { is_owned_by = ROOT is_controlled_by = ROOT }\n348 = { is_owned_by = ROOT is_controlled_by = ROOT }\n349 = { is_owned_by = ROOT is_controlled_by = ROOT }\n350 = { is_owned_by = ROOT is_controlled_by = ROOT }\n352 = { is_owned_by = ROOT is_controlled_by = ROOT }\n353 = { is_owned_by = ROOT is_controlled_by = ROOT }\n354 = { is_owned_by = ROOT is_controlled_by = ROOT }\n355 = { is_owned_by = ROOT is_controlled_by = ROOT }\n356 = { is_owned_by = ROOT is_controlled_by = ROOT }\n797 = { is_owned_by = ROOT is_controlled_by = ROOT }\n798 = { is_owned_by = ROOT is_controlled_by = ROOT }\n800 = { is_owned_by = ROOT is_controlled_by = ROOT }",
+      "summary": "政治点+150；完成前置国策后，只需拥有君士坦丁堡且土耳其不存在，开放后续制度、宗教和征服分支。",
+      "available": "owns_state = 797 NOT = { country_exists = TUR }",
       "bypass": "",
       "mutex": []
     },
@@ -376,7 +376,7 @@
     },
     {
       "id": "RR_faith",
-      "name": "帝国与信仰",
+      "name": "重启圣像之争",
       "group": "宗教",
       "x": 68,
       "y": 10,
@@ -387,15 +387,15 @@
         ]
       ],
       "reward": "add_political_power = 75",
-      "summary": "政治点+75；选择教会帝国或公民认同路线。",
+      "summary": "政治点+75；圣像崇敬与圣像破坏两条路线互斥。",
       "available": "",
       "bypass": "",
       "mutex": []
     },
     {
       "id": "RR_church_crown",
-      "name": "教会与皇权",
-      "group": "宗教：教会",
+      "name": "尼西亚的回响",
+      "group": "宗教：圣像崇敬",
       "x": 66,
       "y": 11,
       "days": 35,
@@ -405,7 +405,7 @@
         ]
       ],
       "reward": "RR_set_church1 = yes",
-      "summary": "教会与帝国升级至第1档：适役人口+5%、稳定度+5、战争支持+5、科研−3%。",
+      "summary": "圣像崇敬精神升级至：适役人口系数+5%、稳定度+5%、战争支持度+5%、科研速度−3%。",
       "available": "",
       "bypass": "",
       "mutex": [
@@ -414,8 +414,8 @@
     },
     {
       "id": "RR_dioceses",
-      "name": "复兴教区网络",
-      "group": "宗教：教会",
+      "name": "修道院与施济所",
+      "group": "宗教：圣像崇敬",
       "x": 66,
       "y": 12,
       "days": 70,
@@ -425,15 +425,15 @@
         ]
       ],
       "reward": "RR_set_church2 = yes",
-      "summary": "教会与帝国升级至第2档：适役人口+15%、稳定度+10、战争支持+10、科研−5%。",
+      "summary": "圣像崇敬精神升级至：适役人口系数+15%、稳定度+10%、战争支持度+10%、科研速度−5%、陆军组织度恢复+2%。",
       "available": "",
       "bypass": "",
       "mutex": []
     },
     {
       "id": "RR_faith_guard",
-      "name": "信仰的守护者",
-      "group": "宗教：教会",
+      "name": "圣像守护者",
+      "group": "宗教：圣像崇敬",
       "x": 66,
       "y": 13,
       "days": 70,
@@ -443,15 +443,15 @@
         ]
       ],
       "reward": "RR_set_church3 = yes",
-      "summary": "教会与帝国升级至第3档：适役人口+25%、稳定度+15、战争支持+15、科研−8%。",
+      "summary": "圣像崇敬精神升级至：适役人口系数+25%、稳定度+15%、战争支持度+15%、科研速度−6%、陆军组织度恢复+3%。",
       "available": "",
       "bypass": "",
       "mutex": []
     },
     {
       "id": "RR_sacred_contract",
-      "name": "神圣帝国契约",
-      "group": "宗教：教会",
+      "name": "正教的凯旋",
+      "group": "宗教：圣像崇敬",
       "x": 66,
       "y": 14,
       "days": 70,
@@ -461,15 +461,15 @@
         ]
       ],
       "reward": "RR_set_church4 = yes",
-      "summary": "教会与帝国升级至第4档：适役人口+35%、稳定度+20、战争支持+20、科研−10%。",
+      "summary": "圣像崇敬精神升级至：适役人口系数+35%、稳定度+20%、战争支持度+15%、科研速度−8%、陆军组织度恢复+5%。",
       "available": "",
       "bypass": "",
       "mutex": []
     },
     {
       "id": "RR_private_faith",
-      "name": "信仰属于私人",
-      "group": "宗教：公民",
+      "name": "伊苏里亚敕令",
+      "group": "宗教：圣像破坏",
       "x": 70,
       "y": 11,
       "days": 35,
@@ -479,7 +479,7 @@
         ]
       ],
       "reward": "RR_set_identity1 = yes",
-      "summary": "认同的转变：稳定度−5、战争支持−10；开放公民教育改革决议。",
+      "summary": "圣像整顿精神升级至：稳定度−5%、战争支持度−10%、每日政治点+0.05；开放整顿教产与学校决议。",
       "available": "",
       "bypass": "",
       "mutex": [
@@ -488,8 +488,8 @@
     },
     {
       "id": "RR_roman_community",
-      "name": "罗马人的共同体",
-      "group": "宗教：公民",
+      "name": "希耶里亚的决议",
+      "group": "宗教：圣像破坏",
       "x": 70,
       "y": 12,
       "days": 70,
@@ -499,15 +499,15 @@
         ]
       ],
       "reward": "RR_set_identity3 = yes",
-      "summary": "认同精神升级：稳定度+10、战争支持+5、科研+6%、适役人口系数+15%。",
+      "summary": "圣像整顿精神升级至：稳定度+10%、战争支持度+5%、科研速度+6%、适役人口系数+15%、每日政治点+0.20、法律成本−10%、动员速度+10%。",
       "available": "has_country_flag = RR_civic_education",
       "bypass": "",
       "mutex": []
     },
     {
       "id": "RR_citizen_above_creed",
-      "name": "公民高于教籍",
-      "group": "宗教：公民",
+      "name": "十字架下的皇权",
+      "group": "宗教：圣像破坏",
       "x": 70,
       "y": 13,
       "days": 35,
@@ -517,7 +517,7 @@
         ]
       ],
       "reward": "RR_set_identity4 = yes",
-      "summary": "认同精神最终：稳定度+15、战争支持+10、科研+10%、适役人口系数+25%。",
+      "summary": "圣像整顿精神最终：稳定度+15%、战争支持度+10%、科研速度+10%、适役人口系数+25%、每日政治点+0.30、法律成本−15%、动员速度+15%。",
       "available": "",
       "bypass": "",
       "mutex": []
@@ -778,6 +778,9 @@
       "parents": [
         [
           "RR_empire"
+        ],
+        [
+          "GRE_reevaluating_the_drachma"
         ]
       ],
       "reward": " \n\t\t\tif = { \n\t\t\t\tlimit = { \n\t\t\t\t\thas_idea = GRE_agrarian_society\n\t\t\t\t}\n\t\t\t\tswap_ideas = {\n\t\t\t\t\tremove_idea = GRE_agrarian_society\n\t\t\t\t\tadd_idea = GRE_industrializing_society\n\t\t\t\t}\n\t\t\t\tadd_stability = -0.15\n\t\t\t}\n\t\t\telse_if = { \n\t\t\t\tlimit = { \n\t\t\t\t\thas_idea = GRE_agricultural_communes_idea\n\t\t\t\t}\n\t\t\t\tadd_timed_idea = {\n\t\t\t\t\tidea = GRE_rural_exodus \n\t\t\t\t\tdays = 280\n\t\t\t\t}\n\t\t\t\tadd_stability = -0.10\n\t\t\t}\n\t\t set_country_flag = RR_debt_open",
@@ -818,7 +821,7 @@
       ],
       "reward": "add_political_power = 120 set_country_flag = RR_enterprises RR_update_enterprises = yes",
       "summary": "政治点+120；开放帝国工业企业和1级军工机构。要求债务已部分或全部偿还。",
-      "available": "OR = { has_idea = GRE_debt_to_the_ifc_2 has_idea = GRE_debt_to_the_ifc_3 has_country_flag = GRE_completely_debt_free }",
+      "available": "OR = { has_idea = GRE_debt_to_the_ifc_2 has_idea = GRE_debt_to_the_ifc_3 has_country_flag = GRE_completely_debt_free has_country_flag = GRE_defaulted_on_debt_flag }",
       "bypass": "",
       "mutex": []
     },
@@ -1113,6 +1116,9 @@
       "parents": [
         [
           "RR_empire"
+        ],
+        [
+          "GRE_reevaluating_the_drachma"
         ]
       ],
       "reward": "\t\n            random_owned_controlled_state = {\n\t\t\t\tprioritize = { 186 }\n               \tlimit = {\n                    free_building_slots = {\n                       \tbuilding = synthetic_refinery\n                        size > 0\n                        include_locked = yes\n                    }\n                }\n                add_extra_state_shared_building_slots = 1\n                add_building_construction = {\n                    type = synthetic_refinery\n                    level = 1\n                    instant_build = yes\n                }\n            }\n            effect_tooltip = { \n            \tadd_ideas = GRE_dep\n            }\n        ",
@@ -1282,6 +1288,171 @@
       "available": "",
       "bypass": "",
       "mutex": []
+    },
+    {
+      "id": "RR_new_marian_reforms",
+      "name": "新马略军改",
+      "group": "陆军：步兵",
+      "x": 117,
+      "y": 3,
+      "days": 21,
+      "parents": [
+        [
+          "RR_empire"
+        ]
+      ],
+      "reward": "add_army_experience = 25 add_ideas = RR_marian_reform_spirit add_tech_bonus = { name = RR_new_marian_reforms bonus = .5 uses = 1 category = infantry_weapons } add_tech_bonus = { name = RR_new_marian_reforms bonus = .5 uses = 1 category = artillery } custom_effect_tooltip = RR_marian_minister_tt hidden_effect = { RR_upgrade_marian_minister = yes }",
+      "summary": "陆军经验+25、每日陆军经验+0.05；步兵装备和火炮各1次50%研究加成，两类研究速度永久+5%；贝利萨留升级为75政治点的改革版陆军部长。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_rebuild_themes",
+      "name": "重建军区制",
+      "group": "陆军：步兵",
+      "x": 117,
+      "y": 4,
+      "days": 28,
+      "parents": [
+        [
+          "RR_new_marian_reforms"
+        ]
+      ],
+      "reward": "add_ideas = RR_military_themes_spirit custom_effect_tooltip = RR_unlock_john_ii_theorist_tt",
+      "summary": "训练时间−15%、部队经验获取+20%、陆军损耗−15%（包含演习）；开放约翰二世为军团战争理论家。",
+      "available": "num_divisions > 7",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_state_armories",
+      "name": "重建国家军械所",
+      "group": "陆军：步兵",
+      "x": 117,
+      "y": 5,
+      "days": 28,
+      "parents": [
+        [
+          "RR_rebuild_themes"
+        ]
+      ],
+      "reward": "add_ideas = RR_state_armories_spirit set_country_flag = RR_army_reward_state_armories RR_update_enterprises = yes custom_effect_tooltip = RR_army_mio_pending_tt",
+      "summary": "步兵装备成本−20%；牵引火炮、防空炮、反坦克炮、火箭炮及支援装备成本−15%；比雷埃夫斯兵工局经费+1000、机构研究加成+10个百分点，未开放时保留。",
+      "available": "num_of_military_factories > 2",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_roman_legions",
+      "name": "罗马军团",
+      "group": "陆军：步兵",
+      "x": 117,
+      "y": 6,
+      "days": 35,
+      "parents": [
+        [
+          "RR_state_armories"
+        ]
+      ],
+      "reward": "add_unit_bonus = {\n        infantry = { max_organisation = 10 defense = .15 soft_attack = .10 name = RR_roman_legions }\n        artillery = { soft_attack = .10 name = RR_roman_legions }\n        artillery_brigade = { soft_attack = .10 name = RR_roman_legions }\n    }",
+      "summary": "普通徒步步兵组织度+10、防御+15%、软攻击+10%；牵引火炮（含支援炮兵）软攻击+10%。永久国策加成，不解锁专属科技。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_recast_cataphracts",
+      "name": "重铸铁甲骑兵",
+      "group": "陆军：装甲",
+      "x": 121,
+      "y": 3,
+      "days": 21,
+      "parents": [
+        [
+          "RR_empire"
+        ]
+      ],
+      "reward": "add_army_experience = 25 add_ideas = RR_cataphract_research_spirit add_tech_bonus = { name = RR_recast_cataphracts bonus = .5 uses = 2 category = armor }",
+      "summary": "陆军经验+25；2次坦克科技50%研究加成；坦克科技研究速度永久+5%。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_revise_strategikon",
+      "name": "重修《战略论》",
+      "group": "陆军：装甲",
+      "x": 121,
+      "y": 4,
+      "days": 28,
+      "parents": [
+        [
+          "RR_recast_cataphracts"
+        ]
+      ],
+      "reward": "add_army_experience = 30 add_ideas = RR_strategikon_spirit custom_effect_tooltip = RR_unlock_heraclius_theorist_tt",
+      "summary": "陆军经验+30、陆军经验获取+10%、陆军学说花费−10%；开放希拉克略为装甲战争理论家。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_imperial_workshops",
+      "name": "帝国御用兵工坊",
+      "group": "陆军：装甲",
+      "x": 121,
+      "y": 5,
+      "days": 28,
+      "parents": [
+        [
+          "RR_revise_strategikon"
+        ]
+      ],
+      "reward": "add_ideas = RR_imperial_workshops_spirit set_country_flag = RR_army_reward_imperial_workshops RR_update_enterprises = yes custom_effect_tooltip = RR_army_mio_pending_tt",
+      "summary": "坦克及衍生车辆、装甲车生产成本−15%、可靠性+5个百分点；安纳托利亚装甲联合厂经费+1000、机构研究加成+10个百分点，未开放时保留。",
+      "available": "num_of_military_factories > 2",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_modern_cataphracts",
+      "name": "现代铁甲圣骑兵",
+      "group": "陆军：装甲",
+      "x": 121,
+      "y": 6,
+      "days": 35,
+      "parents": [
+        [
+          "RR_imperial_workshops"
+        ]
+      ],
+      "reward": "add_ideas = RR_modern_cataphracts_spirit",
+      "summary": "坦克、坦克歼击车、自行火炮、自行防空炮及装甲车移动速度+10%、软硬攻击+15%、防御+15%；不增加突破，不解锁专属科技。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
+    },
+    {
+      "id": "RR_roman_military_glory",
+      "name": "罗马军威再临",
+      "group": "陆军：合流",
+      "x": 119,
+      "y": 7,
+      "days": 35,
+      "parents": [
+        [
+          "RR_roman_legions"
+        ],
+        [
+          "RR_modern_cataphracts"
+        ]
+      ],
+      "reward": "add_army_experience = 75 add_political_power = 100\n    capital_scope = { add_extra_state_shared_building_slots = 2\n        add_building_construction = { type = arms_factory level = 2 instant_build = yes } }\n    add_ideas = RR_roman_military_glory_spirit set_country_flag = RR_army_reward_roman_military_glory RR_update_enterprises = yes custom_effect_tooltip = RR_army_mio_pending_tt custom_effect_tooltip = RR_unlock_alexios_i_theorist_tt",
+      "summary": "两线完成后：陆军经验+75、政治点+100、首都2军工及2建筑槽；陆军组织度+5%、恢复+10%、补给消耗−10%、计划上限+10%；三家陆军企业各500经费；开放阿莱克修斯一世为帝国战争理论家。",
+      "available": "",
+      "bypass": "",
+      "mutex": []
     }
   ],
   "decisions": [
@@ -1297,7 +1468,8 @@
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "皇帝需要一个能够汇集各方意见的议事机关。重新召集元老，厘清席位与议程，让帝国的法令有一个可以公开辩论的起点。"
     },
     {
       "id": "RR_population_census",
@@ -1311,7 +1483,8 @@
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "从雅典的街巷到乡村的田地，许多居民仍不曾进入完整的国家名册。我们将登记家庭、职业与服役义务，让公民真正成为帝国治理的基础。"
     },
     {
       "id": "RR_provincial_council",
@@ -1325,7 +1498,8 @@
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "首都不可能了解每一座城镇的需要。行省代表将带着地方的账册和诉求前来议事，把中央的法令与地方的实际联系起来。"
     },
     {
       "id": "RR_institution_meeting",
@@ -1339,21 +1513,23 @@
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "军区长官与土地持有者对帝国的未来各有主张。召集制度会议，由皇帝裁定税收、土地与服役义务应当如何安排。"
     },
     {
       "id": "RR_civic_schooling",
-      "name": "公民教育改革",
+      "name": "整顿教产与学校",
       "cost": 100,
       "days": 60,
       "visible": "has_completed_focus = RR_private_faith",
       "available": "",
       "reward": "set_country_flag = RR_civic_education RR_set_identity2 = yes",
-      "summary": "100政治点，60天；认同精神改为稳定度0、战争支持−5、科研+3%、适役人口系数+5%；开放罗马人的共同体。",
+      "summary": "75政治点，60天；精神升级为稳定度0、战争支持度−5%、科研速度+5%、适役人口系数+5%、每日政治点+0.10、法律成本−10%、动员速度+5%；开放希耶里亚的决议。",
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "圣像之争已经进入教产与教育的日常管理。皇帝要求清点账册，将部分收入用于学校，并明确教会与官署的职责。新的秩序必须靠持续治理赢得接受。"
     },
     {
       "id": "RR_turkey_demand",
@@ -1361,13 +1537,14 @@
       "cost": 75,
       "days": 0,
       "visible": "has_completed_focus = RR_legitimacy",
-      "available": "date > 1936.12.31 has_government = empire is_subject = no NOT = { has_war_with = TUR } OR = { is_in_faction = no is_faction_leader = yes } TUR = { exists = yes }",
+      "available": "has_government = empire is_subject = no NOT = { has_war_with = TUR } OR = { is_in_faction = no is_faction_leader = yes } TUR = { exists = yes }",
       "reward": "TUR = { country_event = { id = rr.5 } }",
-      "summary": "75政治点，1937年1月1日起；帝国执政、独立、与土耳其和平、不在外国领导的阵营。土耳其90%拒绝并立即开战，10%接受并割让约定领土。",
+      "summary": "75政治点，帝国执政、独立、与土耳其和平、不在外国领导的阵营。土耳其90%拒绝并立即开战，10%接受并割让约定领土。",
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "双头鹰的法统不能永远停留在演说之中。我们的使节将前往安卡拉，要求土耳其承认拜占庭的正统并交还争议领土。这封照会将决定博斯普鲁斯两岸迎来交接，还是战争。"
     },
     {
       "id": "RR_capital_constantinople",
@@ -1381,7 +1558,8 @@
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "君士坦丁堡再次向我们敞开城门。修缮官署、安置居民，将皇帝与政府迁回海峡之城，让新罗马重新成为帝国的心脏。"
     },
     {
       "id": "RR_holy_city",
@@ -1395,7 +1573,8 @@
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "耶路撒冷的钟声属于许多不同的信众。帝国将承担守护圣地的责任，维持街道与朝圣道路的秩序，让新的统治以安宁证明自身。"
     },
     {
       "id": "RR_granary",
@@ -1409,7 +1588,8 @@
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "尼罗河的收成曾经养育帝国的城市。如今我们必须重新审视南方的航道与粮运，让埃及再次进入帝国的战略视野。"
     },
     {
       "id": "RR_our_sea",
@@ -1423,7 +1603,8 @@
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "从安条克到亚历山大里亚，港口与航道正重新连为一体。协调舰队、码头与海运，使地中海上的帝国据点能够彼此支援。"
     },
     {
       "id": "RR_proclaim_rome",
@@ -1437,7 +1618,8 @@
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "旧罗马与新罗马已经归于同一面旗帜。现在，皇帝与元老院将共同宣布帝国的重建，并决定这份宣言应从哪一座首都传向世界。"
     },
     {
       "id": "RR_higher_education",
@@ -1451,7 +1633,8 @@
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "各大学仍沿用不同的课程与考核办法。由学者共同制定高等教育标准，使知识能够在帝国的院校之间自由传承。"
     },
     {
       "id": "RR_education_system",
@@ -1465,7 +1648,8 @@
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "仅靠几所大学无法支撑国家的未来。我们将培养教师、编订课程并建立教育行政，让城镇与乡村的孩子都能走进课堂。"
     },
     {
       "id": "RR_national_laboratory",
@@ -1479,7 +1663,8 @@
       "once": true,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "研究委员会的图纸已经铺满桌面。集中设备、人才与经费，建设一座能够把理论转化为突破的国家实验设施。"
     },
     {
       "id": "RR_assembly_decision",
@@ -1493,7 +1678,8 @@
       "once": false,
       "start": "add_timed_idea = { idea = RR_assembly days = 90 }",
       "remove_trigger": "",
-      "cooldown": 180
+      "cooldown": 180,
+      "description": "让公民在广场上听见彼此的声音。公开讨论复兴的目标，将街头的热情凝聚为对帝国事业的支持。"
     },
     {
       "id": "RR_tour_decision",
@@ -1507,7 +1693,8 @@
       "once": false,
       "start": "add_timed_idea = { idea = RR_tour days = 90 }",
       "remove_trigger": "",
-      "cooldown": 180
+      "cooldown": 180,
+      "description": "皇帝将离开首都，亲自听取行省的诉求。沿途的接见与巡视应让臣民看见，帝国的关切并不止于宫墙之内。"
     },
     {
       "id": "RR_registration_decision",
@@ -1521,7 +1708,8 @@
       "once": false,
       "start": "add_timed_idea = { idea = RR_registration days = 120 }",
       "remove_trigger": "",
-      "cooldown": 240
+      "cooldown": 240,
+      "description": "更新公民名册，并将服役登记带到地方。每一份准确的记录都能减少动员时的混乱，让国家更清楚自己可以依靠谁。"
     },
     {
       "id": "RR_conference_decision",
@@ -1535,7 +1723,8 @@
       "once": false,
       "start": "add_timed_idea = { idea = RR_conference days = 180 }",
       "remove_trigger": "",
-      "cooldown": 365
+      "cooldown": 365,
+      "description": "邀请各地学者汇集研究成果。在讲堂与讨论室中交换意见，让孤立的探索成为共同的学术事业。"
     },
     {
       "id": "RR_emergency_research_decision",
@@ -1549,7 +1738,8 @@
       "once": false,
       "start": "add_timed_idea = { idea = RR_emergency_research days = 180 }",
       "remove_trigger": "",
-      "cooldown": 365
+      "cooldown": 365,
+      "description": "紧迫的局势不容研究继续等待常规拨款。国库将为重点课题调集资源，让研究人员尽快验证最有希望的方案。"
     },
     {
       "id": "RR_legal_review_decision",
@@ -1563,7 +1753,8 @@
       "once": false,
       "start": "add_timed_idea = { idea = RR_legal_review days = 120 }",
       "remove_trigger": "",
-      "cooldown": 365
+      "cooldown": 365,
+      "description": "旧法令彼此重叠，地方惯例又常与中央规定冲突。法学家将重新整理条文，让官员与公民都能理解法律的边界。"
     },
     {
       "id": "RR_festival_decision",
@@ -1577,7 +1768,8 @@
       "once": false,
       "start": "add_timed_idea = { idea = RR_festival days = 180 }",
       "remove_trigger": "",
-      "cooldown": 365
+      "cooldown": 365,
+      "description": "城市将装点街道，广场将迎来庆典。用共同的纪念与欢聚，让帝国的重建成为人民能够亲身参与的时刻。"
     },
     {
       "id": "RR_triumph_decision",
@@ -1591,7 +1783,8 @@
       "once": false,
       "start": "clr_country_flag = RR_victory_pending add_timed_idea = { idea = RR_triumph days = 90 }",
       "remove_trigger": "",
-      "cooldown": 0
+      "cooldown": 0,
+      "description": "归来的军队将穿过首都，接受人民的致意。凯旋仪式既纪念胜利，也铭记那些未能归来的名字。"
     },
     {
       "id": "RR_clear_cases",
@@ -1605,7 +1798,8 @@
       "once": false,
       "start": "",
       "remove_trigger": "",
-      "cooldown": 360
+      "cooldown": 360,
+      "description": "积压的案件使公民等待，也使地方官署失去信任。派出审理人员清查案卷，让长久悬而未决的争端得到裁断。"
     }
   ],
   "events": [
@@ -1991,43 +2185,62 @@
       "conscription_factor": 0.15,
       "stability_factor": 0.1,
       "war_support_factor": 0.1,
-      "research_speed_factor": -0.05
+      "research_speed_factor": -0.05,
+      "army_morale_factor": 0.02
     },
     "RR_church3": {
       "conscription_factor": 0.25,
       "stability_factor": 0.15,
       "war_support_factor": 0.15,
-      "research_speed_factor": -0.08
+      "research_speed_factor": -0.06,
+      "army_morale_factor": 0.03
     },
     "RR_church4": {
       "conscription_factor": 0.35,
       "stability_factor": 0.2,
-      "war_support_factor": 0.2,
-      "research_speed_factor": -0.1
+      "war_support_factor": 0.15,
+      "research_speed_factor": -0.08,
+      "army_morale_factor": 0.05
     },
     "RR_identity1": {
       "conscription_factor": 0,
       "stability_factor": -0.05,
       "war_support_factor": -0.1,
-      "research_speed_factor": 0
+      "research_speed_factor": 0,
+      "political_power_gain": 0.05
     },
     "RR_identity2": {
       "conscription_factor": 0.05,
       "stability_factor": 0,
       "war_support_factor": -0.05,
-      "research_speed_factor": 0.03
+      "research_speed_factor": 0.03,
+      "political_power_gain": 0.1,
+      "mobilization_speed": 0.05,
+      "economy_cost_factor": -0.1,
+      "trade_laws_cost_factor": -0.1,
+      "mobilization_laws_cost_factor": -0.1
     },
     "RR_identity3": {
       "conscription_factor": 0.15,
       "stability_factor": 0.1,
       "war_support_factor": 0.05,
-      "research_speed_factor": 0.06
+      "research_speed_factor": 0.06,
+      "political_power_gain": 0.2,
+      "mobilization_speed": 0.1,
+      "economy_cost_factor": -0.1,
+      "trade_laws_cost_factor": -0.1,
+      "mobilization_laws_cost_factor": -0.1
     },
     "RR_identity4": {
       "conscription_factor": 0.25,
       "stability_factor": 0.15,
       "war_support_factor": 0.1,
-      "research_speed_factor": 0.1
+      "research_speed_factor": 0.1,
+      "political_power_gain": 0.3,
+      "mobilization_speed": 0.15,
+      "economy_cost_factor": -0.15,
+      "trade_laws_cost_factor": -0.15,
+      "mobilization_laws_cost_factor": -0.15
     },
     "RR_mare": {
       "industrial_capacity_dockyard": 0.05
@@ -2132,6 +2345,28 @@
     "RR_case_review": {
       "resistance_growth": -0.1,
       "compliance_growth": 0.02
+    },
+    "RR_marian_reform_spirit": {
+      "experience_gain_army": 0.05
+    },
+    "RR_military_themes_spirit": {
+      "training_time_army_factor": -0.15,
+      "experience_gain_army_unit_factor": 0.2,
+      "attrition": -0.15
+    },
+    "RR_cataphract_research_spirit": {},
+    "RR_strategikon_spirit": {
+      "experience_gain_army_factor": 0.1,
+      "land_doctrine_cost_factor": -0.1
+    },
+    "RR_state_armories_spirit": {},
+    "RR_imperial_workshops_spirit": {},
+    "RR_modern_cataphracts_spirit": {},
+    "RR_roman_military_glory_spirit": {
+      "army_org_factor": 0.05,
+      "army_org_regain": 0.1,
+      "supply_consumption_factor": -0.1,
+      "max_planning_factor": 0.1
     }
   },
   "traits": {
@@ -2199,6 +2434,24 @@
     "RR_university_director_trait": {
       "research_speed_factor": 0.05,
       "special_project_speed_factor": 0.05
+    },
+    "RR_john_ii_theorist_trait": {
+      "experience_gain_army": 0.2,
+      "land_doctrine_cost_factor": -0.1
+    },
+    "RR_heraclius_theorist_trait": {
+      "experience_gain_army": 0.2,
+      "land_doctrine_cost_factor": -0.1
+    },
+    "RR_alexios_i_theorist_trait": {
+      "experience_gain_army": 0.25,
+      "land_doctrine_cost_factor": -0.15,
+      "experience_gain_army_factor": 0.1
+    },
+    "RR_marian_reformer_trait": {
+      "army_attack_factor": 0.1,
+      "experience_gain_army": 0.15,
+      "training_time_army_factor": -0.1
     }
   },
   "commanders": [
@@ -2438,7 +2691,7 @@
       47,
       "infantry_equipment artillery_equipment",
       "infantry_weapons artillery",
-      "reliability = .05",
+      "reliability = .05 build_cost_ic = -.05",
       ""
     ],
     [
@@ -2447,7 +2700,7 @@
       731,
       "motorized_equipment mechanized_equipment",
       "motorized_equipment",
-      "",
+      " build_cost_ic = -.05 reliability = .05",
       "production_efficiency_gain_factor = .05"
     ],
     [
@@ -2481,12 +2734,74 @@
       "ankara_armor",
       "安纳托利亚装甲联合厂",
       49,
+      "armor armored_car_equipment",
       "armor",
-      "armor",
-      "reliability = .05",
+      "reliability = .05 build_cost_ic = -.05",
       ""
     ]
   ],
+  "army": {
+    "entry": "RR_empire",
+    "days": 259,
+    "infantry": [
+      "RR_new_marian_reforms",
+      "RR_rebuild_themes",
+      "RR_state_armories",
+      "RR_roman_legions"
+    ],
+    "armor": [
+      "RR_recast_cataphracts",
+      "RR_revise_strategikon",
+      "RR_imperial_workshops",
+      "RR_modern_cataphracts"
+    ],
+    "final": "RR_roman_military_glory",
+    "theorists": [
+      {
+        "character": "RR_john_ii",
+        "token": "RR_john_ii_theorist",
+        "trait": "RR_john_ii_theorist_trait",
+        "title": "军团战争理论家",
+        "unlock": "RR_rebuild_themes",
+        "research": {
+          "infantry_weapons": 0.05,
+          "artillery": 0.05
+        },
+        "cost": 100
+      },
+      {
+        "character": "RR_heraclius",
+        "token": "RR_heraclius_theorist",
+        "trait": "RR_heraclius_theorist_trait",
+        "title": "装甲战争理论家",
+        "unlock": "RR_revise_strategikon",
+        "research": {
+          "armor": 0.1
+        },
+        "cost": 100
+      },
+      {
+        "character": "RR_alexios_i",
+        "token": "RR_alexios_i_theorist",
+        "trait": "RR_alexios_i_theorist_trait",
+        "title": "帝国战争理论家",
+        "unlock": "RR_roman_military_glory",
+        "research": {},
+        "cost": 100
+      }
+    ],
+    "training_scope": "部队经验获取与陆军损耗为通用修正，包含演习；不是仅限演习的修正。"
+  },
+  "idea_extra": {
+    "RR_marian_reform_spirit": "research_bonus = { infantry_weapons = 0.05 artillery = 0.05 }",
+    "RR_military_themes_spirit": "",
+    "RR_cataphract_research_spirit": "research_bonus = { armor = 0.05 }",
+    "RR_strategikon_spirit": "",
+    "RR_state_armories_spirit": "equipment_bonus = { infantry_equipment = { instant = yes build_cost_ic = -0.2 } artillery_equipment = { instant = yes build_cost_ic = -0.15 } anti_tank_equipment = { instant = yes build_cost_ic = -0.15 } anti_air_equipment = { instant = yes build_cost_ic = -0.15 } rocket_artillery_equipment = { instant = yes build_cost_ic = -0.15 } support_equipment = { instant = yes build_cost_ic = -0.15 } }",
+    "RR_imperial_workshops_spirit": "equipment_bonus = { armor = { instant = yes build_cost_ic = -0.15 reliability = 0.05 } armored_car_equipment = { instant = yes build_cost_ic = -0.15 reliability = 0.05 } }",
+    "RR_modern_cataphracts_spirit": "equipment_bonus = { armor = { instant = yes maximum_speed = 0.1 soft_attack = 0.15 hard_attack = 0.15 defense = 0.15 } armored_car_equipment = { instant = yes maximum_speed = 0.1 soft_attack = 0.15 hard_attack = 0.15 defense = 0.15 } }",
+    "RR_roman_military_glory_spirit": ""
+  },
   "state_sets": {
     "TUR": [
       339,
@@ -2587,5 +2902,5 @@
   },
   "game_source": "E:\\game\\Gfat\\steamapps\\common\\Hearts of Iron IV",
   "target_version": "1.18.*",
-  "source_version": "Operation Postern v1.19.2.0.a729 (d245)"
+  "source_version": "Operation Postern v1.19.3.0.c01a (5632)"
 }
